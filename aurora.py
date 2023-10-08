@@ -1,7 +1,7 @@
 import wx
-import webbrowser
-import sys
-import os
+import subprocess
+import threading
+import pickle  # Importe o módulo pickle
 
 class WelcomeDialog(wx.Dialog):
     def __init__(self, parent, id, title):
@@ -39,31 +39,179 @@ class MyFrame(wx.Frame):
         panel = wx.Panel(self)
         
         # Lista vazia
-        empty_list = wx.ListCtrl(panel, -1, style=wx.LC_REPORT)
-        empty_list.InsertColumn(0, "Itens", width=300)
+        self.lista_de_comandos = wx.ListCtrl(panel, -1, style=wx.LC_REPORT)
+        self.lista_de_comandos.InsertColumn(0, "Nome", width=100)
+        self.lista_de_comandos.InsertColumn(1, "Descrição", width=150)
+        self.lista_de_comandos.InsertColumn(2, "Comando", width=200)
+        self.lista_de_comandos.InsertColumn(3, "Tipo", width=100)
         
-        # Botões "Abrir Repositório no GitHub" e "Baixar Versão Mais Recente"
-        github_button = wx.Button(panel, label="Abrir Repositório no GitHub")
-        github_button.Bind(wx.EVT_BUTTON, self.open_github)
-        
-        download_button = wx.Button(panel, label="Baixar Versão Mais Recente")
-        download_button.Bind(wx.EVT_BUTTON, self.download_latest_version)
+        # Criar o menu "Adicionar Comandos"
+        menu_bar = wx.MenuBar()
+        file_menu = wx.Menu()
+        add_command_item = file_menu.Append(wx.ID_ANY, "Adicionar Comandos", "Adicionar um novo comando")
+        self.Bind(wx.EVT_MENU, self.on_add_command, add_command_item)
+        menu_bar.Append(file_menu, "Comandos")
+        self.SetMenuBar(menu_bar)
         
         # Layout
         sizer = wx.BoxSizer(wx.VERTICAL)
-        sizer.Add(empty_list, 1, wx.EXPAND|wx.ALL, 10)
-        sizer.Add(github_button, 0, wx.CENTER|wx.TOP|wx.BOTTOM, 10)
-        sizer.Add(download_button, 0, wx.CENTER|wx.TOP|wx.BOTTOM, 10)
+        sizer.Add(self.lista_de_comandos, 1, wx.EXPAND|wx.ALL, 10)
+        
+        panel.SetSizer(sizer)
+
+        # Bind para a tecla Enter ou Espaço na lista de comandos
+        self.lista_de_comandos.Bind(wx.EVT_LIST_ITEM_ACTIVATED, self.on_execute_command)
+
+        # Carregue os comandos do arquivo
+        self.commands = load_commands()
+
+        # Preencha a lista de comandos
+        for command in self.commands:
+            self.add_command_to_list(command)
+
+    def on_execute_command(self, event):
+        # Obtenha o comando selecionado na lista
+        selected_item = self.lista_de_comandos.GetFirstSelected()
+        if selected_item >= 0:
+            cmd = self.lista_de_comandos.GetItemText(selected_item, col=2)
+            type = self.lista_de_comandos.GetItemText(selected_item, col=3)
+            # Executar o comando em uma thread separada
+            threading.Thread(target=self.run_command, args=(cmd, type)).start()
+
+    def on_add_command(self, event):
+        # Abrir a caixa de diálogo para adicionar comandos
+        dlg = AddCommandDialog(self, -1, "Adicionar Comandos")
+        result = dlg.ShowModal()
+        if result == wx.ID_OK:
+            name = dlg.name_text.GetValue()
+            desc = dlg.desc_text.GetValue()
+            cmd = dlg.cmd_text.GetValue()
+            type = dlg.type_combo.GetValue()
+            
+            # Adicionar o comando à lista
+            command = {"name": name, "desc": desc, "cmd": cmd, "type": type}
+            self.commands.append(command)
+            self.add_command_to_list(command)
+            # Salvar os comandos no arquivo
+            save_commands(self.commands)
+        
+        dlg.Destroy()
+
+    def add_command_to_list(self, command):
+        index = self.lista_de_comandos.InsertItem(self.lista_de_comandos.GetItemCount(), command["name"])
+        self.lista_de_comandos.SetItem(index, 1, command["desc"])
+        self.lista_de_comandos.SetItem(index, 2, command["cmd"])
+        self.lista_de_comandos.SetItem(index, 3, command["type"])
+
+    def run_command(self, command, type):
+        try:
+            if "CMD" in type.upper():
+                # Executa o comando CMD e captura a saída
+                result = subprocess.run(["cmd", "/c", command], shell=True, check=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
+            elif "POWERSHELL" in type.upper():
+                # Executa o comando PowerShell e captura a saída
+                result = subprocess.run(["powershell", "-Command", command], shell=True, check=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
+            else:
+                print("Tipo de comando não suportado:", type)
+                return
+
+            # Exibir a saída em uma caixa de diálogo
+            output_dialog = OutputDialog(self, -1, "Resultado do Comando", result.stdout)
+            output_dialog.ShowModal()
+
+        except subprocess.CalledProcessError as e:
+            # Se ocorrer um erro na execução do comando, exibir a saída de erro em uma caixa de diálogo
+            output_dialog = OutputDialog(self, -1, "Erro ao Executar Comando", e.stderr)
+            output_dialog.ShowModal()
+        except Exception as e:
+            print("Erro ao executar comando:", e)
+
+class AddCommandDialog(wx.Dialog):
+    def __init__(self, parent, id, title):
+        super(AddCommandDialog, self).__init__(parent, id, title)
+        
+        panel = wx.Panel(self)
+        
+        # Adicione os elementos para entrada de nome, descrição, comando e tipo de comando
+        name_label = wx.StaticText(panel, -1, "Nome:")
+        self.name_text = wx.TextCtrl(panel, -1, "")
+        
+        desc_label = wx.StaticText(panel, -1, "Descrição:")
+        self.desc_text = wx.TextCtrl(panel, -1, "")
+        
+        cmd_label = wx.StaticText(panel, -1, "Comando:")
+        self.cmd_text = wx.TextCtrl(panel, -1, "")
+        
+        type_label = wx.StaticText(panel, -1, "Tipo de Comando:")
+        self.type_combo = wx.ComboBox(panel, -1, choices=["CMD", "Powershell"], style=wx.CB_READONLY)
+        
+        # Botões "Ok" e "Cancelar"
+        ok_button = wx.Button(panel, label="Ok")
+        ok_button.Bind(wx.EVT_BUTTON, self.on_ok)
+        
+        cancel_button = wx.Button(panel, label="Cancelar")
+        cancel_button.Bind(wx.EVT_BUTTON, self.on_cancel)
+        
+        # Layout da caixa de diálogo
+        sizer = wx.BoxSizer(wx.VERTICAL)
+        sizer.Add(name_label, 0, wx.ALL, 10)
+        sizer.Add(self.name_text, 0, wx.EXPAND|wx.ALL, 10)
+        sizer.Add(desc_label, 0, wx.ALL, 10)
+        sizer.Add(self.desc_text, 0, wx.EXPAND|wx.ALL, 10)
+        sizer.Add(cmd_label, 0, wx.ALL, 10)
+        sizer.Add(self.cmd_text, 0, wx.EXPAND|wx.ALL, 10)
+        sizer.Add(type_label, 0, wx.ALL, 10)
+        sizer.Add(self.type_combo, 0, wx.EXPAND|wx.ALL, 10)
+        sizer.Add(ok_button, 0, wx.CENTER|wx.ALL, 10)
+        sizer.Add(cancel_button, 0, wx.CENTER|wx.ALL, 10)
         
         panel.SetSizer(sizer)
     
-    def open_github(self, event):
-        # Abrir o navegador no link do GitHub
-        webbrowser.open("https://github.com/azurejoga/Aurora-otimisador-para-windows-")
+    def on_ok(self, event):
+        self.EndModal(wx.ID_OK)
     
-    def download_latest_version(self, event):
-        # Abrir o navegador no link de download da versão mais recente
-        webbrowser.open("https://link_para_download_da_versao_mais_recente")
+    def on_cancel(self, event):
+        self.EndModal(wx.ID_CANCEL)
+
+class OutputDialog(wx.Dialog):
+    def __init__(self, parent, id, title, output):
+        super(OutputDialog, self).__init__(parent, id, title, size=(400, 300))
+        
+        panel = wx.Panel(self)
+        
+        # Texto de saída do comando
+        output_text = wx.TextCtrl(panel, -1, value=output, style=wx.TE_MULTILINE|wx.TE_READONLY|wx.HSCROLL|wx.VSCROLL)
+        
+        # Botão "Fechar"
+        close_button = wx.Button(panel, label="Fechar")
+        close_button.Bind(wx.EVT_BUTTON, self.on_close)
+        
+        # Layout da caixa de diálogo
+        sizer = wx.BoxSizer(wx.VERTICAL)
+        sizer.Add(output_text, 1, wx.EXPAND|wx.ALL, 10)
+        sizer.Add(close_button, 0, wx.CENTER|wx.ALL, 10)
+        
+        panel.SetSizer(sizer)
+    
+    def on_close(self, event):
+        self.EndModal(wx.ID_OK)
+
+def save_commands(commands):
+    try:
+        with open("commands", "wb") as file:
+            pickle.dump(commands, file)
+    except Exception as e:
+        print("Erro ao salvar comandos:", e)
+
+def load_commands():
+    try:
+        with open("commands", "rb") as file:
+            return pickle.load(file)
+    except FileNotFoundError:
+        return []
+    except Exception as e:
+        print("Erro ao carregar comandos:", e)
+        return []
 
 app = wx.App()
 
