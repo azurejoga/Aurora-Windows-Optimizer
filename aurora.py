@@ -2,6 +2,7 @@ import wx
 import subprocess
 import threading
 import pickle  # Importe o módulo pickle
+import webbrowser  # Importe o módulo webbrowser
 
 class WelcomeDialog(wx.Dialog):
     def __init__(self, parent, id, title):
@@ -51,6 +52,15 @@ class MyFrame(wx.Frame):
         add_command_item = file_menu.Append(wx.ID_ANY, "Adicionar Comandos", "Adicionar um novo comando")
         self.Bind(wx.EVT_MENU, self.on_add_command, add_command_item)
         menu_bar.Append(file_menu, "Comandos")
+        
+        # Criar o menu "Ferramentas" e adicionar itens
+        tools_menu = wx.Menu()
+        open_github_repo_item = tools_menu.Append(wx.ID_ANY, "Abrir Repositório no GitHub", "Abrir o repositório no GitHub")
+        download_latest_github_item = tools_menu.Append(wx.ID_ANY, "Baixar Versão Mais Recente do GitHub", "Baixar a versão mais recente do GitHub")
+        self.Bind(wx.EVT_MENU, self.open_github_repo, open_github_repo_item)
+        self.Bind(wx.EVT_MENU, self.download_latest_github, download_latest_github_item)
+        menu_bar.Append(tools_menu, "Ferramentas")
+
         self.SetMenuBar(menu_bar)
         
         # Layout
@@ -125,6 +135,16 @@ class MyFrame(wx.Frame):
             output_dialog.ShowModal()
         except Exception as e:
             print("Erro ao executar comando:", e)
+
+    def open_github_repo(self, event):
+        # URL do repositório no GitHub
+        github_url = "https://github.com/azurejoga/Aurora-otimisador-para-windows-/"
+        webbrowser.open(github_url)
+
+    def download_latest_github(self, event):
+        # URL para baixar a versão mais recente do GitHub
+        download_url = "https://github.com/seu-usuario/seu-repositorio/releases/latest"
+        webbrowser.open(download_url)
 
 class AddCommandDialog(wx.Dialog):
     def __init__(self, parent, id, title):
