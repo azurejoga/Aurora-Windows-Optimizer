@@ -69,6 +69,9 @@ class MyFrame(wx.Frame):
         # Bind para a tecla Enter ou Espaço na lista de comandos
         self.lista_de_comandos.Bind(wx.EVT_LIST_ITEM_ACTIVATED, self.on_execute_command)
 
+        # Vincule o evento EVT_CONTEXT_MENU
+        self.lista_de_comandos.Bind(wx.EVT_CONTEXT_MENU, self.on_context_menu)
+
         # Carregue os comandos do arquivo
         self.commands = load_commands()
 
@@ -143,6 +146,82 @@ class MyFrame(wx.Frame):
         download_url = "https://github.com/seu-usuario/seu-repositorio/releases/latest"
         webbrowser.open(download_url)
 
+    def create_context_menu(self):
+        menu = wx.Menu()
+
+        edit_item = wx.MenuItem(menu, wx.ID_ANY, "Editar")
+        self.Bind(wx.EVT_MENU, self.on_edit_command, edit_item)
+        menu.Append(edit_item)
+
+        remove_item = wx.MenuItem(menu, wx.ID_ANY, "Remover Comando")
+        self.Bind(wx.EVT_MENU, self.on_remove_command, remove_item)
+        menu.Append(remove_item)
+
+        return menu
+
+    def on_context_menu(self, event):
+        selected_item = self.lista_de_comandos.GetFirstSelected()
+        if selected_item >= 0:
+            menu = self.create_context_menu()
+            self.PopupMenu(menu)
+            menu.Destroy()
+
+    def on_edit_command(self, event):
+        selected_item = self.lista_de_comandos.GetFirstSelected()
+        if selected_item >= 0:
+            # Obtenha os detalhes do comando selecionado
+            name = self.lista_de_comandos.GetItemText(selected_item, col=0)
+            desc = self.lista_de_comandos.GetItemText(selected_item, col=1)
+            cmd = self.lista_de_comandos.GetItemText(selected_item, col=2)
+            type = self.lista_de_comandos.GetItemText(selected_item, col=3)
+
+            # Use a mesma caixa de diálogo para edição
+            dlg = AddCommandDialog(self, -1, "Editar Comando")
+            dlg.name_text.SetValue(name)
+            dlg.desc_text.SetValue(desc)
+            dlg.cmd_text.SetValue(cmd)
+            dlg.type_combo.SetValue(type)
+
+            result = dlg.ShowModal()
+            if result == wx.ID_OK:
+                # Atualize os detalhes do comando na lista
+                updated_name = dlg.name_text.GetValue()
+                updated_desc = dlg.desc_text.GetValue()
+                updated_cmd = dlg.cmd_text.GetValue()
+                updated_type = dlg.type_combo.GetValue()
+
+                self.lista_de_comandos.SetItem(selected_item, 0, updated_name)
+                self.lista_de_comandos.SetItem(selected_item, 1, updated_desc)
+                self.lista_de_comandos.SetItem(selected_item, 2, updated_cmd)
+                self.lista_de_comandos.SetItem(selected_item, 3, updated_type)
+
+                # Atualize os detalhes do comando na lista de comandos
+                self.commands[selected_item]["name"] = updated_name
+                self.commands[selected_item]["desc"] = updated_desc
+                self.commands[selected_item]["cmd"] = updated_cmd
+                self.commands[selected_item]["type"] = updated_type
+
+                # Salve as alterações no arquivo
+                save_commands(self.commands)
+
+            dlg.Destroy()
+
+    def on_remove_command(self, event):
+        selected_item = self.lista_de_comandos.GetFirstSelected()
+        if selected_item >= 0:
+            # Confirme se o usuário deseja remover o comando
+            confirm_dialog = wx.MessageDialog(self, "Tem certeza de que deseja remover este comando?", "Remover Comando", wx.YES_NO | wx.ICON_QUESTION)
+            result = confirm_dialog.ShowModal()
+            confirm_dialog.Destroy()
+
+            if result == wx.ID_YES:
+                # Remova o item da lista
+                self.lista_de_comandos.DeleteItem(selected_item)
+                # Remova o comando da lista de comandos
+                del self.commands[selected_item]
+                # Salve as alterações no arquivo
+                save_commands(self.commands)
+
 class AddCommandDialog(wx.Dialog):
     def __init__(self, parent, id, title):
         super(AddCommandDialog, self).__init__(parent, id, title)
@@ -212,8 +291,6 @@ class OutputDialog(wx.Dialog):
     
     def on_close(self, event):
         self.EndModal(wx.ID_OK)
-
-        
 
 def save_commands(commands):
     try:
