@@ -13,8 +13,7 @@ class WelcomeDialog(wx.Dialog):
         # Texto de boas-vindas na caixa de diálogo
         welcome_text = wx.StaticText(panel, -1, "Olá, estamos felizes por você querer testar nosso programa!")
         disclaimer_text = wx.StaticText(panel, -1, "Lembre-se que todas as alterações são feitas por você e não somos responsáveis ​​por quaisquer problemas.")
-        disclaimer_text2 = wx.StaticText(panel, -1, "Todos os riscos são assumidos por você mesmo!")
-        restore_text = wx.StaticText(panel, -1, "Antes de fazer qualquer coisa, crie um ponto de restauração no seu PC para prevenir eventuais problemas.")
+        restore_text = wx.StaticText(panel, -1, "Antes de fazer qualquer coisa, crie um ponto de restauração no seu PC para evitar eventuais problemas.")
         
         # Botão "Ok, quero continuar" na caixa de diálogo
         ok_button = wx.Button(panel, label="Ok, quero continuar")
@@ -24,7 +23,6 @@ class WelcomeDialog(wx.Dialog):
         sizer = wx.BoxSizer(wx.VERTICAL)
         sizer.Add(welcome_text, 0, wx.ALL, 10)
         sizer.Add(disclaimer_text, 0, wx.ALL, 10)
-        sizer.Add(disclaimer_text2, 0, wx.ALL, 10)
         sizer.Add(restore_text, 0, wx.ALL, 10)
         sizer.Add(ok_button, 0, wx.CENTER|wx.ALL, 10)
         
