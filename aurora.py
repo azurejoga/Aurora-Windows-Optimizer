@@ -1,6 +1,5 @@
 import wx
 import subprocess
-import threading
 import pickle
 import webbrowser
 
@@ -83,8 +82,8 @@ class MyFrame(wx.Frame):
         if selected_item >= 0:
             cmd = self.lista_de_comandos.GetItemText(selected_item, col=2)
             type = self.lista_de_comandos.GetItemText(selected_item, col=3)
-            # Executar o comando em uma thread separada
-            threading.Thread(target=self.run_command, args=(cmd, type)).start()
+            # Executar o comando
+            self.run_command(cmd, type)
 
     def on_add_command(self, event):
         # Abrir a caixa de diálogo para adicionar comandos
@@ -213,6 +212,8 @@ class OutputDialog(wx.Dialog):
     
     def on_close(self, event):
         self.EndModal(wx.ID_OK)
+
+        
 
 def save_commands(commands):
     try:
