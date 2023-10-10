@@ -1,8 +1,8 @@
 import wx
 import subprocess
 import threading
-import pickle  # Importe o módulo pickle
-import webbrowser  # Importe o módulo webbrowser
+import pickle
+import webbrowser
 
 class WelcomeDialog(wx.Dialog):
     def __init__(self, parent, id, title):
