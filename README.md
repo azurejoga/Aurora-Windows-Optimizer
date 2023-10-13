@@ -43,7 +43,7 @@ Simples, funcional, fácil e otimizado!
 * código aberto!
 Sim! nós somos código aberto licenciado pela licença MIT. Caso queira contribuir, entre na branch dev, e   faça as alterações! PS: elas serão revisadas antes da publicação e compilação do código para o repositório principal e o release.
 
-* Novos recursos embreve, mas você pode colaborar também!
+* Novos recursos em breve, mas você pode colaborar também!
 
 
 * Queremos adicionar suporte a novos idiomas, Suporte ao alterar registros do windows, e muito mais!
@@ -62,11 +62,11 @@ sseu pc! e mais estão chegando logo logo...
 # Requisitos
 
 
-* sistemas operacionais compátiveis, (OS) 
+* sistemas operacionais compatíveis, (OS) 
 * Windows 10 e Windows 11.
 
 
-* Nenhum requisito estravagante para memória, processador ou espaço em disco.
+* Nenhum requisito extravagante para memória, processador ou espaço em disco.
 
 
 # Como usar?
@@ -77,7 +77,7 @@ sseu pc! e mais estão chegando logo logo...
 3. Clique em um comando da lista ou adicione o seu próprio
 4. Remova ou edite um comando para se adecuar ao seu gosto
 
-# é autamente recomendado criar um ponto de restauração antes no seu pc para que eventuais alterações sejam desfeitas depois.
+# é altamente recomendado criar um ponto de restauração antes no seu pc para que eventuais alterações sejam desfeitas depois.
 
 
 # Nós não somos responsáveis por quaisquer alterações feitas por você no seu computador.
