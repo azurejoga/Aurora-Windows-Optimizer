@@ -1,10 +1,10 @@
-# Aurora: windows-otimizer™
+# Aurora: windows optimizer™
 Otimize seu Windows com  aurora ™
 
 # Um otimizador leve e feito em python!
 
 
-# obrigado por: edu-mx ajudar no desenvolvimento
+# obrigado por: [edu-mx](https://github.com/edu-mx) ajudar no desenvolvimento
 
 
 # Para quem é?
@@ -94,14 +94,12 @@ Crie um ponto antes para prevenir qualquer incidente.
 
 # Download
 
-
-* SHA
-
-* MD5
+* MD5: 239e8719156d6967285382a2c649aa42
+* SHA-256: 083453e351865c334d347fa3aa8a4c07e22d8707c89002064c667f1eb41ef1e4
 
 
 * Download, windows 11 e windows 10
-[Baixe Aqui]()
+[Baixe Aqui](https://github.com/azurejoga/Aurora-otimisador-para-windows-/releases/download/aurora1/aurora-windows-optimizer.zip)
 
 
 # Obrigado a todos que colaboraram para tornar o windows um lugar melhor e livre de blotware e telemetria!
