@@ -276,7 +276,10 @@ class OutputDialog(wx.Dialog):
         panel = wx.Panel(self)
         
         # Texto de saída do comando
-        output_text = wx.TextCtrl(panel, -1, value=output, style=wx.TE_MULTILINE|wx.TE_READONLY|wx.HSCROLL|wx.VSCROLL)
+        if output:
+            output_text = wx.TextCtrl(panel, -1, value=output.strip(), style=wx.TE_MULTILINE|wx.TE_READONLY|wx.HSCROLL|wx.VSCROLL)
+        else:
+            output_text = wx.TextCtrl(panel, -1, value='O comando foi executado com sucesso!', style=wx.TE_MULTILINE|wx.TE_READONLY|wx.HSCROLL|wx.VSCROLL)
         
         # Botão "Fechar"
         close_button = wx.Button(panel, label="Fechar")
