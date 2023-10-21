@@ -1,108 +1,110 @@
 # Aurora: windows optimizer™
-Otimize seu Windows com  aurora ™
+Optimize your Windows with Aurora™
 
-# Um otimizador leve e feito em python!
-
-
-# obrigado por: [edu-mx](https://github.com/edu-mx) ajudar no desenvolvimento
+# A lightweight optimizer made in Python!
 
 
-# Para quem é?
+# thanks for: [edu-mx](https://github.com/edu-mx) helping with development
 
 
-Para todos aqueles que tem pc fraco, pc com baixo desempenho, pc para jogos e muito mais!
+# Who is it for?
 
 
-# Quer desativar recursos desnecessários do windows?
-Aqui é o seu lugar com o app certo na palma da sua mão!
-
-Simples, funcional, fácil e otimizado!
+For all those who have a weak PC, low-performance PC, gaming PC and more!
 
 
-# recursos
+# Want to disable unnecessary Windows features?
+Here is your place with the right app in the palm of your hand!
+
+Simple, functional, easy and optimized!
 
 
-* Quer adicionar seus próprios comandos? você pode! 
-1. abra o menu
-2. clique em adicionar comandos.
-3. digite um nome, descrição, escolha se é powershell ou cmd e digite o comando.
-4. aperte em ok e execute o comando na lista.
-
-* baixe a versão mais recente para seu pc no nosso repositório! faça isso por dentro do programa!
-
-*  Chegou a hora de otimizar seu pc, sem precisar entrar em forums obscuros, sites cheios de anúncios ou qualquer outra coisa bizarra!
+# resources
 
 
-* não somos algo comum, aqui você pode adicionar seus próprios comandos e compartilhar com a comunidade!
+* Want to add your own commands? you can!
+1. open the menu
+2. click add commands.
+3. enter a name, description, choose whether it is powershell or cmd and enter the command.
+4. press ok and execute the command in the list.
 
-* Edite um comando ou o remova, caso não goste dele.
+* download the latest version for your pc from our repository! do this within the program!
 
-
-* de pobres que tinham um pc ruim para outros pobres... 🤣
-
-* código aberto!
-Sim! nós somos código aberto licenciado pela licença MIT. Caso queira contribuir, entre na branch dev, e   faça as alterações! PS: elas serão revisadas antes da publicação e compilação do código para o repositório principal e o release.
-
-* Novos recursos em breve, mas você pode colaborar também!
+* The time has come to optimize your PC, without having to enter obscure forums, sites full of ads or anything else bizarre!
 
 
-* Queremos adicionar suporte a novos idiomas, Suporte ao alterar registros do windows, e muito mais!
+* we are not something common, here you can add your own commands and share with the community!
 
-* Totalmente compatível com leitores de tela para cegos / deficientes visuais
-
-# Simples e funcional.
-
-* nosso aplicativo conta com mais de 50 comandos para diversos tipos de otimizações / tarefas no 
-sseu pc! e mais estão chegando logo logo...
+* Edit a command or remove it if you don't like it.
 
 
-* Procuramos otimizar ao máximo os pcs com windows!
+* from poor people who had a bad PC to other poor people... 🤣
+
+* open code!
+Yes! we are open source licensed under the MIT license. If you want to contribute, go to the dev branch and make the changes! PS: they will be reviewed before publishing and compiling the code for the main repository and release.
+
+* New features coming soon, but you can collaborate too!
 
 
-# Requisitos
+* We want to add support for new languages, support for changing windows registries, and more!
+
+* Fully compatible with screen readers for the blind/visually impaired
+
+* create a restauration point direct en program!
+
+# Simple and functional.
+
+* our application has more than 50 commands for different types of optimizations / tasks in the
+your pc! and more are coming soon...
 
 
-* sistemas operacionais compatíveis, (OS) 
-* Windows 10 e Windows 11.
+* We try to optimize Windows PCs as much as possible!
 
 
-* Nenhum requisito extravagante para memória, processador ou espaço em disco.
+# Requirements
 
 
-# Como usar?
+* Compatible operating systems, (OS)
+*Windows 10 and Windows 11.
 
 
-1. Abra o aplicativo em modo administrador.
-2. Pule a mensagem de boas-vindas, caso você já tenha feito um ponto de restauração
-3. Clique em um comando da lista ou adicione o seu próprio
-4. Remova ou edite um comando para se adecuar ao seu gosto
-
-# é altamente recomendado criar um ponto de restauração antes no seu pc para que eventuais alterações sejam desfeitas depois.
+* No extravagant requirements for memory, processor or disk space.
 
 
-# Nós não somos responsáveis por quaisquer alterações feitas por você no seu computador.
-Crie um ponto antes para prevenir qualquer incidente.
+# How to use?
 
 
-# Bugs conhecidos.
+1. Open the application in administrator mode.
+2. Skip the welcome message if you have already made a restore point
+3. Click a command from the list or add your own
+4. Remove or edit a command to suit your taste
 
-* Existe um bug onde a formatação do terminal, precisamente caracteres UTF-8 / Unicode. estão sendo exibidos incorretamente.
+# It is highly recommended to create a restore point on your PC beforehand so that any changes can be undone later.
 
 
-* existe um bug ao abrir um programa por meio de algum comando no aplicativo que a janela dele fica indisponível.
+# We are not responsible for any changes made by you to your computer.
+Create a point in advance to prevent any incident.
+
+
+# Known bugs.
+
+* There is a bug where the terminal formatting precisely UTF-8 / Unicode characters. are being displayed incorrectly.
+
+
+* there is a bug when opening a program using a command in the application that makes its window unavailable.
 
 
 # Download
 
-* MD5: 239e8719156d6967285382a2c649aa42
-* SHA-256: 083453e351865c334d347fa3aa8a4c07e22d8707c89002064c667f1eb41ef1e4
+* MD5: a49d93e6f6046d0e46bbea27fb3b7c0e
+* SHA-256: f6c3f3e8ee41ec3e977a9ed091e4d794bb2d650b2d879d5624516b2e1d2cd34c
 
 
-* Download, windows 11 e windows 10
-[Baixe Aqui](https://github.com/azurejoga/Aurora-otimisador-para-windows-/releases/download/aurora1/aurora-windows-optimizer.zip)
+* Download, windows 11 and windows 10
+[Download Here](https://github.com/azurejoga/Aurora-Windows-Optimizer/releases/download/aurora2/aurora-windows-optimizer.zip)
 
 
-# Obrigado a todos que colaboraram para tornar o windows um lugar melhor e livre de blotware e telemetria!
+# Thank you to everyone who contributed to making Windows a better place, free from blotware and telemetry!
 
 
-# Encontrou algum bug? Faça um issue para ajudar no desenvolvimento!
+# Found any bugs? Make an issue to help with development!
