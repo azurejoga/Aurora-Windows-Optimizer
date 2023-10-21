@@ -96,12 +96,12 @@ Create a point in advance to prevent any incident.
 
 # Download
 
-* MD5: a49d93e6f6046d0e46bbea27fb3b7c0e
-* SHA-256: f6c3f3e8ee41ec3e977a9ed091e4d794bb2d650b2d879d5624516b2e1d2cd34c
+* MD5: 5471c45d6cdce4036b2c5abf418ae4e5
+* SHA-256: a8a3e3f4d3285653d4b884be6b909077303384e041f59e67b74687ad0c3991b6
 
 
 * Download, windows 11 and windows 10
-[Download Here](https://github.com/azurejoga/Aurora-Windows-Optimizer/releases/download/aurora2/aurora-windows-optimizer.zip)
+[Download Here](https://github.com/azurejoga/Aurora-Windows-Optimizer/releases/download/aurora3/aurora-windows-optimizer.zip)
 
 
 # Thank you to everyone who contributed to making Windows a better place, free from blotware and telemetry!
