@@ -1,3 +1,4 @@
+# Importe as bibliotecas necessárias (wx, subprocess, pickle, webbrowser, ctypes)
 import wx
 import subprocess
 import pickle
@@ -67,17 +68,17 @@ class MyFrame(wx.Frame):
         open_github_repo_item = tools_menu.Append(wx.ID_ANY, "Abrir Repositório no GitHub", "Abrir o repositório no GitHub")
         download_latest_github_item = tools_menu.Append(wx.ID_ANY, "Baixar Versão Mais Recente do GitHub", "Baixar a versão mais recente do GitHub")
         create_restore_point_item = tools_menu.Append(wx.ID_ANY, "Criar Ponto de Restauração", "Criar um ponto de restauração no sistema")
+        sort_commands_item = tools_menu.Append(wx.ID_ANY, "Ordenar Comandos", "Ordenar os comandos em ordem alfabética")
         self.Bind(wx.EVT_MENU, self.open_github_repo, open_github_repo_item)
         self.Bind(wx.EVT_MENU, self.download_latest_github, download_latest_github_item)
         self.Bind(wx.EVT_MENU, self.create_system_restore_point, create_restore_point_item)
+        self.Bind(wx.EVT_MENU, self.sort_commands, sort_commands_item)
         menu_bar.Append(tools_menu, "Ferramentas")
-
         self.SetMenuBar(menu_bar)
 
         # Layout
         sizer = wx.BoxSizer(wx.VERTICAL)
         sizer.Add(self.lista_de_comandos, 1, wx.EXPAND | wx.ALL, 10)
-
         panel.SetSizer(sizer)
 
         # Bind para a tecla Enter ou Espaço na lista de comandos
@@ -157,7 +158,7 @@ class MyFrame(wx.Frame):
 
     def download_latest_github(self, event):
         # URL para baixar a versão mais recente do GitHub
-        download_url = "https://github.com/seu-usuario/seu-repositorio/releases/latest"
+        download_url = "https://github.com/azurejoga/Aurora-Windows-Optimizer/releases/"
         webbrowser.open(download_url)
 
     def create_system_restore_point(self, event):
@@ -165,6 +166,13 @@ class MyFrame(wx.Frame):
         description = wx.GetTextFromUser("Insira uma descrição para o ponto de restauração:", "Criar Ponto de Restauração")
         if description:
             create_system_restore_point(description)
+
+    def sort_commands(self, event):
+        # Ordenar os comandos em ordem alfabética
+        self.lista_de_comandos.DeleteAllItems()
+        self.commands.sort(key=lambda x: x["name"])
+        for command in self.commands:
+            self.add_command_to_list(command)
 
     def create_context_menu(self):
         menu = wx.Menu()
@@ -176,6 +184,14 @@ class MyFrame(wx.Frame):
         remove_item = wx.MenuItem(menu, wx.ID_ANY, "Remover Comando")
         self.Bind(wx.EVT_MENU, self.on_remove_command, remove_item)
         menu.Append(remove_item)
+
+        move_to_top_item = wx.MenuItem(menu, wx.ID_ANY, "Mover para o Topo")
+        self.Bind(wx.EVT_MENU, self.move_command_to_top, move_to_top_item)
+        menu.Append(move_to_top_item)
+
+        move_to_bottom_item = wx.MenuItem(menu, wx.ID_ANY, "Mover para o Final")
+        self.Bind(wx.EVT_MENU, self.move_command_to_bottom, move_to_bottom_item)
+        menu.Append(move_to_bottom_item)
 
         return menu
 
@@ -234,6 +250,26 @@ class MyFrame(wx.Frame):
             self.lista_de_comandos.DeleteItem(selected_item)
             # Salve as alterações no arquivo
             save_commands(self.commands)
+
+    def move_command_to_top(self, event):
+        selected_item = self.lista_de_comandos.GetFirstSelected()
+        if selected_item > 0:
+            # Mova o comando para o topo da lista
+            self.commands.insert(0, self.commands.pop(selected_item))
+            self.lista_de_comandos.DeleteAllItems()
+            for command in self.commands:
+                self.add_command_to_list(command)
+            self.lista_de_comandos.Select(0)
+
+    def move_command_to_bottom(self, event):
+        selected_item = self.lista_de_comandos.GetFirstSelected()
+        if selected_item >= 0 and selected_item < len(self.commands) - 1:
+            # Mova o comando para o final da lista
+            self.commands.append(self.commands.pop(selected_item))
+            self.lista_de_comandos.DeleteAllItems()
+            for command in self.commands:
+                self.add_command_to_list(command)
+            self.lista_de_comandos.Select(len(self.commands) - 1)
 
 class AddCommandDialog(wx.Dialog):
     def __init__(self, parent, id, title):

@@ -1,110 +1,50 @@
-# Aurora: windows optimizer™
-Optimize your Windows with Aurora™
+# Aurora: Windows optimizer™ Transformando Seu PC em uma Máquina Poderosa! 💻
 
-# A lightweight optimizer made in Python!
+O **Aurora™** é o otimizador definitivo para Windows, uma ferramenta incrivelmente poderosa que eleva o desempenho do seu PC! ✨
 
+Agradecimentos especiais a [edu-mx](https://github.com/edu-mx) por sua colaboração no desenvolvimento. 🙌
 
-# thanks for: [edu-mx](https://github.com/edu-mx) helping with development
+## Por Que Escolher o Aurora? 🤔
 
+Se você deseja **otimizar seu PC para obter o máximo de desempenho** ou simplesmente **eliminar recursos indesejados do Windows**, o Aurora é a resposta. Este otimizador inovador oferece:
 
-# Who is it for?
+### 🧰 Recursos Poderosos:
 
+- **Adicione Seus Próprios Comandos**: Tenha o controle total e personalize o Aurora com seus próprios comandos.
+- **Atualização Simplificada**: Mantenha-se atualizado com o toque de um botão, diretamente do aplicativo.
+- **Otimização Sem Complicações**: Diga adeus a fóruns obscuros e sites cheios de anúncios.
+- **Comunidade de Colaboradores**: Participe de uma comunidade vibrante e compartilhe seus comandos personalizados.
+- **Código Aberto**: Contribua para o projeto e veja suas mudanças ganharem vida no repositório aberto.
+- ** possibilidade de editar, remover ou adicionar seus próprios comandos, conforme desejar,! a personalização é sua!😱**
+- ** mover para o topo, final da lista ou até ordenar  alfabeticamente os comandos!✌**
+- ** crie um ponto de restauração dentro do próprio aurora e não tenha medo de turbinar seu pc!👏**
+- ** remova aplicativos nativos inúteis que vem instalados por padrão no seu pc! cansou dos bloatwares, estamos aqui para ajudar! 🐱‍🎁**
 
-For all those who have a weak PC, low-performance PC, gaming PC and more!
+### 🌟 O Futuro é Incrível:
 
+Estamos comprometidos em adicionar mais funcionalidades incríveis ao Aurora. Aguarde novos idiomas, personalização avançada de registros do Windows e muito mais. Além disso, o Aurora é totalmente acessível para deficientes visuais. 🌌
 
-# Want to disable unnecessary Windows features?
-Here is your place with the right app in the palm of your hand!
+## Como Usar o Aurora? 🚀
 
-Simple, functional, easy and optimized!
+É fácil começar a otimizar o seu PC com o Aurora:
 
+1. Abra o aplicativo como administrador para obter o melhor desempenho.
+2. Pule a mensagem de boas-vindas se você já fez um ponto de restauração.
+3. Escolha entre uma variedade de comandos de otimização ou crie os seus próprios.
+4. Edite ou remova comandos conforme sua preferência.
 
-# resources
+# É altamente recomendável criar um ponto de restauração antes de efetuar alterações, para que você possa desfazê-las, se necessário.
 
+## Reporte Bugs e Colabore 🐜🛠️
 
-* Want to add your own commands? you can!
-1. open the menu
-2. click add commands.
-3. enter a name, description, choose whether it is powershell or cmd and enter the command.
-4. press ok and execute the command in the list.
+Se encontrar algum problema ou tiver sugestões para melhorias, por favor, crie uma *issue*. A colaboração é fundamental para aprimorar o Aurora e torná-lo ainda mais incrível.
 
-* download the latest version for your pc from our repository! do this within the program!
+## Baixe Agora! 📥
 
-* The time has come to optimize your PC, without having to enter obscure forums, sites full of ads or anything else bizarre!
+Comece sua jornada para um PC mais poderoso e eficiente. Faça o download do Aurora para Windows 11 e Windows 10 agora:
 
+[Download Aurora](https://github.com/azurejoga/Aurora-Windows-Optimizer/releases/download/aurora4/aurora-install.exe)
 
-* we are not something common, here you can add your own commands and share with the community!
+# Obrigado por escolher o Aurora para elevar o desempenho do seu PC a patamares inéditos! 💪✨
 
-* Edit a command or remove it if you don't like it.
-
-
-* from poor people who had a bad PC to other poor people... 🤣
-
-* open code!
-Yes! we are open source licensed under the MIT license. If you want to contribute, go to the dev branch and make the changes! PS: they will be reviewed before publishing and compiling the code for the main repository and release.
-
-* New features coming soon, but you can collaborate too!
-
-
-* We want to add support for new languages, support for changing windows registries, and more!
-
-* Fully compatible with screen readers for the blind/visually impaired
-
-* create a restauration point direct en program!
-
-# Simple and functional.
-
-* our application has more than 50 commands for different types of optimizations / tasks in the
-your pc! and more are coming soon...
-
-
-* We try to optimize Windows PCs as much as possible!
-
-
-# Requirements
-
-
-* Compatible operating systems, (OS)
-*Windows 10 and Windows 11.
-
-
-* No extravagant requirements for memory, processor or disk space.
-
-
-# How to use?
-
-
-1. Open the application in administrator mode.
-2. Skip the welcome message if you have already made a restore point
-3. Click a command from the list or add your own
-4. Remove or edit a command to suit your taste
-
-# It is highly recommended to create a restore point on your PC beforehand so that any changes can be undone later.
-
-
-# We are not responsible for any changes made by you to your computer.
-Create a point in advance to prevent any incident.
-
-
-# Known bugs.
-
-* There is a bug where the terminal formatting precisely UTF-8 / Unicode characters. are being displayed incorrectly.
-
-
-* there is a bug when opening a program using a command in the application that makes its window unavailable.
-
-
-# Download
-
-* MD5: 5471c45d6cdce4036b2c5abf418ae4e5
-* SHA-256: a8a3e3f4d3285653d4b884be6b909077303384e041f59e67b74687ad0c3991b6
-
-
-* Download, windows 11 and windows 10
-[Download Here](https://github.com/azurejoga/Aurora-Windows-Optimizer/releases/download/aurora3/aurora-windows-optimizer.zip)
-
-
-# Thank you to everyone who contributed to making Windows a better place, free from blotware and telemetry!
-
-
-# Found any bugs? Make an issue to help with development!
+# Licenciado pela licença MIT
