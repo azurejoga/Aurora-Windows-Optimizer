@@ -1,0 +1,9 @@
+releases:
+  - version: "4"
+    url: "https://github.com/azurejoga/Aurora-Windows-Optimizer/releases/download/aurora4/aurora-install.exe"
+    note: "Atualização para a versão 4.0.0 (aurora4)."
+    files:
+      - name: "commands"
+        url: "https://github.com/azurejoga/Aurora-Windows-Optimizer/raw/aurora/commands"
+        commit: "168f364"  # Use o hash do commit para verificar se o arquivo foi atualizado
+        note: "Arquivo 'commands' atualizado."
