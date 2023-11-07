@@ -69,10 +69,12 @@ class MyFrame(wx.Frame):
         download_latest_github_item = tools_menu.Append(wx.ID_ANY, "Baixar Versão Mais Recente do GitHub", "Baixar a versão mais recente do GitHub")
         create_restore_point_item = tools_menu.Append(wx.ID_ANY, "Criar Ponto de Restauração", "Criar um ponto de restauração no sistema")
         sort_commands_item = tools_menu.Append(wx.ID_ANY, "Ordenar Comandos", "Ordenar os comandos em ordem alfabética")
+        check_updates_item = tools_menu.Append(wx.ID_ANY, "Verificar Atualizações", "Verificar atualizações e fechar Aurora")
         self.Bind(wx.EVT_MENU, self.open_github_repo, open_github_repo_item)
         self.Bind(wx.EVT_MENU, self.download_latest_github, download_latest_github_item)
         self.Bind(wx.EVT_MENU, self.create_system_restore_point, create_restore_point_item)
         self.Bind(wx.EVT_MENU, self.sort_commands, sort_commands_item)
+        self.Bind(wx.EVT_MENU, self.check_updates, check_updates_item)
         menu_bar.Append(tools_menu, "Ferramentas")
         self.SetMenuBar(menu_bar)
 
@@ -251,6 +253,11 @@ class MyFrame(wx.Frame):
             # Salve as alterações no arquivo
             save_commands(self.commands)
 
+    def check_updates(self, event):
+        subprocess.run(["update.exe"], shell=True)
+
+
+ 
     def move_command_to_top(self, event):
         selected_item = self.lista_de_comandos.GetFirstSelected()
         if selected_item > 0:
