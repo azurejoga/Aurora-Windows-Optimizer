@@ -1,4 +1,4 @@
-# [Leia em português](readme-pt-br.md)
+#[Leia em português](https://github.com/azurejoga/Aurora-Windows-Optimizer/blob/aurora/readme-pt-br.md)
 
 # [leer en español](readme-es.md)
 
