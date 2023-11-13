@@ -1,8 +1,8 @@
 # Leia em Português 
-[README em Português](https://github.com/azurejoga/Aurora-Windows-Optimizer/blob/aurora/readme-pt-br.md)
+[leia em Português](https://github.com/azurejoga/Aurora-Windows-Optimizer/blob/aurora/readme-pt-br.md)
 
 # Leer en Español
-[readme en Español](https://github.com/azurejoga/Aurora-Windows-Optimizer/blob/aurora/readme_es.md)
+[Leer en Español](https://github.com/azurejoga/Aurora-Windows-Optimizer/blob/aurora/readme_es.md)
 
 # Read in English
 [README in English](https://github.com/azurejoga/Aurora-Windows-Optimizer/blob/aurora/readme.md)
