@@ -1,10 +1,14 @@
+# Leia em Português 
+[README em Português](https://github.com/azurejoga/Aurora-Windows-Optimizer/blob/aurora/readme-pt-br.md)
+
+# Leer en Español
+[readme en Español](https://github.com/azurejoga/Aurora-Windows-Optimizer/blob/aurora/readme-es.md)
+
+# Read in English
+[README in English](https://github.com/azurejoga/Aurora-Windows-Optimizer/blob/aurora/readme.md)
+
 # Aurora: Windows Optimizer™ Transforming Your PC into a Powerful Machine! 💻
 
-# Leia em português [](https://github.com/azurejoga/Aurora-Windows-Optimizer/blob/aurora/readme-pt-br.md)
-
-# [leer en español](https://github.com/azurejoga/Aurora-Windows-Optimizer/blob/aurora/readme-es.md)
-
-# [read en english](https://github.com/azurejoga/Aurora-Windows-Optimizer/blob/aurora/readme.md)
 
 
 **Aurora™** is the ultimate Windows optimizer, an incredibly powerful tool that enhances your PC's performance! ✨
