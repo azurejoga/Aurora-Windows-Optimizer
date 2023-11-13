@@ -1,10 +1,11 @@
+# Aurora: Windows Optimizer™ Transforming Your PC into a Powerful Machine! 💻
+
 # Leia em português [](https://github.com/azurejoga/Aurora-Windows-Optimizer/blob/aurora/readme-pt-br.md)
 
-# [leer en español](readme-es.md)
+# [leer en español](https://github.com/azurejoga/Aurora-Windows-Optimizer/blob/aurora/readme-es.md)
 
-# [read en english](readme.md)
+# [read en english](https://github.com/azurejoga/Aurora-Windows-Optimizer/blob/aurora/readme.md)
 
-# Aurora: Windows Optimizer™ Transforming Your PC into a Powerful Machine! 💻
 
 **Aurora™** is the ultimate Windows optimizer, an incredibly powerful tool that enhances your PC's performance! ✨
 
