@@ -1,9 +1,11 @@
-# [Leia em português](readme-pt-br.md)
+# Leia em Português 
+[README em Português](https://github.com/azurejoga/Aurora-Windows-Optimizer/blob/aurora/readme-pt-br.md)
 
-# [leer en español](readme-es.md)
+# Leer en Español
+[readme en Español](https://github.com/azurejoga/Aurora-Windows-Optimizer/blob/aurora/readme-es.md)
 
-# [read en english](readme.md)
-
+# Read in English
+[README in English](https://github.com/azurejoga/Aurora-Windows-Optimizer/blob/aurora/readme.md)
 
 # Aurora: Windows Optimizer™ transformando seu PC em uma máquina poderosa! 💻
 
