@@ -1,11 +1,14 @@
+#!/usr/bin/python
+# -*- coding: <encoding name> -*-
 # Importe as bibliotecas necessárias (wx, subprocess, pickle, webbrowser, ctypes)
 import wx
 import subprocess
 import pickle
 import webbrowser
 import ctypes
-
+import languageHandler
 # Constantes da API do Windows para criar um ponto de restauração
+languageHandler.setLanguage("system")
 SMGR_CREATE = 0x100
 SMGR_CONFIRM = 0x200
 SMGR_AUTO = 0x400
@@ -23,12 +26,12 @@ class WelcomeDialog(wx.Dialog):
         panel = wx.Panel(self)
 
         # Texto de boas-vindas na caixa de diálogo
-        welcome_text = wx.StaticText(panel, -1, "Olá, estamos felizes por você querer testar nosso programa!")
-        disclaimer_text = wx.StaticText(panel, -1, "Lembre-se que todas as alterações são feitas por você e não somos responsáveis por quaisquer problemas.")
-        restore_text = wx.StaticText(panel, -1, "Antes de fazer qualquer coisa, crie um ponto de restauração no seu PC para evitar eventuais problemas.")
+        welcome_text = wx.StaticText(panel, -1, _("Olá, estamos felizes por você querer testar nosso programa!"))
+        disclaimer_text = wx.StaticText(panel, -1, _("Lembre-se que todas as alterações são feitas por você e não somos responsáveis por quaisquer problemas."))
+        restore_text = wx.StaticText(panel, -1, _("Antes de fazer qualquer coisa, crie um ponto de restauração no seu PC para evitar eventuais problemas."))
 
         # Botão "Ok, quero continuar" na caixa de diálogo
-        ok_button = wx.Button(panel, label="Ok, quero continuar")
+        ok_button = wx.Button(panel, label=_("Ok, quero continuar"))
         ok_button.Bind(wx.EVT_BUTTON, self.on_ok)
 
         # Layout da caixa de diálogo
@@ -52,30 +55,30 @@ class MyFrame(wx.Frame):
         # Lista vazia
         self.lista_de_comandos = wx.ListCtrl(panel, -1, style=wx.LC_REPORT)
         self.lista_de_comandos.InsertColumn(0, "Nome", width=100)
-        self.lista_de_comandos.InsertColumn(1, "Descrição", width=150)
-        self.lista_de_comandos.InsertColumn(2, "Comando", width=200)
-        self.lista_de_comandos.InsertColumn(3, "Tipo", width=100)
+        self.lista_de_comandos.InsertColumn(1, _("Descrição"), width=150)
+        self.lista_de_comandos.InsertColumn(2, _("Comando"), width=200)
+        self.lista_de_comandos.InsertColumn(3, _("Tipo"), width=100)
 
         # Criar o menu "Adicionar Comandos"
         menu_bar = wx.MenuBar()
         file_menu = wx.Menu()
-        add_command_item = file_menu.Append(wx.ID_ANY, "Adicionar Comandos", "Adicionar um novo comando")
+        add_command_item = file_menu.Append(wx.ID_ANY, _("Adicionar Comandos"), _("Adicionar um novo comando"))
         self.Bind(wx.EVT_MENU, self.on_add_command, add_command_item)
-        menu_bar.Append(file_menu, "Comandos")
+        menu_bar.Append(file_menu, _("Comandos"))
 
         # Criar o menu "Ferramentas" e adicionar itens
         tools_menu = wx.Menu()
-        open_github_repo_item = tools_menu.Append(wx.ID_ANY, "Abrir Repositório no GitHub", "Abrir o repositório no GitHub")
-        download_latest_github_item = tools_menu.Append(wx.ID_ANY, "Baixar Versão Mais Recente do GitHub", "Baixar a versão mais recente do GitHub")
-        create_restore_point_item = tools_menu.Append(wx.ID_ANY, "Criar Ponto de Restauração", "Criar um ponto de restauração no sistema")
-        sort_commands_item = tools_menu.Append(wx.ID_ANY, "Ordenar Comandos", "Ordenar os comandos em ordem alfabética")
-        check_updates_item = tools_menu.Append(wx.ID_ANY, "Verificar Atualizações", "Verificar atualizações e fechar Aurora")
+        open_github_repo_item = tools_menu.Append(wx.ID_ANY, _("Abrir Repositório no GitHub"), _("Abrir o repositório no GitHub"))
+        download_latest_github_item = tools_menu.Append(wx.ID_ANY, _("Baixar Versão Mais Recente do GitHub"), _("Baixar a versão mais recente do GitHub"))
+        create_restore_point_item = tools_menu.Append(wx.ID_ANY, _("Criar Ponto de Restauração"), _("Criar um ponto de restauração no sistema"))
+        sort_commands_item = tools_menu.Append(wx.ID_ANY, _("Ordenar Comandos"), _("Ordenar os comandos em ordem alfabética"))
+        check_updates_item = tools_menu.Append(wx.ID_ANY, _("Verificar Atualizações"), _("Verificar atualizações e fechar Aurora"))
         self.Bind(wx.EVT_MENU, self.open_github_repo, open_github_repo_item)
         self.Bind(wx.EVT_MENU, self.download_latest_github, download_latest_github_item)
         self.Bind(wx.EVT_MENU, self.create_system_restore_point, create_restore_point_item)
         self.Bind(wx.EVT_MENU, self.sort_commands, sort_commands_item)
         self.Bind(wx.EVT_MENU, self.check_updates, check_updates_item)
-        menu_bar.Append(tools_menu, "Ferramentas")
+        menu_bar.Append(tools_menu, _("Ferramentas"))
         self.SetMenuBar(menu_bar)
 
         # Layout
@@ -107,7 +110,7 @@ class MyFrame(wx.Frame):
 
     def on_add_command(self, event):
         # Abrir a caixa de diálogo para adicionar comandos
-        dlg = AddCommandDialog(self, -1, "Adicionar Comandos")
+        dlg = AddCommandDialog(self, -1, _("Adicionar Comandos"))
         result = dlg.ShowModal()
         if result == wx.ID_OK:
             name = dlg.name_text.GetValue()
@@ -165,7 +168,7 @@ class MyFrame(wx.Frame):
 
     def create_system_restore_point(self, event):
         # Abrir uma caixa de diálogo para inserir a descrição do ponto de restauração
-        description = wx.GetTextFromUser("Insira uma descrição para o ponto de restauração:", "Criar Ponto de Restauração")
+        description = wx.GetTextFromUser(_("Insira uma descrição para o ponto de restauração:"), _("Criar Ponto de Restauração"))
         if description:
             create_system_restore_point(description)
 
@@ -179,19 +182,19 @@ class MyFrame(wx.Frame):
     def create_context_menu(self):
         menu = wx.Menu()
 
-        edit_item = wx.MenuItem(menu, wx.ID_ANY, "Editar")
+        edit_item = wx.MenuItem(menu, wx.ID_ANY, _("Editar"))
         self.Bind(wx.EVT_MENU, self.on_edit_command, edit_item)
         menu.Append(edit_item)
 
-        remove_item = wx.MenuItem(menu, wx.ID_ANY, "Remover Comando")
+        remove_item = wx.MenuItem(menu, wx.ID_ANY, _("Remover Comando"))
         self.Bind(wx.EVT_MENU, self.on_remove_command, remove_item)
         menu.Append(remove_item)
 
-        move_to_top_item = wx.MenuItem(menu, wx.ID_ANY, "Mover para o Topo")
+        move_to_top_item = wx.MenuItem(menu, wx.ID_ANY, _("Mover para o Topo"))
         self.Bind(wx.EVT_MENU, self.move_command_to_top, move_to_top_item)
         menu.Append(move_to_top_item)
 
-        move_to_bottom_item = wx.MenuItem(menu, wx.ID_ANY, "Mover para o Final")
+        move_to_bottom_item = wx.MenuItem(menu, wx.ID_ANY, _("Mover para o Final"))
         self.Bind(wx.EVT_MENU, self.move_command_to_bottom, move_to_bottom_item)
         menu.Append(move_to_bottom_item)
 
@@ -214,7 +217,7 @@ class MyFrame(wx.Frame):
             type = self.lista_de_comandos.GetItemText(selected_item, col=3)
 
             # Use a mesma caixa de diálogo para edição
-            dlg = AddCommandDialog(self, -1, "Editar Comando")
+            dlg = AddCommandDialog(self, -1, _("Editar Comando"))
             dlg.name_text.SetValue(name)
             dlg.desc_text.SetValue(desc)
             dlg.cmd_text.SetValue(cmd)
@@ -285,23 +288,23 @@ class AddCommandDialog(wx.Dialog):
         panel = wx.Panel(self)
 
         # Adicione os elementos para entrada de nome, descrição, comando e tipo de comando
-        name_label = wx.StaticText(panel, -1, "Nome:")
+        name_label = wx.StaticText(panel, -1, _("Nome:"))
         self.name_text = wx.TextCtrl(panel, -1, "")
 
-        desc_label = wx.StaticText(panel, -1, "Descrição:")
+        desc_label = wx.StaticText(panel, -1, _("Descrição:"))
         self.desc_text = wx.TextCtrl(panel, -1, "")
 
-        cmd_label = wx.StaticText(panel, -1, "Comando:")
+        cmd_label = wx.StaticText(panel, -1, _("Comando:"))
         self.cmd_text = wx.TextCtrl(panel, -1, "", style=wx.TE_MULTILINE)  # Permite várias linhas
 
-        type_label = wx.StaticText(panel, -1, "Tipo de Comando:")
+        type_label = wx.StaticText(panel, -1, _("Tipo de Comando:"))
         self.type_combo = wx.ComboBox(panel, -1, choices=["CMD", "Powershell"], style=wx.CB_READONLY)
 
         # Botões "Ok" e "Cancelar"
-        ok_button = wx.Button(panel, label="Ok")
+        ok_button = wx.Button(panel, label=_("Ok"))
         ok_button.Bind(wx.EVT_BUTTON, self.on_ok)
 
-        cancel_button = wx.Button(panel, label="Cancelar")
+        cancel_button = wx.Button(panel, label=_("Cancelar"))
         cancel_button.Bind(wx.EVT_BUTTON, self.on_cancel)
 
         # Layout da caixa de diálogo
@@ -335,10 +338,10 @@ class OutputDialog(wx.Dialog):
         if output:
             output_text = wx.TextCtrl(panel, -1, value=output.strip(), style=wx.TE_MULTILINE | wx.TE_READONLY | wx.HSCROLL | wx.VSCROLL)
         else:
-            output_text = wx.TextCtrl(panel, -1, value='O comando foi executado com sucesso!', style=wx.TE_MULTILINE | wx.TE_READONLY | wx.HSCROLL | wx.VSCROLL)
+            output_text = wx.TextCtrl(panel, -1, value=_('O comando foi executado com sucesso!'), style=wx.TE_MULTILINE | wx.TE_READONLY | wx.HSCROLL | wx.VSCROLL)
 
         # Botão "Fechar"
-        close_button = wx.Button(panel, label="Fechar")
+        close_button = wx.Button(panel, label=_("Fechar"))
         close_button.Bind(wx.EVT_BUTTON, self.on_close)
 
         # Layout da caixa de diálogo
@@ -353,14 +356,14 @@ class OutputDialog(wx.Dialog):
 
 def save_commands(commands):
     try:
-        with open("commands", "wb") as file:
+        with open("commands"+languageHandler.curLang[:2], "wb") as file:
             pickle.dump(commands, file)
     except Exception as e:
         print("Erro ao salvar comandos:", e)
 
 def load_commands():
     try:
-        with open("commands", "rb") as file:
+        with open("commands-"+languageHandler.curLang[:2], "rb") as file:
             return pickle.load(file)
     except FileNotFoundError:
         return []
@@ -371,19 +374,19 @@ def load_commands():
 def create_system_restore_point(description):
     try:
         ctypes.windll.shell32.ShellExecuteW(None, "runas", "powershell.exe", "Checkpoint-Computer -Description '{}'".format(description), "", 1)
-        wx.MessageBox("Ponto de restauração criado com sucesso!", "Ponto de Restauração", wx.OK | wx.ICON_INFORMATION)
+        wx.MessageBox(_("Ponto de restauração criado com sucesso!"), _("Ponto de Restauração"), wx.OK | wx.ICON_INFORMATION)
     except Exception as e:
-        wx.MessageBox("Erro ao criar o ponto de restauração:\n" + str(e), "Erro de Ponto de Restauração", wx.OK | wx.ICON_ERROR)
+        wx.MessageBox(_("Erro ao criar o ponto de restauração:\n") + str(e), _("Erro de Ponto de Restauração"), wx.OK | wx.ICON_ERROR)
 
 app = wx.App()
 
 # Exibir a caixa de diálogo inicial
-dlg = WelcomeDialog(None, -1, "Bem-Vindo ao Aurora")
+dlg = WelcomeDialog(None, -1, _("Bem-Vindo ao Aurora"))
 result = dlg.ShowModal()
 dlg.Destroy()
 
 if result == wx.ID_OK:
-    frame = MyFrame(None, -1, "Aurora: Otimizador para Windows ™")
+    frame = MyFrame(None, -1, _("Aurora: Otimizador para Windows ™"))
     frame.Show()
 
 app.MainLoop()
