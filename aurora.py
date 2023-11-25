@@ -383,7 +383,7 @@ result = dlg.ShowModal()
 dlg.Destroy()
 
 if result == wx.ID_OK:
-    frame = MyFrame(None, -1, "Aurora: Otimizador para Windows ™")
+    frame = MyFrame(None, -1, "Aurora: Windows optimizer™")
     frame.Show()
 
 app.MainLoop()
