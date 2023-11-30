@@ -55,10 +55,10 @@ def getAvailableLanguages():
     @rtype: list of tuples
     """
     #Make a list of all the locales found in NVDA's locale dir
-    l=[x for x in os.listdir('locales') if os.path.isfile(os.path.join('locales', x, 'LC_MESSAGES', 'VeTube.mo'))]
-    #Make sure that es (spanish) is in the list as it may not have any locale files, but is default
-    if 'es' not in l:
-        l.append('es')
+    l=[x for x in os.listdir('locales') if os.path.isfile(os.path.join('locales', x, 'LC_MESSAGES', 'aurora.mo'))]
+    #Make sure that pt (portuguese) is in the list as it may not have any locale files, but is default
+    if 'pt' not in l:
+        l.append('pt')
         l.sort()
     #For each locale, ask Windows for its human readable display name
     d=[]
@@ -69,7 +69,7 @@ def getAvailableLanguages():
     #include a 'user default, windows' language, which just represents the default language for this user account
     l.append("system")
     # Translators: the label for the Windows default NVDA interface language.
-    d.append(_("Idioma del sistema"))
+    d.append(_("idioma do sistema"))
     #return a zipped up version of both the lists (a list with tuples of locale,label)
     return list(zip(l,d))
 
@@ -100,10 +100,10 @@ def setLanguage(lang):
             if system == "Windows":
                 windowsLCID=ctypes.windll.kernel32.GetUserDefaultUILanguage()
                 localeName=locale.windows_locale[windowsLCID]
-            trans=gettext.translation('VeTube', localedir='locales', languages=[localeName])
+            trans=gettext.translation('aurora', localedir='locales', languages=[localeName])
             curLang=localeName
         else:
-            trans=gettext.translation('VeTube', localedir='locales', languages=[lang])
+            trans=gettext.translation('aurora', localedir='locales', languages=[lang])
             curLang=lang
             localeChanged=False
             if system == "Windows":
@@ -121,8 +121,8 @@ def setLanguage(lang):
                 LCID=localeNameToWindowsLCID(lang)
                 ctypes.windll.kernel32.SetThreadLocale(LCID)
     except IOError:
-        trans=gettext.translation('VeTube', fallback=True)
-        curLang="es"
+        trans=gettext.translation('aurora', fallback=True)
+        curLang="pt"
     if sys.version[0] == "3":
         trans.install()
     else:
