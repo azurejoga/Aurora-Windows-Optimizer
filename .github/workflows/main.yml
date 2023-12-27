@@ -1,0 +1,37 @@
+name: VirusTotal Scan
+
+on:
+  push:
+    branches:
+      - main  # ou a branch principal do seu repositório
+
+jobs:
+  virus_scan:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+
+      - name: Get Latest Release
+        id: get_release
+        run: |
+          RELEASE=$(curl -s https://api.github.com/repos/azurejoga/Aurora-Windows-Optimizer/releases/latest | jq -r '.tag_name')
+          echo "Latest Release: $RELEASE"
+          echo "::set-output name=release::$RELEASE"
+
+      - name: Download Files
+        run: |
+          RELEASE_TAG=$(echo ${{ steps.get_release.outputs.release }} | sed 's/v//')
+          DOWNLOAD_URL="https://github.com/azurejoga/Aurora-Windows-Optimizer/releases/download/$RELEASE_TAG/"
+
+          curl -LJO $DOWNLOAD_URL/aurora-install.exe
+          curl -LJO $DOWNLOAD_URL/aurora-windows-optimizer.zip
+
+      - name: VirusTotal Scan
+        uses: fifi/scan-action@v1
+        with:
+          virustotal_api_token: ${{ secrets.VIRUSTOTAL_API_KEY }}
+          paths: |
+            aurora-install.exe
+            aurora-windows-optimizer.zip
