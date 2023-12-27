@@ -1,33 +1,21 @@
-name: Fortify AST Scan
+name: Verificar Vírus
 
 on:
   push:
     branches:
       - aurora  # ou a branch principal do seu repositório
-  workflow_dispatch:
 
 jobs:
-  fortify_ast_scan:
+  verificar_virus:
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v2
 
-      - name: Get Latest Release
-        id: get_release
+      - name: Executar Script de Verificação de Vírus
         run: |
-          RELEASE=$(curl -s https://api.github.com/repos/azurejoga/Aurora-Windows-Optimizer/releases/latest | jq -r '.tag_name')
-          echo "Latest Release: $RELEASE"
-          echo "::set-output name=release::$RELEASE"
-
-      - name: Download Files
-        run: |
-          RELEASE_TAG=$(echo ${{ steps.get_release.outputs.release }} | sed 's/v//')
-          DOWNLOAD_URL="https://github.com/azurejoga/Aurora-Windows-Optimizer/releases/download/$RELEASE_TAG/"
-
-          curl -LJO $DOWNLOAD_URL/aurora-install.exe
-          curl -LJO $DOWNLOAD_URL/aurora-windows-optimizer.zip
-
-      - name: Fortify AST Scan
-        uses: fortify/github-action@v1.1.0
+          chmod +x verificar_virus.sh
+          ./verificar_virus.sh
+        env:
+          VIRUSTOTAL_API_KEY: ${{ secrets.VIRUSTOTAL_API_KEY }}
