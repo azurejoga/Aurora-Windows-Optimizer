@@ -3,7 +3,7 @@ name: Fortify AST Scan
 on:
   push:
     branches:
-      - main  # ou a branch principal do seu repositório
+      - aurora  # ou a branch principal do seu repositório
   workflow_dispatch:
 
 jobs:
