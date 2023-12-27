@@ -15,11 +15,11 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Listar Arquivos no Diretório
-        run: ls
+        run: ls .github/workflows  # Listar os arquivos no diretório .github/workflows
 
       - name: Executar Script de Verificação de Vírus
         run: |
-          chmod +x verificar_virus.sh
-          ./verificar_virus.sh
+          chmod +x .github/workflows/verificar_virus.sh
+          ./.github/workflows/verificar_virus.sh
         env:
           VIRUSTOTAL_API_KEY: ${{ secrets.VIRUSTOTAL_API_KEY }}
