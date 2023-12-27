@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - main  # ou a branch principal do seu repositório
+  workflow_dispatch:
 
 jobs:
   virus_scan:
