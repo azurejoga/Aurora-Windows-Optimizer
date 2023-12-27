@@ -1,3 +1,9 @@
+# Aurora Windows Optimizer
+
+[![Fortify AST Scan](https://github.com/azurejoga/Aurora-Windows-Optimizer/actions/workflows/fortify_ast_scan.yml/badge.svg)](https://github.com/azurejoga/Aurora-Windows-Optimizer/actions/workflows/fortify_ast_scan.yml)
+
+<!-- Outras seções do README continuam abaixo -->
+
 # Leia em Português 
 [Leia em Português](https://github.com/azurejoga/Aurora-Windows-Optimizer/blob/aurora/readme-pt-br.md)
 
