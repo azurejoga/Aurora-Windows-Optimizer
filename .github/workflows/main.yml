@@ -1,4 +1,4 @@
-name: VirusTotal Scan
+name: Fortify AST Scan
 
 on:
   push:
@@ -7,7 +7,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  virus_scan:
+  fortify_ast_scan:
     runs-on: ubuntu-latest
 
     steps:
@@ -29,10 +29,5 @@ jobs:
           curl -LJO $DOWNLOAD_URL/aurora-install.exe
           curl -LJO $DOWNLOAD_URL/aurora-windows-optimizer.zip
 
-      - name: VirusTotal Scan
-        uses: fifi/scan-action@v1
-        with:
-          virustotal_api_token: ${{ secrets.VIRUSTOTAL_API_KEY }}
-          paths: |
-            aurora-install.exe
-            aurora-windows-optimizer.zip
+      - name: Fortify AST Scan
+        uses: fortify/github-action@v1.1.0
