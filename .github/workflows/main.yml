@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - aurora  # ou a branch principal do seu repositório
+  workflow_dispatch:
 
 jobs:
   verificar_virus:
@@ -12,6 +13,9 @@ jobs:
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v2
+
+      - name: Listar Arquivos no Diretório
+        run: ls
 
       - name: Executar Script de Verificação de Vírus
         run: |
