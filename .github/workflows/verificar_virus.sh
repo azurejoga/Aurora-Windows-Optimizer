@@ -14,40 +14,43 @@ EXE_FILE="aurora-install.exe"
 ZIP_URL="$DOWNLOAD_URL$ZIP_FILE"
 EXE_URL="$DOWNLOAD_URL$EXE_FILE"
 
-# Verificar o arquivo .zip com a API do VirusTotal
-echo "Verificando $ZIP_FILE com VirusTotal..."
-ZIP_RESULT=$(curl -s -X POST "https://www.virustotal.com/api/v3/files" \
-    -H "x-apikey: $VIRUSTOTAL_API_KEY" \
-    -H "Content-Type: application/json" \
-    --data-binary @<(curl -s $ZIP_URL | base64 -w 0) \
-    | jq -r '.data.id')
+# Exibir resultados no README.md em formato HTML
+HTML_OUTPUT="README.html"
 
-# Aguardar a análise no VirusTotal
-sleep 30  # Aguarde um tempo para permitir que o VirusTotal processe a verificação
+# Iniciar o conteúdo HTML
+echo "<h1>Verificação de Vírus para a Versão $RELEASE</h1>" > $HTML_OUTPUT
+echo "<p>Links para os arquivos:</p>" >> $HTML_OUTPUT
+echo "<ul>" >> $HTML_OUTPUT
+echo "<li><a href=\"$ZIP_URL\">$ZIP_FILE</a></li>" >> $HTML_OUTPUT
+echo "<li><a href=\"$EXE_URL\">$EXE_FILE</a></li>" >> $HTML_OUTPUT
+echo "</ul>" >> $HTML_OUTPUT
 
-# Obter o status da verificação
-ZIP_STATUS=$(curl -s "https://www.virustotal.com/api/v3/analyses/$ZIP_RESULT" \
-    -H "x-apikey: $VIRUSTOTAL_API_KEY" \
-    | jq -r '.data.attributes.last_analysis_stats.overall')
+# Verificar vírus usando a API do VirusTotal
+echo "Verificando $ZIP_FILE e $EXE_FILE com VirusTotal..."
 
-# Verificar o arquivo .exe com a API do VirusTotal
-echo "Verificando $EXE_FILE com VirusTotal..."
-EXE_RESULT=$(curl -s -X POST "https://www.virustotal.com/api/v3/files" \
-    -H "x-apikey: $VIRUSTOTAL_API_KEY" \
-    -H "Content-Type: application/json" \
-    --data-binary @<(curl -s $EXE_URL | base64 -w 0) \
-    | jq -r '.data.id')
+# Usando a API do VirusTotal para verificar os arquivos
+VT_RESULT_ZIP=$(curl -s --request POST \
+  --url https://www.virustotal.com/api/v3/files \
+  --header "x-apikey: $VIRUSTOTAL_API_KEY" \
+  --form file=@$ZIP_URL)
 
-# Aguardar a análise no VirusTotal
-sleep 30  # Aguarde um tempo para permitir que o VirusTotal processe a verificação
+VT_RESULT_EXE=$(curl -s --request POST \
+  --url https://www.virustotal.com/api/v3/files \
+  --header "x-apikey: $VIRUSTOTAL_API_KEY" \
+  --form file=@$EXE_URL)
 
-# Obter o status da verificação
-EXE_STATUS=$(curl -s "https://www.virustotal.com/api/v3/analyses/$EXE_RESULT" \
-    -H "x-apikey: $VIRUSTOTAL_API_KEY" \
-    | jq -r '.data.attributes.last_analysis_stats.overall')
+# Adicionar resultados ao HTML
+echo "<p>Resultados da Verificação .zip:</p>" >> $HTML_OUTPUT
+echo "<pre>$VT_RESULT_ZIP</pre>" >> $HTML_OUTPUT
 
-# Exibir resultados no README.md
-echo "# O app foi verificado e não há vírus em .zip ou .exe da versão mais recente"
-echo "Versão mais recente: $RELEASE"
-echo "Verificação .zip: $ZIP_STATUS"
-echo "Verificação .exe: $EXE_STATUS"
+echo "<p>Resultados da Verificação .exe:</p>" >> $HTML_OUTPUT
+echo "<pre>$VT_RESULT_EXE</pre>" >> $HTML_OUTPUT
+
+# Exibir mensagem de conclusão no HTML
+echo "<p>Verificação concluída.</p>" >> $HTML_OUTPUT
+
+# Adicionar HTML gerado ao README.md
+cat $HTML_OUTPUT >> README.md
+
+# Limpar arquivos temporários
+rm $HTML_OUTPUT
