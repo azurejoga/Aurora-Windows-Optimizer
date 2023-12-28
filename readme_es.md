@@ -54,12 +54,12 @@ Si encuentras algún problema o tienes sugerencias para mejoras, por favor, crea
 
 Inicia tu camino hacia una PC más potente y eficiente. Descarga Aurora para Windows 11 y Windows 10 ahora:
 
-- **MD5: INSTALLABLE VERSION** b074f49b60eac1398c7c733c364c4999
-- **SHA-256: ZIP VERSION** 14ffe527b4706959d519e51405ad811666a243a636dd7a83ec547140907f24ce
+- **MD5: INSTALLABLE VERSION** 28626063a5bc2421d372ec95287b5d72
+- **SHA-256: ZIP VERSION** 8c2cbf3e64fc0d4542f6c545bb3ef4609eb4a5ab951af4af387310f9789aeb69
 
-[Descargar Aurora, Optimizador de Windows™](https://github.com/azurejoga/Aurora-Windows-Optimizer/releases/download/aurora9/aurora-install.exe)
+[Descargar Aurora, Optimizador de Windows™](https://github.com/azurejoga/Aurora-Windows-Optimizer/releases/download/aurora10/aurora-install.exe)
 
-[Descargar Aurora, Optimizador de Windows, versión ZIP](https://github.com/azurejoga/Aurora-Windows-Optimizer/releases/download/aurora9/aurora-windows-optimizer.zip)
+[Descargar Aurora, Optimizador de Windows, versión ZIP](https://github.com/azurejoga/Aurora-Windows-Optimizer/releases/download/aurora10/aurora-windows-optimizer.zip)
 
 # ¡Gracias por elegir Aurora para elevar el rendimiento de tu PC a niveles sin precedentes! 💪✨
 

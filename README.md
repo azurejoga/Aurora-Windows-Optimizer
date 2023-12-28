@@ -17,6 +17,9 @@
 
 Special thanks to [edu-mx](https://github.com/edu-mx) for their collaboration in development. 🙌
 
+### Warning for Users with 8GB or More RAM
+If your PC has 8GB or more RAM, the performance and optimization impact may be minimal. However, if you prioritize privacy, you can still use various available commands
+
 ## Why Choose Aurora? 🤔
 
 Whether you want to **optimize your PC for maximum performance** or simply **eliminate unwanted Windows features**, Aurora is the answer. This innovative optimizer offers:
@@ -58,12 +61,12 @@ If you encounter any issues or have suggestions for improvements, please create 
 
 Start your journey to a more powerful and efficient PC. Download Aurora for Windows 11 and Windows 10 now:
 
-- **MD5: INSTALLABLE VERSION** b074f49b60eac1398c7c733c364c4999
-- **SHA-256: ZIP VERSION** 14ffe527b4706959d519e51405ad811666a243a636dd7a83ec547140907f24ce
+- **MD5: INSTALLABLE VERSION** 28626063a5bc2421d372ec95287b5d72
+- **SHA-256: ZIP VERSION** 8c2cbf3e64fc0d4542f6c545bb3ef4609eb4a5ab951af4af387310f9789aeb69
 
-[Download Aurora, Windows Optimizer™](https://github.com/azurejoga/Aurora-Windows-Optimizer/releases/download/aurora9/aurora-install.exe)
+[Download Aurora, Windows Optimizer™](https://github.com/azurejoga/Aurora-Windows-Optimizer/releases/download/aurora10/aurora-install.exe)
 
-[Download Aurora, Windows Optimizer, ZIP version](https://github.com/azurejoga/Aurora-Windows-Optimizer/releases/download/aurora9/aurora-windows-optimizer.zip)
+[Download Aurora, Windows Optimizer, ZIP version](https://github.com/azurejoga/Aurora-Windows-Optimizer/releases/download/aurora10/aurora-windows-optimizer.zip)
 
 # Thank you for choosing Aurora to elevate your PC's performance to unprecedented levels! 💪✨
 
