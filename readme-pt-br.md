@@ -51,7 +51,7 @@ Começar a otimizar seu PC com Aurora é fácil:
 
 ## Reporte bugs e colabore 🐞😻
 
-Se você encontrar algum problema ou tiver sugestões de melhorias, crie um *problema*. A colaboração é essencial para valorizar Aurora e torná-la ainda mais incrível.
+Se você encontrar algum problema ou tiver sugestões de melhorias, crie um *issue*. A colaboração é essencial para valorizar Aurora e torná-la ainda mais incrível.
 
 ## Baixe abaixo! 📁
 
