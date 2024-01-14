@@ -1,9 +1,29 @@
-# Import necessary libraries (wx, subprocess, pickle, webbrowser, ctypes)
 import wx
 import subprocess
 import pickle
 import webbrowser
 import ctypes
+import os
+import sys
+
+def is_admin():
+    try:
+        return ctypes.windll.shell32.IsUserAnAdmin()
+    except:
+        return False
+
+def run_as_admin():
+    ctypes.windll.shell32.ShellExecuteW(None, "runas", sys.executable, " ".join(sys.argv), None, 1)
+
+if not is_admin():
+    run_as_admin()
+    sys.exit()
+
+# Comando PowerShell para habilitar a execução de scripts
+powershell_command = "Set-ExecutionPolicy Unrestricted -Scope CurrentUser -Force"
+
+# Executa o comando PowerShell
+subprocess.run(["powershell", "-Command", powershell_command], shell=True, check=True)
 
 # Constants for the Windows API to create a restore point
 SMGR_CREATE = 0x100
