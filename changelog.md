@@ -1,6 +1,27 @@
+### aurora windows optimizer v11.0
+01/15/2024 17:55
 
-### Changelog, Aurora Windows Optimizer V10.0
-
+# english
+### source code
+* Added: run as administrator in the source code, to eliminate installer instructions and run, through the compilation itself, aurora windows optimizer.exe
+* added: enable running powershell scripts when running aurora, so you don't have to click on the first item in the list after running the application.
+* I changed the installer to my own installer created by me and now, the compilation is done by cx_freeze instead of pyinstaller, where it reported as a false positive of viruses.
+# New functionalities and features
+* added: installation of all .net framework from 1.0 to 8.0 for better system operation.
+* Added: Completely disable Windows Defender with Defender Control deactivation utility
+*Added: enable or disable the firewall however you want.
+* Added: install openshell classic start menu; with a classic Windows 7 design or your choice
+# português / portuguese.
+### código fonte
+* Adicionado: executar como administrador no código fonte, para eliminar  instruções do instalador e executar atravez da própria compilação, aurora windows optimizer.exe
+* adicionado: habilitar a execução de scripts powershell ao executar o aurora, para que não precise clicar no primeiro item da lista após executar o aplicativo.
+# Novas funcionalidades e recursos
+* adicionado: instalação de todos os .net framework do 1.0 até o 8.0 para melhor funcionamento do sistema.
+* adicionado: desative completamente o windows defender com o utilitário de desativação defender control
+*Adicionado: habilite o firewall ou desabilite da forma que você quiser..
+* Adicionado: instale o menu iniciar clássico openshell; com um designe clássico do windows 7 ou sua escolha
+* Mudei o instalador para o meu próprio instalador criado por mim e agora, a compilação é feita pelo cx_freeze ao invés do pyinstaller, onde reportava como falso positivo de vírus.
+### Aurora windows optimizer V10.0
 12/28/2023 16:16
 
 Português
