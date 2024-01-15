@@ -9,7 +9,7 @@
 # New functionalities and features
 * added: installation of all .net framework from 1.0 to 8.0 for better system operation.
 * Added: Completely disable Windows Defender with Defender Control deactivation utility
-*Added: enable or disable the firewall however you want.
+* Added: enable or disable the firewall however you want.
 * Added: install openshell classic start menu; with a classic Windows 7 design or your choice
 # português / portuguese.
 ### código fonte
@@ -18,7 +18,7 @@
 # Novas funcionalidades e recursos
 * adicionado: instalação de todos os .net framework do 1.0 até o 8.0 para melhor funcionamento do sistema.
 * adicionado: desative completamente o windows defender com o utilitário de desativação defender control
-*Adicionado: habilite o firewall ou desabilite da forma que você quiser..
+* Adicionado: habilite o firewall ou desabilite da forma que você quiser..
 * Adicionado: instale o menu iniciar clássico openshell; com um designe clássico do windows 7 ou sua escolha
 * Mudei o instalador para o meu próprio instalador criado por mim e agora, a compilação é feita pelo cx_freeze ao invés do pyinstaller, onde reportava como falso positivo de vírus.
 ### Aurora windows optimizer V10.0
