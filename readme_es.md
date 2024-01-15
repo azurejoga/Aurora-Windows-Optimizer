@@ -31,6 +31,21 @@ Ya sea que desees **optimizar tu PC para obtener el máximo rendimiento** o simp
 - **mover al principio, al final de la lista o incluso ordenar alfabéticamente los comandos! ✌**
 - **crea un punto de restauración dentro de Aurora mismo y ¡no temas potenciar tu PC! 👏**
 - **elimina aplicaciones nativas inútiles que vienen instaladas por defecto en tu PC. ¡Cansado de bloatwares, estamos aquí para ayudar! 🐱‍🎁**
+- **Instale aplicaciones útiles a través de Aurora, Windows Optimizer**
+- **Las aplicaciones enumeradas son:**
+1. NVDA, instala NVDA: Lector de pantalla para ciegos.
+2. Instale todos los paquetes de VC++, visual runtime.
+3. instale todo el .net framework  desde 1.0 a 8.0
+4. ¡Instale el muy necesario JDK java8!
+5. Instala winrar o, si lo prefieres, 7zip.
+6. habilite DirectPlay, necesario para ejecutar algunos juegos que requieren este componente/función.
+7. Desactive Windows Defender o desactive la telemetría, ¡la elección es suya!
+8. Instale VS Code: ¡Para desarrolladores!
+9. ¡Inicie sesión automáticamente en Windows sin tener que ingresar su contraseña!
+10. Instale un menú Inicio clásico o un administrador de tareas, ¡mejor que Windows 10! ¡Es aún mejor! ¡Con un look clásico!
+11. active o desactive el firewall, ¡la elección es suya!
+12. Borre el caché de DNS, optimice su windows con más de 67 comandos y mucho más.
+¡Nuestra lista de funciones que ofrece Aurora se actualizará a medida que introduzcamos nuevas funciones!
 
 ### 🌟 El Futuro es Asombroso:
 
@@ -57,12 +72,12 @@ Si encuentras algún problema o tienes sugerencias para mejoras, por favor, crea
 
 Inicia tu camino hacia una PC más potente y eficiente. Descarga Aurora para Windows 11 y Windows 10 ahora:
 
-- **MD5: INSTALLABLE VERSION** 3a8077f068e7e69503fd2a23a1247cf0
-- **SHA-256: ZIP VERSION** 275cdda382970c538bc216259ee7f4353018b40873468bba4472fa920b9fc2fb
+- **MD5: INSTALLABLE VERSION** 91bab1bea709bcfd9f346f4765158d5f
+- **SHA-256: ZIP VERSION** cd047b56d2384da043a1461bd4a50c843066b5030a66f4d9b0e3dcfa5f6c8290
 
-[Descargar Aurora, Optimizador de Windows™](https://github.com/azurejoga/Aurora-Windows-Optimizer/releases/download/aurora10/aurora-install.exe)
+[Descargar Aurora, Optimizador de Windows™](https://github.com/azurejoga/Aurora-Windows-Optimizer/releases/download/aurora11/aurora-install.exe)
 
-[Descargar Aurora, Optimizador de Windows, versión ZIP](https://github.com/azurejoga/Aurora-Windows-Optimizer/releases/download/aurora10/aurora-windows-optimizer.zip)
+[Descargar Aurora, Optimizador de Windows, versión ZIP](https://github.com/azurejoga/Aurora-Windows-Optimizer/releases/download/aurora11/aurora-windows-optimizer.zip)
 
 # ¡Gracias por elegir Aurora para elevar el rendimiento de tu PC a niveles sin precedentes! 💪✨
 
