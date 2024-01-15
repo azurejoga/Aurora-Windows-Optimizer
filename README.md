@@ -35,6 +35,21 @@ Whether you want to **optimize your PC for maximum performance** or simply **eli
 - **Move to the top, end of the list, or even alphabetically sort commands! ✌**
 - **Create a restoration point within Aurora itself and fearlessly boost your PC! 👏**
 - **Remove useless native apps that come pre-installed on your PC! Tired of bloatware? We're here to help! 🐱‍🎁**
+- **Install useful applications through Aurora, Windows Optimizer**
+- **Applications listed are:**
+1. NVDA, install NVDA: Screen Reader for the Blind.
+2. install all visual runtime, VC++ packages.
+3. install all .net framework from 1.0 to 8.0
+4. Install the much needed java8 JDK!
+5. Install winrar or, if you prefer, 7zip.
+6. enable directplay, necessary to run some games that require this component/feature.
+7. disable windows defender, or disable telemetry, it's your choice!
+8. Install VS code: for developers!
+9. Automatically log in to Windows without having to enter your password!
+10. Install a classic start menu or task manager, better than the one in windows 10! It's even better! with a classic look!
+11. enable or disable the firewall, it's your choice!
+12. Clear the DNS cache, optimize your windows with more than 67 commands and much more!
+Our list of features that Aurora offers will be updated as we introduce new features!
 
 ### 🌟 The Future is Amazing:
 
