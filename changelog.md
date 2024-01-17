@@ -1,3 +1,57 @@
+### Aurora, windows optimizer. v12.0
+01/17/2024 14:55
+# english
+added new script with more than 50 commands for windows11 and 10! see the list below!
+[Taken from](https://github.com/hellzerg/optimizer)
+* Full multilingual support (24 languages ​​available)
+* Improve system and network performance
+* Disable unnecessary Windows services
+* Disable Windows telemetry, Cortana and more
+* Disable Office Telemetry (works with Office 2016 or newer)
+* Stop Windows 10/11 automatic updates
+* Download various useful apps quickly
+* Disable CoPilot AI in Windows 11
+* Uninstall UWP apps
+* Clean system drive and browser profiles
+* Fix common registry issues
+* Ping IPs and evaluate latency
+* Search IPs on SHODAN.io
+* Quickly change DNS server (from a predefined list)
+* Flush DNS cache
+* Remove unwanted startup programs
+* Edit your HOSTS file
+* Identify and terminate file lock handles
+* Hardware inspection tool
+* Add items to the desktop right-click menu
+* Define custom commands for the run dialog
+* Supports silent runs using a template file
+
+# Português / portuguese
+adicionado novo script com mais de 50 comandos para windows11 e 10! veja a lista abaixo!
+[Retirado de](https://github.com/hellzerg/optimizer)
+* Suporte multilíngue completo (24 idiomas disponíveis)
+* Melhore o desempenho do sistema e da rede
+* Desative serviços desnecessários do Windows
+* Desative a telemetria do Windows, Cortana e muito mais
+* Desative a telemetria do Office (funciona com o Office 2016 ou mais recente)
+* Pare as atualizações automáticas do Windows 10/11
+* Baixe vários aplicativos úteis rapidamente
+* Desative o CoPilot AI no Windows 11
+* Desinstalar aplicativos UWP
+* Limpe a unidade do sistema e os perfis do navegador
+* Corrija problemas comuns de registro
+* Faça ping em IPs e avalie a latência
+* Pesquise IPs em SHODAN.io
+* Altere rapidamente o servidor DNS (de uma lista predefinida)
+* Liberar cache DNS
+* Remova programas de inicialização indesejados
+* Edite seu arquivo HOSTS
+* Identificar e encerrar identificadores de bloqueio de arquivo
+* Ferramenta de inspeção de hardware
+* Adicione itens ao menu do botão direito da área de trabalho
+* Defina comandos personalizados para a caixa de diálogo de execução
+* Suporta execuções silenciosas usando um arquivo de modelo
+
 ### aurora windows optimizer v11.0
 01/15/2024 17:55
 
