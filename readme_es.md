@@ -69,7 +69,7 @@ Es fácil comenzar a optimizar tu PC con Aurora:
 Si encuentras algún problema o tienes sugerencias para mejoras, por favor, crea un *issue*. La colaboración es fundamental para mejorar Aurora y hacerlo aún más sorprendente.
 
 ## ¡Descarga a Continuación! 📁
-
+Puede ver el [registro de cambios aquí](https://github.com/azurejoga/Aurora-Windows-Optimizer/blob/aurora/changelog.md)
 Inicia tu camino hacia una PC más potente y eficiente. Descarga Aurora para Windows 11 y Windows 10 ahora:
 
 - **MD5: INSTALLABLE VERSION** 3e6b826f1ea50764453c09b479d5a0f9
