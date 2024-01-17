@@ -2,7 +2,8 @@
 01/17/2024 14:55
 # english
 added new script with more than 50 commands for windows11 and 10! see the list below!
-[Taken from](https://github.com/hellzerg/optimizer)
+[Taken from optimizer script en github](https://github.com/hellzerg/optimizer)
+Remember, this is not the full list of features, so you can see all the features added in this version. Please download and find out!
 * Full multilingual support (24 languages ​​available)
 * Improve system and network performance
 * Disable unnecessary Windows services
@@ -28,7 +29,8 @@ added new script with more than 50 commands for windows11 and 10! see the list b
 
 # Português / portuguese
 adicionado novo script com mais de 50 comandos para windows11 e 10! veja a lista abaixo!
-[Retirado de](https://github.com/hellzerg/optimizer)
+[Retirado de, optimizer script no github](https://github.com/hellzerg/optimizer)
+Lembre-se, esta não é a lista completa de recursos. para  você poder ver todos os recursos adicionados nesta versão. Faça o download e descubra!
 * Suporte multilíngue completo (24 idiomas disponíveis)
 * Melhore o desempenho do sistema e da rede
 * Desative serviços desnecessários do Windows
