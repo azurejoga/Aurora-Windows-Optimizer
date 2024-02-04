@@ -4,12 +4,12 @@
 [Leia em Português](https://github.com/azurejoga/Aurora-Windows-Optimizer/blob/aurora/readme-pt-br.md)
 
 
-# Leia em espanhol
-[Leia em espanhol](https://github.com/azurejoga/Aurora-Windows-Optimizer/blob/aurora/readme_es.md)
+# leer em español
+[Leer em español](https://github.com/azurejoga/Aurora-Windows-Optimizer/blob/aurora/readme_es.md)
 
 
 # Leia em inglês
-[README em inglês](https://github.com/azurejoga/Aurora-Windows-Optimizer/blob/aurora/readme.md)
+[README en english](https://github.com/azurejoga/Aurora-Windows-Optimizer/blob/aurora/readme.md)
 
 
 # Aurora: Windows Optimizer™ transformando seu PC em uma máquina poderosa! 
@@ -54,13 +54,13 @@ Sim, o Aurora Windows Optimizer é seguro e você mesmo pode verificar com algum
 3. instale todo o framework .net de 1.0 a 8.0
 4. Instale o tão necessário java8 JDK!
 5. Instale o winrar ou, se preferir, o 7zip.
-6. habilite o jogo direto,necessário para rodar alguns jogos que requerem este componente/recurso.
+6. habilite o directplay,necessário para rodar alguns jogos que requerem este componente/recurso.
 7. desative o Windows Defender ou desative a telemetria, a escolha é sua!
-8. Instale o código VS: para desenvolvedores!
+8. Instale o VS code: para desenvolvedores!
 9. Faça login automaticamente no Windows sem precisar digitar sua senha!
 10. Instale um menu Iniciar clássico ou gerenciador de tarefas, melhor que o do Windows 10! É ainda melhor! com visual clássico!
 11. habilite ou desabilite o firewall, a escolha é sua!
-12. Limpe o cache DNS, otimize suas janelas com mais de 67 comandos e muito mais!
+12. Limpe o cache DNS, otimize seu windows com mais de 67 comandos e muito mais!
 Nossa lista de recursos que o Aurora oferece será atualizada à medida que introduzimos novos recursos!
 
 ### 🌟 O futuro é incrível:
@@ -82,7 +82,7 @@ Começar a otimizar seu PC com Aurora é fácil:
 
 ## Reporte bugs e colabore 🐞😻
 
-Se você encontrar algum problema ou tiver sugestões de melhorias, crie um *problema*. A colaboração é essencial para valorizar Aurora e torná-la ainda mais incrível.
+Se você encontrar algum problema ou tiver sugestões de melhorias, crie um *Issue*. A colaboração é essencial para valorizar Aurora e torná-la ainda mais incrível.
 
 ## métodos de instalação
 Você pode ver o [log de alterações aqui](https://github.com/azurejoga/Aurora-Windows-Optimizer/blob/aurora/changelog.md)
