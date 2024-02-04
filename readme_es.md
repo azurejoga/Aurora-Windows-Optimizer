@@ -1,84 +1,118 @@
-# Leia em Português 
-[leia em Português](https://github.com/azurejoga/Aurora-Windows-Optimizer/blob/aurora/readme-pt-br.md)
+# aurora, optimizador de windows
 
-# Leer en Español
-[Leer en Español](https://github.com/azurejoga/Aurora-Windows-Optimizer/blob/aurora/readme_es.md)
+# Leer en portugués
+[Leer en portugués](https://github.com/azurejoga/Aurora-Windows-Optimizer/blob/aurora/readme-pt-br.md)
 
-# Read in English
-[README in English](https://github.com/azurejoga/Aurora-Windows-Optimizer/blob/aurora/readme.md)
 
-# Aurora: Windows optimizer™ ¡Transforma tu PC en una Máquina Poderosa! 💻
+# Leer en español
+[Leer en español](https://github.com/azurejoga/Aurora-Windows-Optimizer/blob/aurora/readme_es.md)
 
-**Aurora™** es el optimizador definitivo para Windows, una herramienta increíblemente poderosa que mejora el rendimiento de tu PC. ✨
 
-Agradecimientos especiales a [edu-mx](https://github.com/edu-mx) por su colaboración en el desarrollo. 🙌
+# Leer en inglés
+[README en inglés](https://github.com/azurejoga/Aurora-Windows-Optimizer/blob/aurora/readme.md)
 
-### Advertencia para usuarios con 8 GB o más de RAM
+
+# Aurora: ¡Windows Optimizer™ convierte tu PC en una máquina poderosa!
+
+
+
+**Aurora™** es el mejor optimizador de Windows, ¡una herramienta increíblemente poderosa que mejora el rendimiento de tu PC! ✨
+
+Un agradecimiento especial a [edu-mx](https://github.com/edu-mx) por su colaboración en el desarrollo. 🙌
+
+
+### Aviso para usuarios con 8GB o más de RAM
 Si su PC tiene 8 GB o más de RAM, el impacto en el rendimiento y la optimización puede ser mínimo. Sin embargo, si prioriza la privacidad, aún puede usar varios comandos disponibles
 
-## ¿Por Qué Elegir Aurora? 🤔
 
-Ya sea que desees **optimizar tu PC para obtener el máximo rendimiento** o simplemente **eliminar funciones no deseadas de Windows**, Aurora es la respuesta. Este optimizador innovador ofrece:
+## ¿Por qué elegir Aurora? 🤔
 
-### 🌄 Características Poderosas:
+Si desea **optimizar su PC para obtener el máximo rendimiento** o simplemente **eliminar funciones no deseadas de Windows**, Aurora es la respuesta. Este innovador optimizador ofrece:
 
-- **Añade tus Propios Comandos**: Toma el control total y personaliza Aurora con tus propios comandos.
-- **Actualizaciones Simplificadas**: Mantente actualizado con un toque de un botón, directamente desde la aplicación.
-- **Optimización sin Complicaciones**: Di adiós a los foros oscuros y sitios llenos de anuncios.
-- **Comunidad de Colaboradores**: Únete a una comunidad vibrante y comparte tus comandos personalizados.
-- **Código Abierto**: Contribuye al proyecto y ve cómo tus cambios cobran vida en el repositorio abierto.
-- **posibilidad de editar, eliminar o añadir tus propios comandos, según desees; ¡la personalización es tuya! 😱**
-- **mover al principio, al final de la lista o incluso ordenar alfabéticamente los comandos! ✌**
-- **crea un punto de restauración dentro de Aurora mismo y ¡no temas potenciar tu PC! 👏**
-- **elimina aplicaciones nativas inútiles que vienen instaladas por defecto en tu PC. ¡Cansado de bloatwares, estamos aquí para ayudar! 🐱‍🎁**
+
+## Aurora, ¿es seguro el Optimizador de Windows?
+Sí, Aurora Windows Optimizer es seguro y puedes comprobarlo tú mismo con algunas herramientas.
+1. Virus total. [ver y comprobar el amanecer sobre el virus total](https://www.virustotal.com/gui/file/15ff322be4c05d2b2d3ee3980483de05a57872b9fe0627615e0871eab257c09c/detection)
+2. Verificar con claves GPG. Firmé mis claves gpg para asegurarme de que el ejecutable sea legítimo.
+3. nunca descargue de sitios que no sean chocolatey o github y siempre verifique los hashes para compararlos, si el hash del zip o el ejecutable no es el mismo, no confíe en él y no lo instale ni lo ejecute.
+
+### 🌄 Funciones potentes:
+
+- **Añade tus propios comandos**: ten control total y personaliza Aurora con tus propios comandos.
+- **Actualizaciones simplificadas**: manténgase actualizado con solo tocar un botón, directamente desde la aplicación.
+- **Optimización sin complicaciones**: diga adiós a los foros turbios y a los sitios web llenos de publicidad.
+- **Comunidad de colaboradores**: únete a una comunidad vibrante y comparte tus comandos personalizados.
+- **Código abierto**: contribuya al proyecto y vea cómo sus cambios cobran vida en el repositorio abierto.
+- **Posibilidad de editar, eliminar o agregar tus propios comandos como desees; ¡La personalización es tuya! 😱**
+- **¡Muévete al principio, al final de la lista o incluso ordena los comandos alfabéticamente! ✌**
+- **¡Crea un punto de restauración dentro de la propia Aurora y mejora tu PC sin miedo! 👏**
+- **¡Elimina las aplicaciones nativas inútiles que vienen preinstaladas en tu PC! ¿Estás cansado del bloatware? ¡Estamos aquí para ayudar! 🐱‍🎁**
 - **Instale aplicaciones útiles a través de Aurora, Windows Optimizer**
 - **Las aplicaciones enumeradas son:**
 1. NVDA, instala NVDA: Lector de pantalla para ciegos.
-2. Instale todos los paquetes de VC++, visual runtime.
-3. instale todo el .net framework  desde 1.0 a 8.0
+dos.Instale todos los paquetes de VC++ en tiempo de ejecución visual.
+3. instale todo el marco .net desde 1.0 a 8.0
 4. ¡Instale el muy necesario JDK java8!
 5. Instala winrar o, si lo prefieres, 7zip.
-6. habilite DirectPlay, necesario para ejecutar algunos juegos que requieren este componente/función.
+6. Habilite el juego directo, necesario para ejecutar algunos juegos que requieren este componente/función.
 7. Desactive Windows Defender o desactive la telemetría, ¡la elección es suya!
 8. Instale VS Code: ¡Para desarrolladores!
 9. ¡Inicie sesión automáticamente en Windows sin tener que ingresar su contraseña!
 10. Instale un menú Inicio clásico o un administrador de tareas, ¡mejor que Windows 10! ¡Es aún mejor! ¡Con un look clásico!
 11. active o desactive el firewall, ¡la elección es suya!
-12. Borre el caché de DNS, optimice su windows con más de 67 comandos y mucho más.
+12. Borre el caché de DNS, optimice sus ventanas con más de 67 comandos y mucho más.
 ¡Nuestra lista de funciones que ofrece Aurora se actualizará a medida que introduzcamos nuevas funciones!
 
-### 🌟 El Futuro es Asombroso:
+### 🌟 El futuro es increíble:
 
-Estamos comprometidos a añadir más funcionalidades increíbles a Aurora. Espera nuevos idiomas, personalización avanzada del registro de Windows y mucho más. Además, Aurora es totalmente accesible para usuarios con discapacidad visual. 🌌
+Estamos comprometidos a agregar más funciones excelentes a Aurora. Espere nuevos idiomas, personalización avanzada del registro de Windows y más. Además, Aurora es totalmente accesible para usuarios con discapacidad visual. 🌌
 
-## ¿Cómo Usar Aurora? 🚀
+## ¿Cómo utilizar Aurora? 🚀
 
-Es fácil comenzar a optimizar tu PC con Aurora:
+Comenzar a optimizar su PC con Aurora es fácil:
 
-1. Abre la aplicación como administrador para obtener el mejor rendimiento.
-2. Salta el mensaje de bienvenida si ya has creado un punto de restauración.
-3. Elige entre una variedad de comandos de optimización o crea los tuyos propios.
-4. Edita, mueve, elimina comandos según tu preferencia.
+1. Abra la aplicación como administrador para un mejor rendimiento.
+2. Ignore el mensaje de bienvenida si ya ha establecido un punto de restauración.
+3. Elija entre una variedad de comandos de optimización o cree el suyo propio. Presione Enter en un comando y espere a que se ejecute. Si el programa deja de responder, es normal, no es un error y el script se ejecutará normalmente debido al uso de un método de ejecución externo.
+4. Edite, mueva y elimine comandos según sus preferencias.
 
-# Se recomienda encarecidamente crear un punto de restauración antes de realizar cambios para que puedas deshacerlos si es necesario.
+# Se recomienda encarecidamente crear un punto de restauración antes de realizar cambios para poder deshacerlos si es necesario.
 
-# No somos responsables de nada que suceda con tu PC; ¡úsalo bajo tu propio riesgo!
+# No somos responsables de nada de lo que le suceda a su PC; ¡Úselo bajo su propio riesgo!
 
-## Reporta Errores y Colabora 🐞😻
+## Reportar errores y colaborar 🐞😻
 
-Si encuentras algún problema o tienes sugerencias para mejoras, por favor, crea un *issue*. La colaboración es fundamental para mejorar Aurora y hacerlo aún más sorprendente.
+Si encuentra algún problema o tiene sugerencias para mejorar, cree un *problema*. La colaboración es fundamental para valorar Aurora y hacerla aún más increíble.
 
-## ¡Descarga a Continuación! 📁
+## métodos de instalación
 Puede ver el [registro de cambios aquí](https://github.com/azurejoga/Aurora-Windows-Optimizer/blob/aurora/changelog.md)
-Inicia tu camino hacia una PC más potente y eficiente. Descarga Aurora para Windows 11 y Windows 10 ahora:
 
-- **MD5: INSTALLABLE VERSION** 3e6b826f1ea50764453c09b479d5a0f9
-- **SHA-256: ZIP VERSION** a13e54831a401e91c80ad27f5c8a624a144cb27b5dfb02acb0ff42aebdb34874
 
-[Descargar Aurora, Optimizador de Windows™](https://github.com/azurejoga/Aurora-Windows-Optimizer/releases/download/aurora12/aurora-install.exe)
+Para instalar Aurora, Optimizador de Windows
+Hay 2 métodos de instalación.
 
-[Descargar Aurora, Optimizador de Windows, versión ZIP](https://github.com/azurejoga/Aurora-Windows-Optimizer/releases/download/aurora12/aurora-windows-optimizer.zip)
 
-# ¡Gracias por elegir Aurora para elevar el rendimiento de tu PC a niveles sin precedentes! 💪✨
+1. descargar desde chocolatey
 
-# Con licencia MIT
+
+choco install aurora-windows-optimizer --version=13.0.0
+
+
+Siga las instrucciones en pantalla, elija la carpeta y haga clic en instalar
+
+
+2. descarga el zip a continuación
+
+
+Comience su viaje hacia una PC más potente y eficiente. Descargue Aurora para Windows 11 y Windows 10 ahora:
+
+
+- **SHA-256: VERSIÓN ZIP** a13e54831a401e91c80ad27f5c8a624a144cb27b5dfb02acb0ff42aebdb34874
+
+
+[Descargar Aurora, Windows Optimizer, versión ZIP](https://github.com/azurejoga/Aurora-Windows-Optimizer/releases/download/aurora12/aurora-windows-optimizer.zip)
+
+
+# ¡Gracias por elegir Aurora para llevar el rendimiento de su PC a niveles sin precedentes! 💪✨
+
+# Licenciado bajo la licencia MIT
