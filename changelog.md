@@ -1,3 +1,73 @@
+## Aurora, windows optimizer v13.0
+02/05/2024 10:11
+# english
+
+# code changes
+
+
+* Now update is a folder compiled in cx_freeze and not a onefile
+
+
+* check updates has been changed with new functions.
+
+
+# new things added
+
+
+* added the possibility of downloading lenovo vantage, where you can change the FN key or multimedia keys. explanation in the aurora program itself, download the new update.
+
+* added java JDK 17 and java JDK 21 to download.
+
+*Added the possibility to re-enable the dictation or/online speech features, there are 2 methods for users to use.
+1. Windows registry, will open a registry for you to accept the new changes
+2. powershell method, this method is carried out using the powershell command
+
+
+PS: Both methods need to restart the computer.
+
+
+* Added Pot Player, a video, music player, accessible for the visually impaired.
+* added steam client download most updated version
+
+* Aurora Windows Optimizer can be installed via the Chocolatey package, see
+[installation methods in readme.md](https://github.com/azurejoga/Aurora-Windows-Optimizer)
+download the new installation
+[here]()
+
+
+# português / portuguese.
+
+
+# mudanças no código
+
+
+* Agora, update é uma pasta compilada em cx_freeze e não um onefile
+
+
+* check updates foi mudado com novas funções.
+
+
+# novas coisas adicionadas
+
+
+* adicionado a possibilidade de baixar o lenovo vantage, onde pode mudar as teclas FN key ou teclas multimedia. explicação no próprio programa aurora, baixe a nova atualização.
+* adicionado java JDK 17 e java JDK 21 para baixar.
+* adicionado a possibilidade de reabilitar o ditado ou / recursos de fala online, existem 2 métodos para os usuários usarem.
+1. registro do windows, abrirá um registro para você aceitar as novas alterações
+2. método powershell, esse método realiza-se por meio do comando powershell
+
+
+PS: os 2 métodos precisam  reiniciar o computador.
+
+
+* adicionado pot player, um player de vídeo, música, acessível para deficientes visuais.
+* adicionado download do steam client versão mais atualizada
+* aurora windows optimizer pode ser instalado por meio do pacote chocolatey, consulte
+[métodos de instalação no readme.md](https://github.com/azurejoga/Aurora-Windows-Optimizer)
+baixe a nova instalação
+[aqui]()
+
+
 ### Aurora, windows optimizer. v12.0
 01/17/2024 14:55
 # english
