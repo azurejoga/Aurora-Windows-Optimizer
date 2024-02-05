@@ -18,7 +18,7 @@
 
 * added java JDK 17 and java JDK 21 to download.
 
-*Added the possibility to re-enable the dictation or/online speech features, there are 2 methods for users to use.
+* Added the possibility to re-enable the dictation or/online speech features, there are 2 methods for users to use.
 1. Windows registry, will open a registry for you to accept the new changes
 2. powershell method, this method is carried out using the powershell command
 
@@ -32,7 +32,7 @@ PS: Both methods need to restart the computer.
 * Aurora Windows Optimizer can be installed via the Chocolatey package, see
 [installation methods in readme.md](https://github.com/azurejoga/Aurora-Windows-Optimizer)
 download the new installation
-[here]()
+[here](https://github.com/azurejoga/Aurora-Windows-Optimizer/releases/tag/aurora13)
 
 
 # português / portuguese.
@@ -65,7 +65,7 @@ PS: os 2 métodos precisam  reiniciar o computador.
 * aurora windows optimizer pode ser instalado por meio do pacote chocolatey, consulte
 [métodos de instalação no readme.md](https://github.com/azurejoga/Aurora-Windows-Optimizer)
 baixe a nova instalação
-[aqui]()
+[aqui](https://github.com/azurejoga/Aurora-Windows-Optimizer/releases/tag/aurora13)
 
 
 ### Aurora, windows optimizer. v12.0
