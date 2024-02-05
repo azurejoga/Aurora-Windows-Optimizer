@@ -274,9 +274,22 @@ class MyFrame(wx.Frame):
             save_commands(self.commands)
 
     def check_updates(self, event):
-        subprocess.run(["update.exe"], shell=True)
+        script_dir = os.path.dirname(os.path.abspath(__file__))
+        
+        # Path to update.exe in the "update" folder
+        update_exe_path_update = os.path.join(script_dir, "update", "update.exe")
+        
+        # Path to update.exe in the same folder
+        update_exe_path_same_folder = os.path.join(script_dir, "update.exe")
 
-
+        # Check if update.exe exists in the "update" folder and run it
+        if os.path.exists(update_exe_path_update):
+            subprocess.run([update_exe_path_update], shell=True)
+        # If it doesn't exist, check the same folder and run
+        elif os.path.exists(update_exe_path_same_folder):
+            subprocess.run([update_exe_path_same_folder], shell=True)
+        else:
+            print("Update.exe file not found.")
 
     def move_command_to_top(self, event):
         selected_item = self.lista_de_comandos.GetFirstSelected()
