@@ -5,6 +5,7 @@ import webbrowser
 import ctypes
 import os
 import sys
+import threading
 
 def is_admin():
     try:
@@ -117,13 +118,13 @@ class MyFrame(wx.Frame):
             self.add_command_to_list(command)
 
     def on_execute_command(self, event):
-        # Get the selected command in the list
         selected_item = self.lista_de_comandos.GetFirstSelected()
         if selected_item >= 0:
             cmd = self.lista_de_comandos.GetItemText(selected_item, col=2)
             type = self.lista_de_comandos.GetItemText(selected_item, col=3)
-            # Execute the command
-            self.run_command(cmd, type)
+
+# Execute the command in a separate thread
+            threading.Thread(target=self.run_command, args=(cmd, type)).start()
 
     def on_add_command(self, event):
         # Open the dialog to add commands
@@ -150,17 +151,34 @@ class MyFrame(wx.Frame):
         self.lista_de_comandos.SetItem(index, 2, command["cmd"])
         self.lista_de_comandos.SetItem(index, 3, command["type"])
 
+    def show_output_dialog(self, output):
+        try:
+            # Crie uma instância do diálogo de saída e exiba-o
+            output_dialog = OutputDialog(self, -1, "Command Result", output)
+            output_dialog.ShowModal()
+
+        except Exception as e:
+            print("Error showing output dialog:", e)
+
     def run_command(self, command, type):
         try:
             if "CMD" in type.upper():
-                # Execute the CMD command and capture the output
+                # Execute o comando CMD e capture a saída
                 result = subprocess.run(["cmd", "/c", command], shell=True, check=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
             elif "POWERSHELL" in type.upper():
-                # Execute the PowerShell command and capture the output
+                # Execute o comando PowerShell e capture a saída
                 result = subprocess.run(["powershell", "-Command", command], shell=True, check=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
             else:
                 print("Unsupported command type:", type)
                 return
+
+            # Chame uma função para atualizar a GUI na thread principal
+            wx.CallAfter(self.show_output_dialog, result.stdout)
+
+        except subprocess.CalledProcessError as e:
+            wx.CallAfter(self.show_output_dialog, e.stderr)
+        except Exception as e:
+            print("Error executing command:", e)
 
             # Display the output in a dialog box
             output_dialog = OutputDialog(self, -1, "Command Result", result.stdout)
