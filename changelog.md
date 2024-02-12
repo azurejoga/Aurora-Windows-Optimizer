@@ -1,3 +1,39 @@
+## Aurora, windows optimizer v14.0
+12/02/2024 15:25
+#English
+# Bugs fixed.
+1. Now, when you click a command in aurora, aurora will not crash.
+The program stopped responding when a command was clicked.
+ Previously, aurora would crash because treading was not being used to run a process or tasks in the background. then, import treading and its functions were added, see
+
+[aurora.py for more information](https://github.com/azurejoga/Aurora-Windows-Optimizer/blob/aurora/aurora.py)
+
+2. A critical bug has been fixed.
+A bug that you couldn't run aurora if you didn't have the VC++ libraries, runtimes installed.
+Now, you can go into the aurora folder, and run the install-vc-packages.ps1 script to install all VC++ runtime packages from 2003 to 2022 and then this bug has been fixed.
+
+# New features in the application.
+* Now you can install chocolatey through aurora, enjoy!
+
+[Download the new update](https://github.com/azurejoga/Aurora-Windows-Optimizer/releases/tag/aurora14)
+
+# Bugs corrigidos
+1. Agora, quando você clica em um comando no aurora, o aurora não trava.
+O programa parou de responder quando um comando foi clicado.
+ Anteriormente, o aurora travava porque o treading  não estava sendo usada para executar um processo ou tarefas em segundo plano. em seguida, foram adicionadas o treading  de importação e suas funções, veja
+
+[aurora.py para obter mais informações](https://github.com/azurejoga/Aurora-Windows-Optimizer/blob/aurora/aurora.py)
+
+2. Um bug crítico foi corrigido.
+Um bug que dizia que você não poderia executar o aurora se não tivesse as bibliotecas VC++ e os tempos de execução instalados.
+Agora, você pode ir para a pasta aurora e executar o script install-vc-packages.ps1 para instalar todos os pacotes de tempo de execução VC++ de 2003 a 2022 e.
+ então, esse bug foi corrigido.
+
+# Novos recursos no aplicativo.
+* Agora você pode instalar o chocolatey através do aurora, divirta-se!
+
+[Baixe a nova atualização](https://github.com/azurejoga/Aurora-Windows-Optimizer/releases/tag/aurora14)
+
 ## Aurora, windows optimizer v13.0
 02/05/2024 10:11
 # english

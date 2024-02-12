@@ -32,7 +32,7 @@ Si desea **optimizar su PC para obtener el máximo rendimiento** o simplemente *
 
 ## Aurora, ¿es seguro el Optimizador de Windows?
 Sí, Aurora Windows Optimizer es seguro y puedes comprobarlo tú mismo con algunas herramientas.
-1. Virus total. [ver y comprobar el amanecer sobre el virus total](https://www.virustotal.com/gui/file/15ff322be4c05d2b2d3ee3980483de05a57872b9fe0627615e0871eab257c09c/detection)
+1. Virus total. [ver y comprobar el amanecer sobre el virus total](https://www.virustotal.com/gui/file/4a90f55bc51fb6105241194e8211574a2d9d5337c57256f86545991dc94c39e0?nocache=1)
 2. Verificar con claves GPG. Firmé mis claves gpg para asegurarme de que el ejecutable sea legítimo.
 3. nunca descargue de sitios que no sean chocolatey o github y siempre verifique los hashes para compararlos, si el hash del zip o el ejecutable no es el mismo, no confíe en él y no lo instale ni lo ejecute.
 
@@ -110,7 +110,7 @@ Comience su viaje hacia una PC más potente y eficiente. Descargue Aurora para W
 - **SHA-256: VERSIÓN ZIP** 15ff322be4c05d2b2d3ee3980483de05a57872b9fe0627615e0871eab257c09c
 
 
-[Descargar Aurora, Windows Optimizer, versión ZIP](https://github.com/azurejoga/Aurora-Windows-Optimizer/releases/download/aurora13/aurora-windows-optimizer.zip)
+[Descargar Aurora, Windows Optimizer, versión ZIP](https://github.com/azurejoga/Aurora-Windows-Optimizer/releases/download/aurora14/aurora-windows-optimizer.zip)
 
 
 # ¡Gracias por elegir Aurora para llevar el rendimiento de su PC a niveles sin precedentes! 💪✨
