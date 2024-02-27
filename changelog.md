@@ -1,6 +1,7 @@
 ## Aurora, windows optimizer v14.0
 12/02/2024 15:25
-#English
+
+# English
 # Bugs fixed.
 1. Now, when you click a command in aurora, aurora will not crash.
 The program stopped responding when a command was clicked.
@@ -16,6 +17,8 @@ Now, you can go into the aurora folder, and run the install-vc-packages.ps1 scri
 * Now you can install chocolatey through aurora, enjoy!
 
 [Download the new update](https://github.com/azurejoga/Aurora-Windows-Optimizer/releases/tag/aurora14)
+
+# português / portuguese
 
 # Bugs corrigidos
 1. Agora, quando você clica em um comando no aurora, o aurora não trava.
