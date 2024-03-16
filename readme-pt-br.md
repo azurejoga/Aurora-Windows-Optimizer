@@ -110,7 +110,7 @@ Comece sua jornada para um PC mais potente e eficiente. Baixe Aurora para Window
 - **SHA-256: ZIP VERSION** 4a90f55bc51fb6105241194e8211574a2d9d5337c57256f86545991dc94c39e0
 
 
-[Baixar Aurora, Windows Optimizer, versão ZIP](https://github.com/azurejoga/Aurora-Windows-Optimizer/releases/download/aurora14/aurora-windows-optimizer.zip)
+[Baixar Aurora, Windows Optimizer, versão ZIP](https://github.com/azurejoga/Aurora-Windows-Optimizer/releases/download/aurora15/aurora-windows-optimizer.zip)
 
 
 # Obrigado por escolher o Aurora para elevar o desempenho do seu PC a níveis sem precedentes! 💪✨

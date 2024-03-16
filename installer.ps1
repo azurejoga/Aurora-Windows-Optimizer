@@ -1,8 +1,8 @@
-# Verificar se está executando como administrador
+# Check if you are running as administrator
 if (-not ([Security.Principal.WindowsPrincipal] [Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole]::Administrator)) {
     Write-Host "Running as a non-administrator. Requesting elevation..."
 
-    # Solicitar elevação para administrador
+    # Request elevation to administrator
     Start-Process powershell -ArgumentList "-NoProfile -ExecutionPolicy Bypass -File `"$($MyInvocation.MyCommand.Path)`"" -Verb RunAs
     exit
 }
