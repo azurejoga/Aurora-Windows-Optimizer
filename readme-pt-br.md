@@ -95,17 +95,16 @@ Para instalar o Aurora, Windows Optimizer
 Existem 2 métodos de instalação.
 
 
-1. baixe do chocolatey
+## baixe do chocolatey.
 
-
+```
 choco install aurora-windows-optimizer --version=13.0.0
-
+```
 
 Siga as instruções na tela, escolha a pasta e clique em instalar
 
 
-2. baixe o zip abaixo
-
+## baixe o zip abaixo
 
 Comece sua jornada para um PC mais potente e eficiente. Baixe Aurora para Windows 11 e Windows 10 agora:
 
