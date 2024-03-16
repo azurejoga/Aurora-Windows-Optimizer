@@ -1,4 +1,5 @@
 import wx
+import wx.adv
 import subprocess
 import pickle
 import webbrowser
@@ -89,13 +90,19 @@ class MyFrame(wx.Frame):
         open_github_repo_item = tools_menu.Append(wx.ID_ANY, "Open the repository on GitHub", "Open the repository on GitHub")
         download_latest_github_item = tools_menu.Append(wx.ID_ANY, "Download Latest Version from GitHub", "Download Latest Version from GitHub")
         create_restore_point_item = tools_menu.Append(wx.ID_ANY, "Create Restore Point", "Create a system restore point")
+        restore_changes_item = tools_menu.Append(wx.ID_ANY, "Restore Changes", "Restore system changes to the last restore point and restart")
         sort_commands_item = tools_menu.Append(wx.ID_ANY, "Sort Commands", "Sort commands alphabetically")
         check_updates_item = tools_menu.Append(wx.ID_ANY, "Check updates", "Check for updates and close Aurora")
+
+        # Bind the EVT_MENU event
         self.Bind(wx.EVT_MENU, self.open_github_repo, open_github_repo_item)
         self.Bind(wx.EVT_MENU, self.download_latest_github, download_latest_github_item)
         self.Bind(wx.EVT_MENU, self.create_system_restore_point, create_restore_point_item)
+        self.Bind(wx.EVT_MENU, self.restore_changes, restore_changes_item)
         self.Bind(wx.EVT_MENU, self.sort_commands, sort_commands_item)
         self.Bind(wx.EVT_MENU, self.check_updates, check_updates_item)
+
+        # Append the "Tools" menu to the menu bar
         menu_bar.Append(tools_menu, "Tools")
         self.SetMenuBar(menu_bar)
 
@@ -153,32 +160,44 @@ class MyFrame(wx.Frame):
 
     def show_output_dialog(self, output):
         try:
-            # Crie uma instância do diálogo de saída e exiba-o
             output_dialog = OutputDialog(self, -1, "Command Result", output)
             output_dialog.ShowModal()
-
         except Exception as e:
             print("Error showing output dialog:", e)
+
+    def show_notification(self, message, success=True):
+        try:
+            notification_title = "Success" if success else "Error"
+            notification = wx.adv.NotificationMessage(title=notification_title, message=message, parent=None)
+            notification.Show()
+
+        except Exception as e:
+            print("Error showing notification:", e)
 
     def run_command(self, command, type):
         try:
             if "CMD" in type.upper():
-                # Execute o comando CMD e capture a saída
                 result = subprocess.run(["cmd", "/c", command], shell=True, check=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
             elif "POWERSHELL" in type.upper():
-                # Execute o comando PowerShell e capture a saída
                 result = subprocess.run(["powershell", "-Command", command], shell=True, check=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
             else:
                 print("Unsupported command type:", type)
                 return
 
-            # Chame uma função para atualizar a GUI na thread principal
-            wx.CallAfter(self.show_output_dialog, result.stdout)
+            if result.returncode == 0:
+                wx.CallAfter(self.show_output_dialog, result.stdout)
+                wx.CallAfter(self.show_notification, "Command executed successfully", success=True)
+            else:
+                wx.CallAfter(self.show_output_dialog, result.stderr)
+                wx.CallAfter(self.show_notification, "Error executing command", success=False)
 
         except subprocess.CalledProcessError as e:
             wx.CallAfter(self.show_output_dialog, e.stderr)
+            wx.CallAfter(self.show_notification, "Error executing command", success=False)
         except Exception as e:
             print("Error executing command:", e)
+            wx.CallAfter(self.show_output_dialog, "An unexpected error occurred")
+            wx.CallAfter(self.show_notification, "An unexpected error occurred", success=False)
 
             # Display the output in a dialog box
             output_dialog = OutputDialog(self, -1, "Command Result", result.stdout)
@@ -309,6 +328,71 @@ class MyFrame(wx.Frame):
         else:
             print("Update.exe file not found.")
 
+    def restore_changes(self, event):
+        try:
+            # PowerShell command para encontrar o último ponto de restauração do sistema
+            find_restore_point_command = "Get-ComputerRestorePoint | Sort-Object -Property CreationTime -Descending | Select-Object -First 1 | Format-List -Property CreationTime, Description, SequenceNumber"
+
+            # Executa o comando PowerShell para encontrar o último ponto de restauração
+            result = subprocess.run(["powershell", "-Command", find_restore_point_command], shell=True, capture_output=True, text=True)
+
+            if result.returncode == 0:
+                restore_point_info = result.stdout.strip()
+
+                if restore_point_info:
+                    # Parse a informação do ponto de restauração
+                    restore_point_data = {}
+                    for line in restore_point_info.split('\n'):
+                        key, value = line.split(':', 1)
+                        restore_point_data[key.strip()] = value.strip()
+
+                    # Confirma com o usuário antes de prosseguir com a restauração
+                    dlg = wx.MessageDialog(
+                        None,
+                        f"Do you want to restore the system to the latest restore point?\n\n{restore_point_info}",
+                        "Restore Changes",
+                        wx.YES_NO | wx.ICON_QUESTION
+                    )
+
+                    result = dlg.ShowModal()
+                    dlg.Destroy()
+
+                    if result == wx.ID_YES:
+                        # Usa threading para uma UI responsiva durante o processo de restauração
+                        threading.Thread(target=self.perform_restoration, args=(restore_point_data,), daemon=True).start()
+
+                else:
+                    wx.MessageBox("Could not find a restore point. Create a restore point before attempting to restore changes.", "Restoration Error", wx.OK | wx.ICON_ERROR)
+
+            else:
+                wx.MessageBox(f"Error finding or restoring restore point:\n{result.stderr}", "Restoration Error", wx.OK | wx.ICON_ERROR)
+
+        except subprocess.CalledProcessError as e:
+            wx.MessageBox(f"Error executing PowerShell command:\n{e.stderr}", "Restoration Error", wx.OK | wx.ICON_ERROR)
+        except Exception as e:
+            wx.MessageBox(f"Unexpected error:\n{e}", "Restoration Error", wx.OK | wx.ICON_ERROR)
+
+    def perform_restoration(self, restore_point_data):
+        try:
+            # Extrai o SequenceNumber, Description e CreationTime do ponto de restauração
+            sequence_number = restore_point_data.get("SequenceNumber")
+
+            # PowerShell command para restaurar o sistema para o ponto de restauração especificado
+            restore_command = f"Restore-Computer -RestorePoint $({sequence_number}) -Confirm:$false"
+
+            # Executa o comando PowerShell para restaurar o sistema
+            subprocess.run(["powershell", "-Command", restore_command], shell=True, check=True)
+
+            # Exibe uma mensagem indicando a restauração bem-sucedida
+            wx.CallAfter(wx.MessageBox, f"Changes successfully restored to '{restore_point_data.get('Description')}' ({restore_point_data.get('CreationTime')})! The computer will be restarted.", "Restoration Completed", wx.OK | wx.ICON_INFORMATION)
+
+            # Reinicia o computador
+            subprocess.run(["powershell", "Restart-Computer"])
+
+        except subprocess.CalledProcessError as e:
+            # Exibe uma mensagem de erro se a restauração falhar
+            wx.CallAfter(wx.MessageBox, f"Error restoring changes:\n{e.stderr}", "Restoration Error", wx.OK | wx.ICON_ERROR)
+
     def move_command_to_top(self, event):
         selected_item = self.lista_de_comandos.GetFirstSelected()
         if selected_item > 0:
@@ -426,15 +510,25 @@ def create_system_restore_point(description):
     except Exception as e:
         wx.MessageBox("Error creating restore point:\n" + str(e), "Erro de Ponto de Restauração", wx.OK | wx.ICON_ERROR)
 
-app = wx.App()
+def show_welcome_dialog():
+    # Check if the welcome indicator file exists
+    if not os.path.exists("welcome_indicator"):
+        # Display the welcome dialog if the indicator file does not exist
+        app = wx.App()
+        dlg = WelcomeDialog(None, -1, "Welcome to Aurora")
+        result = dlg.ShowModal()
+        dlg.Destroy()
+        app.MainLoop()
 
-# Display the initial dialog box
-dlg = WelcomeDialog(None, -1, "Welcome to Aurora")
-result = dlg.ShowModal()
-dlg.Destroy()
+        # Create the welcome indicator file
+        open("welcome_indicator", "w").close()
 
-if result == wx.ID_OK:
-    frame = MyFrame(None, -1, "Aurora, windows optimizer™")
+def main():
+    show_welcome_dialog()
+    app = wx.App(False)
+    frame = MyFrame(None, -1, "Aurora, Windows Optimizer™")
     frame.Show()
+    app.MainLoop()
 
-app.MainLoop()
+if __name__ == "__main__":
+    main()

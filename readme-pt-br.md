@@ -32,7 +32,7 @@ Se você deseja **otimizar seu PC para desempenho máximo** ou simplesmente **el
 
 ## aurora, o otimizador do Windows é seguro?
 Sim, o Aurora Windows Optimizer é seguro e você mesmo pode verificar com algumas ferramentas.
-1. Vírus total . [veja e verifique a aurora no virus total](https://www.virustotal.com/gui/file/4a90f55bc51fb6105241194e8211574a2d9d5337c57256f86545991dc94c39e0?nocache=1)
+1. Vírus total  [veja e verifique o aurora no virus total](https://www.virustotal.com/gui/file/88a00774e882d989cac3ebc4c6c3ded4d505a7d4118d34370e4c196f81ffd6be?nocache=1)
 2. Verifique com chaves GPG. Assinei minhas chaves gpg para garantir que o executável seja legítimo.
 3. nunca baixe de sites que não sejam chocolatey ou github e sempre verifique os hashes para comparação, se o hash do zip ou do executável não for o mesmo, não confie, e não instale ou execute.
 
@@ -61,6 +61,9 @@ Sim, o Aurora Windows Optimizer é seguro e você mesmo pode verificar com algum
 10. Instale um menu Iniciar clássico ou gerenciador de tarefas, melhor que o do Windows 10! É ainda melhor! com visual clássico!
 11. habilite ou desabilite o firewall, a escolha é sua!
 12. Limpe o cache DNS, otimize seu windows com mais de 67 comandos e muito mais!
+13. desabilite completamente o windows update, totalmente!
+14. receba notificações de quando um comando foi concluido com sucesso ou aconteceu algum erro.
+15. a mensagem de boas vindas agora não aparece mais depois da primeira execução
 Nossa lista de recursos que o Aurora oferece será atualizada à medida que introduzimos novos recursos!
 
 ### 🌟 O futuro é incrível:
@@ -92,25 +95,24 @@ Para instalar o Aurora, Windows Optimizer
 Existem 2 métodos de instalação.
 
 
-1. baixe do chocolatey
+## baixe do chocolatey.
 
-
+```
 choco install aurora-windows-optimizer --version=13.0.0
-
+```
 
 Siga as instruções na tela, escolha a pasta e clique em instalar
 
 
-2. baixe o zip abaixo
-
+## baixe o zip abaixo
 
 Comece sua jornada para um PC mais potente e eficiente. Baixe Aurora para Windows 11 e Windows 10 agora:
 
 
-- **SHA-256: ZIP VERSION** 4a90f55bc51fb6105241194e8211574a2d9d5337c57256f86545991dc94c39e0
+- **SHA-256: ZIP VERSION** 88a00774e882d989cac3ebc4c6c3ded4d505a7d4118d34370e4c196f81ffd6be
 
 
-[Baixar Aurora, Windows Optimizer, versão ZIP](https://github.com/azurejoga/Aurora-Windows-Optimizer/releases/download/aurora14/aurora-windows-optimizer.zip)
+[Baixar Aurora, Windows Optimizer, versão ZIP](https://github.com/azurejoga/Aurora-Windows-Optimizer/releases/download/aurora15/aurora-windows-optimizer.zip)
 
 
 # Obrigado por escolher o Aurora para elevar o desempenho do seu PC a níveis sem precedentes! 💪✨

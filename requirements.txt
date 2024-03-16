@@ -1,3 +1,4 @@
 future
 platform
 wxpython
+plyer

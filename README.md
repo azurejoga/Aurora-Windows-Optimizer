@@ -27,7 +27,7 @@ Whether you want to **optimize your PC for maximum performance** or simply **eli
 
 ## aurora, windows optimizer is safe?
 Yes, Aurora Windows Optimizer is safe, and you can check it yourself with some tools.
-1. virus total. [see and check the aurora in virus total](https://www.virustotal.com/gui/file/4a90f55bc51fb6105241194e8211574a2d9d5337c57256f86545991dc94c39e0?nocache=1)
+1. virus total. [see and check the aurora in virus total](https://www.virustotal.com/gui/file/88a00774e882d989cac3ebc4c6c3ded4d505a7d4118d34370e4c196f81ffd6be?nocache=1)
 2. Verify with GPG keys. I signed my gpg keys to ensure the executable is legitimate.
 3. never download from sites other than chocolatey or github and always check the hashes for comparison, if the hash of the zip or executable is not the same, do not trust and do not install or run it.
 
@@ -56,11 +56,15 @@ Yes, Aurora Windows Optimizer is safe, and you can check it yourself with some t
 10. Install a classic start menu or task manager, better than the one in windows 10! It's even better! with a classic look!
 11. enable or disable the firewall, it's your choice!
 12. Clear the DNS cache, optimize your windows with more than 67 commands and much more!
+13. completely disable windows update, completely!
+14. receive notifications when a command was completed successfully or an error occurred.
+15. the welcome message now no longer appears after the first run
 Our list of features that Aurora offers will be updated as we introduce new features!
 
 ### 🌟 The Future is Amazing:
 
-We are committed to adding more incredible features to Aurora. Look forward to new languages, advanced Windows registry customization, and much more. Additionally, Aurora is fully accessible for visually impaired users. 🌌
+We are committed to adding more incredible features to Aurora. Look forward to new languages, advanced Windows registry customization, and much more. 
+# Additionally, Aurora is fully accessible for visually impaired users. 🌌
 
 ## How to Use Aurora? 🚀
 
@@ -87,25 +91,25 @@ To install Aurora, Windows Optimizer
 There are 2 installation methods.
 
 
-1. download from chocolatey.
+## download from chocolatey.
 
-
+```
 choco install aurora-windows-optimizer --version=13.0.0
-
+```
 
 Follow the on-screen instructions, choose the folder and click install
 
 
-2. download the zip below
+## download the zip below
 
 
 Start your journey to a more powerful and efficient PC. Download Aurora for Windows 11 and Windows 10 now:
 
 
-- **SHA-256: ZIP VERSION** 4a90f55bc51fb6105241194e8211574a2d9d5337c57256f86545991dc94c39e0
+- **SHA-256: ZIP VERSION** 88a00774e882d989cac3ebc4c6c3ded4d505a7d4118d34370e4c196f81ffd6be
 
 
-[Download Aurora, Windows Optimizer, ZIP version](https://github.com/azurejoga/Aurora-Windows-Optimizer/releases/download/aurora14/aurora-windows-optimizer.zip)
+[Download Aurora, Windows Optimizer, ZIP version](https://github.com/azurejoga/Aurora-Windows-Optimizer/releases/download/aurora15/aurora-windows-optimizer.zip)
 
 
 # Thank you for choosing Aurora to elevate your PC's performance to unprecedented levels! 💪✨
