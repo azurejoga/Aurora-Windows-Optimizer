@@ -93,9 +93,9 @@ There are 2 installation methods.
 
 ## download from chocolatey.
 
-
-choco install aurora-windows-optimizer --version=13.0.0````
-
+```
+choco install aurora-windows-optimizer --version=13.0.0
+```
 
 Follow the on-screen instructions, choose the folder and click install
 
