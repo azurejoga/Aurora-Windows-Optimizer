@@ -93,14 +93,14 @@ There are 2 installation methods.
 
 # 1. download from chocolatey.
 
-    command line```
+
 choco install aurora-windows-optimizer --version=13.0.0
 ```
 
 Follow the on-screen instructions, choose the folder and click install
 
 
-# 2. download the zip below
+## 2. download the zip below
 
 
 Start your journey to a more powerful and efficient PC. Download Aurora for Windows 11 and Windows 10 now:
