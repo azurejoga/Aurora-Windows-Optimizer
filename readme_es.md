@@ -32,7 +32,7 @@ Si desea **optimizar su PC para obtener el máximo rendimiento** o simplemente *
 
 ## Aurora, ¿es seguro el Optimizador de Windows?
 Sí, Aurora Windows Optimizer es seguro y puedes comprobarlo tú mismo con algunas herramientas.
-1. Virus total. [ver y comprobar el amanecer sobre el virus total](https://www.virustotal.com/gui/file/4a90f55bc51fb6105241194e8211574a2d9d5337c57256f86545991dc94c39e0?nocache=1)
+1. Virus total. [ver y comprobar el amanecer sobre el virus total](https://www.virustotal.com/gui/file/88a00774e882d989cac3ebc4c6c3ded4d505a7d4118d34370e4c196f81ffd6be?nocache=1)
 2. Verificar con claves GPG. Firmé mis claves gpg para asegurarme de que el ejecutable sea legítimo.
 3. nunca descargue de sitios que no sean chocolatey o github y siempre verifique los hashes para compararlos, si el hash del zip o el ejecutable no es el mismo, no confíe en él y no lo instale ni lo ejecute.
 
@@ -61,11 +61,15 @@ dos.Instale todos los paquetes de VC++ en tiempo de ejecución visual.
 10. Instale un menú Inicio clásico o un administrador de tareas, ¡mejor que Windows 10! ¡Es aún mejor! ¡Con un look clásico!
 11. active o desactive el firewall, ¡la elección es suya!
 12. Borre el caché de DNS, optimice su windows con más de 67 comandos y mucho más.
+13. ¡Desactive completamente la actualización de Windows, completamente!
+14. recibir notificaciones cuando un comando se completó con éxito o se produjo un error.
+15. el mensaje de bienvenida ya no aparece después de la primera ejecución
 ¡Nuestra lista de funciones que ofrece Aurora se actualizará a medida que introduzcamos nuevas funciones!
 
 ### 🌟 El futuro es increíble:
 
-Estamos comprometidos a agregar más funciones excelentes a Aurora. Espere nuevos idiomas, personalización avanzada del registro de Windows y más. Además, Aurora es totalmente accesible para usuarios con discapacidad visual. 🌌
+Estamos comprometidos a agregar más funciones excelentes a Aurora. Espere nuevos idiomas, personalización avanzada del registro de Windows y más.
+# Además, Aurora es totalmente accesible para usuarios con discapacidad visual. 🌌
 
 ## ¿Cómo utilizar Aurora? 🚀
 
