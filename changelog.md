@@ -28,7 +28,7 @@ Also, if you have never created a restore point, create it within aurora before 
 Another thing, if you created a point but it doesn't appear when you click to restore, close and open aurora again.
 
 # português / portuguese.
-#código
+# código
 * adicionado [vcruntime140.dll](https://www.file.net/process/vcruntime140.dll.html) e vcruntime140_1.dll https://www.easeus.com/knowledge-center/what-is -vcruntime140-dll.html para que o usuário não precise instalar todos os pacotes VC runtime ++ necessários para executar o código aurora.
 * agora o aurora suporta notificações, mais informações no arquivo [aurora.py](https://github.com/azurejoga/Aurora-Windows-Optimizer/blob/aurora/aurora.py)
 * removeu a mensagem de boas-vindas a partir da segunda execução do programa.
