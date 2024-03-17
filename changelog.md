@@ -4,7 +4,7 @@
 # english
 # code
 1. added [vcruntime140.dll](https://www.file.net/process/vcruntime140.dll.html) and
-2. [vcruntime140_1.dll](https://www.easeus.com/knowledge-center/what-is -vcruntime140-dll.html) so that the user does not need to install all the VC runtime ++ packages necessary to run the aurora code.
+2. vcruntime140_1.dll [](https://www.easeus.com/knowledge-center/what-is -vcruntime140-dll.html) so that the user does not need to install all the VC runtime ++ packages necessary to run the aurora code.
 * now aurora supports notifications, more information in the file [aurora.py](https://github.com/azurejoga/Aurora-Windows-Optimizer/blob/aurora/aurora.py)
 * removed the welcome message on the second run of the program onwards.
 
