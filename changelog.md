@@ -3,14 +3,19 @@
 
 # english
 # code
-* added [vcruntime140.dll](https://www.file.net/process/vcruntime140.dll.html) and
- [vcruntime140_1.dll](https://www.easeus.com/knowledge-center/what-is -vcruntime140-dll.html) so that the user does not need to install all the VC runtime ++ packages necessary to run the aurora code.
+1. added [vcruntime140.dll](https://www.file.net/process/vcruntime140.dll.html) and
+2. [vcruntime140_1.dll](https://www.easeus.com/knowledge-center/what-is -vcruntime140-dll.html) so that the user does not need to install all the VC runtime ++ packages necessary to run the aurora code.
 * now aurora supports notifications, more information in the file [aurora.py](https://github.com/azurejoga/Aurora-Windows-Optimizer/blob/aurora/aurora.py)
 * removed the welcome message on the second run of the program onwards.
 
 ## new functions
-* added the possibility of completely disabling windows update, to protest Microsoft's obligation to try to force windows 11, according to the update [KB5001716](https://www.neowin.net/news/microsoft-quietly-installing -kb5001716-so-you-can-update-to-windows-11-or-newer-windows-10/) and according to [this](https://www.techradar.com/news/not-upgraded- to-windows-10-22h2-yet-youll-soon-be-forced-to-or-switch-to-windows-11) plus [this](https://www.tomshardware.com/software/microsoft-begins -forced-updates-to-windows-11-23h2-targets-pcs-running-21h2-and-22h2) article.
+* added the possibility of completely disabling windows update, to protest Microsoft's obligation to try to force windows 11, according to the update
+1. [KB5001716](https://www.neowin.net/news/microsoft-quietly-installing -kb5001716-so-you-can-update-to-windows-11-or-newer-windows-10/)
+2.  and according to [this](https://www.techradar.com/news/not-upgraded- to-windows-10-22h2-yet-youll-soon-be-forced-to-or-switch-to-windows-11)
+3.  plus [this](https://www.tomshardware.com/software/microsoft-begins -forced-updates-to-windows-11-23h2-targets-pcs-running-21h2-and-22h2) article.
+
  If you don't want the latest Windows updates, disable Windows Update completely in Aurora.
+
 * you can now receive notifications when you run a command, this means if you go to grab a coffee when you get back to your pc because you left it AFK/away, it will now look like a notification on your screen saying the command has been run or you hear a error...
 * the welcome message will now only appear on the first run. This means if you see an extra file in your aurora folder, don't worry...
 * Restore the changes you made to your PC! Exactly, a long-awaited feature has arrived! You can now undo the changes made by Aurora on your PC!
