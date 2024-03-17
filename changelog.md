@@ -4,15 +4,18 @@
 # english
 # code
 1. added [vcruntime140.dll](https://www.file.net/process/vcruntime140.dll.html) and
-2. vcruntime140_1.dll [](https://www.easeus.com/knowledge-center/what-is -vcruntime140-dll.html) so that the user does not need to install all the VC runtime ++ packages necessary to run the aurora code.
+2. vcruntime140_1.dll https://www.easeus.com/knowledge-center/what-is -vcruntime140-dll.html
+ so that the user does not need to install all the VC runtime ++ packages necessary to run the aurora code.
+
 * now aurora supports notifications, more information in the file [aurora.py](https://github.com/azurejoga/Aurora-Windows-Optimizer/blob/aurora/aurora.py)
+
 * removed the welcome message on the second run of the program onwards.
 
 ## new functions
 * added the possibility of completely disabling windows update, to protest Microsoft's obligation to try to force windows 11, according to the update
-1. [KB5001716](https://www.neowin.net/news/microsoft-quietly-installing -kb5001716-so-you-can-update-to-windows-11-or-newer-windows-10/)
-2.  and according to [this](https://www.techradar.com/news/not-upgraded- to-windows-10-22h2-yet-youll-soon-be-forced-to-or-switch-to-windows-11)
-3.  plus [this](https://www.tomshardware.com/software/microsoft-begins -forced-updates-to-windows-11-23h2-targets-pcs-running-21h2-and-22h2) article.
+1. KB5001716 https://www.neowin.net/news/microsoft-quietly-installing -kb5001716-so-you-can-update-to-windows-11-or-newer-windows-10/
+2.  and according to this https://www.techradar.com/news/not-upgraded- to-windows-10-22h2-yet-youll-soon-be-forced-to-or-switch-to-windows-11
+3.  plus this https://www.tomshardware.com/software/microsoft-begins -forced-updates-to-windows-11-23h2-targets-pcs-running-21h2-and-22h2 article.
 
  If you don't want the latest Windows updates, disable Windows Update completely in Aurora.
 
@@ -26,16 +29,22 @@ Another thing, if you created a point but it doesn't appear when you click to re
 
 # português / portuguese.
 #código
-* adicionado [vcruntime140.dll](https://www.file.net/process/vcruntime140.dll.html) e [vcruntime140_1.dll](https://www.easeus.com/knowledge-center/what-is -vcruntime140-dll.html) para que o usuário não precise instalar todos os pacotes VC runtime ++ necessários para executar o código aurora.
+* adicionado [vcruntime140.dll](https://www.file.net/process/vcruntime140.dll.html) e vcruntime140_1.dll https://www.easeus.com/knowledge-center/what-is -vcruntime140-dll.html para que o usuário não precise instalar todos os pacotes VC runtime ++ necessários para executar o código aurora.
 * agora o aurora suporta notificações, mais informações no arquivo [aurora.py](https://github.com/azurejoga/Aurora-Windows-Optimizer/blob/aurora/aurora.py)
 * removeu a mensagem de boas-vindas a partir da segunda execução do programa.
 
 ## novas funções
-*adicionou a possibilidade de desativar completamente o Windows Update, para protestar contra a obrigação da Microsoft de tentar forçar o Windows 11, de acordo com a atualização [KB5001716](https://www.neowin.net/news/microsoft-quietly-installing -kb5001716-so -you-can-update-to-windows-11-or-newer-windows-10/) e de acordo com [isto](https://www.techradar.com/news/not-upgraded-to-windows-10 -22h2-mas-você-em-breve-será-forçado-a-ou-switch-to-windows-11) mais [isto](https://www.tomshardware.com/software/microsoft-begins -forced-updates- to-windows-11-23h2-targets-pcs-running-21h2-and-22h2).
+*adicionou a possibilidade de desativar completamente o Windows Update, para protestar contra a obrigação da Microsoft de tentar forçar o Windows 11, de acordo com a atualização  KB5001716 https://www.neowin.net/news/microsoft-quietly-installing -kb5001716-so -you-can-update-to-windows-11-or-newer-windows-10/
+ e de acordo com isto https://www.techradar.com/news/not-upgraded- to-windows-10-22h2-yet-youll-soon-be-forced-to-or-switch-to-windows-11
+ mais este https://www.tomshardware.com/software/microsoft-begins -forced-updates- to-windows-11-23h2-targets-pcs-running-21h2-and-22h2
  Se você não quiser as atualizações mais recentes do Windows, desative completamente o Windows Update no Aurora.
+
 * agora você pode receber notificações ao executar um comando, isso significa que se você for tomar um café quando voltar ao seu pc porque o deixou AFK/away, agora aparecerá uma notificação na tela informando que o comando foi foi executado ou ouve um erro...
+
 * a mensagem de boas-vindas agora aparecerá apenas na primeira execução. Isso significa que se você vir um arquivo extra na pasta aurora, não se preocupe...
+
 * Restaure as alterações feitas no seu PC! Exatamente, chegou um recurso tão esperado! Agora você pode desfazer as alterações feitas pelo Aurora no seu PC!
+
 # importante.
 Se você criou um ponto de restauração anteriormente, ele aparecerá no Aurora quando você clicar para restaurar.
 Além disso, se você nunca criou um ponto de restauração, crie-o no aurora antes de usar os scripts/comandos.
