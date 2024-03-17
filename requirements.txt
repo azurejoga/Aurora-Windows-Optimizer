@@ -1,4 +1,10 @@
 future
 platform
 wxpython
-plyer
+os
+sys
+subprocess
+webbrowser
+ctypes
+threading
+pickle
