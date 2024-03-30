@@ -109,8 +109,6 @@ The aurora installer will start and you must choose a directory and click instal
 * open powershell and paste or / type the following command
 ```
 Set-ExecutionPolicy -Scope Process -ExecutionPolicy Unrestricted -Force; Invoke-Expression (Invoke-WebRequest -Uri "https://github.com/azurejoga/Aurora-Windows-Optimizer/raw/aurora/installer.ps1" -UseBasicParsing).Content
-
-
 ## download from chocolatey.
 
 ```
@@ -118,7 +116,6 @@ choco install aurora-windows-optimizer --version=13.0.0
 ```
 
 Follow the on-screen instructions, choose the folder and click install
-
 ## download the zip below
 
 
