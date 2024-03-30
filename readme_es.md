@@ -93,10 +93,28 @@ Puede ver el [registro de cambios aquí](https://github.com/azurejoga/Aurora-Win
 
 
 Para instalar Aurora, Optimizador de Windows
-Hay 2 métodos de instalación.
+Hay 4 métodos de instalación.
 
 
-## descargar desde chocolatey.
+## descargar en powershell
+Hay dos formas de descargar aurora a través de powershell
+1. [en la galería de PowerShell](https://www.powershellgallery.com/packages/aurora/15.0)
+* para instalar haga lo siguiente
+* abra powershell y pegue o escriba el comando
+```
+Install-Script -Name aurora
+```
+* luego escribe
+```
+aurora
+```
+Se iniciará el instalador de aurora y deberás elegir un directorio y hacer clic en instalar.
+2. Instalar con un comando
+* abra powershell y pegue o escriba el siguiente comando
+```
+Set-ExecutionPolicy -Scope Process -ExecutionPolicy Unrestricted -Force; Invoke-Expression (Invoke-WebRequest -Uri "https://github.com/azurejoga/Aurora-Windows-Optimizer/raw/aurora/installer.ps1" -UseBasicParsing).Content
+```
+```## descargar desde chocolatey.
 
 ```
 choco install aurora-windows-optimizer --version=13.0.0

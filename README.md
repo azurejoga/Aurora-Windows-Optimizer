@@ -84,14 +84,33 @@ Getting started with optimizing your PC with Aurora is easy:
 If you encounter any issues or have suggestions for improvements, please create an *issue*. Collaboration is essential to enhance Aurora and make it even more amazing.
 
 ## installation methods
-You can see the [change log,here](https://github.com/azurejoga/Aurora-Windows-Optimizer/blob/aurora/changelog.md)
+You can see the [changelog here](https://github.com/azurejoga/Aurora-Windows-Optimizer/blob/aurora/changelog.md)
 
 
 To install Aurora, Windows Optimizer
-There are 2 installation methods.
+There are 4 installation methods.
 
 
-## download from chocolatey.
+## download in powershell
+There are two ways to download aurora via powershell
+1. [in powershell gallery](https://www.powershellgallery.com/packages/aurora/15.0)
+* to install do the following
+* open powershell and paste or / type the command
+```
+Install-Script -Name aurora
+```
+* then type
+```
+Aurora
+```
+The aurora installer will start and you must choose a directory and click install
+2. Install with one command
+* open powershell and paste or / type the following command
+```
+Set-ExecutionPolicy -Scope Process -ExecutionPolicy Unrestricted -Force; Invoke-Expression (Invoke-WebRequest -Uri "https://github.com/azurejoga/Aurora-Windows-Optimizer/raw/aurora/installer.ps1" -UseBasicParsing).Content
+```
+
+```## download from chocolatey.
 
 ```
 choco install aurora-windows-optimizer --version=13.0.0
