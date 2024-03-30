@@ -1,3 +1,21 @@
+## aurora, windows optimizer v16.0
+30/03/2024 18:49
+# english
+# new features
+* the possibility of completely disabling Windows Defender has been re-added
+* Added the ability to uninstall or reinstall Microsoft Edge and Microsoft Edge WebView
+* added the possibility to enable the classic volume panel of windows 10
+* the possibility of downloading malwarebits, the best antivirus on the market, has been added
+* 2 new installation methods have been added! to find out which ones, see [](https://github.com/azurejoga/Aurora-Windows-Optimizer/blob/aurora/installation.md)
+
+# português / portuguese
+# novas funcionalidades
+* foi readicionado a possibilidade de desativar completamente o windows defender
+* foi adicionado a possibilidade de desinstalar ou reinstalar o microsoft edge, e o microsoft edge webview
+* foi adicionado a possibilidade de habilitar o painel de volume clássico do windows 10
+* foi adicionado a possibilidade de baixar o malwarebits, o melhor ante-vírus do mercado
+* foi adicionado 2 novos métodos de instalação! para saber quais, consulte  [](https://github.com/azurejoga/Aurora-Windows-Optimizer/blob/aurora/instalation.md)
+
 ## aurora, windows optimizer v15.0
 17/03/2024 17:00
 
