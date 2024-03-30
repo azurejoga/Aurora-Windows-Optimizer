@@ -108,6 +108,7 @@ Install-Script -Name aurora
 aurora
 ```
 O instalador do aurora irá iniciar e você deve escolher um dieretório  e clicar em install
+
 2. Instale com um comando
 * abra o powershell e cole ou / digite o seguinte comando
 ```

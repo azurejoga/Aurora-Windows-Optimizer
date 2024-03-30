@@ -109,12 +109,14 @@ Install-Script -Name aurora
 aurora
 ```
 Se iniciará el instalador de aurora y deberás elegir un directorio y hacer clic en instalar.
+
 2. Instalar con un comando
 * abra powershell y pegue o escriba el siguiente comando
 ```
 Set-ExecutionPolicy -Scope Process -ExecutionPolicy Unrestricted -Force; Invoke-Expression (Invoke-WebRequest -Uri "https://github.com/azurejoga/Aurora-Windows-Optimizer/raw/aurora/installer.ps1" -UseBasicParsing).Content
 ```
-```## descargar desde chocolatey.
+
+## descargar desde chocolatey.
 
 ```
 choco install aurora-windows-optimizer --version=13.0.0
