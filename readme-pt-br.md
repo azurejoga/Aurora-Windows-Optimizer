@@ -87,53 +87,9 @@ Começar a otimizar seu PC com Aurora é fácil:
 
 Se você encontrar algum problema ou tiver sugestões de melhorias, crie um *Issue*. A colaboração é essencial para valorizar Aurora e torná-la ainda mais incrível.
 
-## métodos de instalação
-Você pode ver o [log de alterações aqui](https://github.com/azurejoga/Aurora-Windows-Optimizer/blob/aurora/changelog.md)
-
-
-Para instalar o Aurora, Windows Optimizer
-Existem 4 métodos de instalação.
-
-
-## baixe no powershell
-Existem duas maneiras para baixar o aurora via powershell
-1. [na galeria do powershell](https://www.powershellgallery.com/packages/aurora/15.0)
-* para instalar faça o seguinte
-* abra o powershell e cole ou / digite o comando
-```
-Install-Script -Name aurora
-```
-* depois, digite 
-```
-aurora
-```
-O instalador do aurora irá iniciar e você deve escolher um dieretório  e clicar em install
-
-2. Instale com um comando
-* abra o powershell e cole ou / digite o seguinte comando
-```
-Set-ExecutionPolicy -Scope Process -ExecutionPolicy Unrestricted -Force; Invoke-Expression (Invoke-WebRequest -Uri "https://github.com/azurejoga/Aurora-Windows-Optimizer/raw/aurora/installer.ps1" -UseBasicParsing).Content
-```
-
-## baixe do chocolatey.
-
-```
-choco install aurora-windows-optimizer --version=13.0.0
-```
-
-Siga as instruções na tela, escolha a pasta e clique em instalar
-
-
-## baixe o zip abaixo
-
-Comece sua jornada para um PC mais potente e eficiente. Baixe Aurora para Windows 11 e Windows 10 agora:
-
-
-- **SHA-256: ZIP VERSION** 8a2a97b1ee70674a5d7571d4c8985de3fa8270ad5532517a4dc3f502dbef1aab
-
-
-[Baixar Aurora, Windows Optimizer, versão ZIP](https://github.com/azurejoga/Aurora-Windows-Optimizer/releases/download/aurora16/aurora-windows-optimizer.zip)
-
+## installation methods
+* Você pode ver o [changelog aqui](https://github.com/azurejoga/Aurora-Windows-Optimizer/blob/aurora/changelog.md)
+* você pode ver os métodos de instalação [aqui](https://github.com/azurejoga/Aurora-Windows-Optimizer/blob/aurora/instalation.md)
 
 # Obrigado por escolher o Aurora para elevar o desempenho do seu PC a níveis sem precedentes! 💪✨
 
