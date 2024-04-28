@@ -7,15 +7,36 @@ import ctypes
 import os
 import sys
 import threading
-
+import logging
+#log configuration
+logging.basicConfig(filename='aurora.log', level=logging.DEBUG, 
+                    format='%(asctime)s - %(levelname)s - %(message)s')
 def is_admin():
     try:
-        return ctypes.windll.shell32.IsUserAnAdmin()
-    except:
+        result = ctypes.windll.shell32.IsUserAnAdmin()
+        if result:
+            logging.info("Operation successful, the user has admin privileges.")
+        else:
+            logging.info("Operation successful, the user does not have admin privileges.")
+        return result
+    except OSError as e:
+        logging.error("An error occurred, unable to verify admin privileges. Detailed error: %s", str(e))
+        return False
+    except Exception as e:
+        logging.error("An unexpected error occurred: %s", str(e))
         return False
 
 def run_as_admin():
-    ctypes.windll.shell32.ShellExecuteW(None, "runas", sys.executable, " ".join(sys.argv), None, 1)
+    try:
+        logging.info("Attempting to elevate privileges")
+
+        instance=ctypes.windll.shell32.ShellExecuteW(None, "runas", sys.executable, " ".join(sys.argv), None, 1)
+        if instance<=32:
+            logging.error(f"Failed to elevate privileges, ShellExecuteW returned {instance}")
+        else:
+            logging.info("Privileges successfully elevated")
+    except Exception as e:
+        logging.error(f"An error occurred while trying to elevate privileges. details: {e}")
 
 if not is_admin():
     run_as_admin()
