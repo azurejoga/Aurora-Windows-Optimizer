@@ -42,10 +42,10 @@ if not is_admin():
     run_as_admin()
     sys.exit()
 
-# Comando PowerShell para habilitar a execução de scripts
+# PowerShell command to enable script execution
 powershell_command = "Set-ExecutionPolicy Unrestricted -Scope CurrentUser -Force"
 
-# Executa o comando PowerShell
+# Runs PowerShell command
 subprocess.run(["powershell", "-Command", powershell_command], shell=True, check=True)
 
 # Constants for the Windows API to create a restore point
@@ -351,23 +351,23 @@ class MyFrame(wx.Frame):
 
     def restore_changes(self, event):
         try:
-            # PowerShell command para encontrar o último ponto de restauração do sistema
+            # PowerShell command to find the last system restore point
             find_restore_point_command = "Get-ComputerRestorePoint | Sort-Object -Property CreationTime -Descending | Select-Object -First 1 | Format-List -Property CreationTime, Description, SequenceNumber"
 
-            # Executa o comando PowerShell para encontrar o último ponto de restauração
+            # Runs PowerShell command to find the last restore point
             result = subprocess.run(["powershell", "-Command", find_restore_point_command], shell=True, capture_output=True, text=True)
 
             if result.returncode == 0:
                 restore_point_info = result.stdout.strip()
 
                 if restore_point_info:
-                    # Parse a informação do ponto de restauração
+                    # send restore point information
                     restore_point_data = {}
                     for line in restore_point_info.split('\n'):
                         key, value = line.split(':', 1)
                         restore_point_data[key.strip()] = value.strip()
 
-                    # Confirma com o usuário antes de prosseguir com a restauração
+                    # Confirm with the user before proceeding with the restore
                     dlg = wx.MessageDialog(
                         None,
                         f"Do you want to restore the system to the latest restore point?\n\n{restore_point_info}",
@@ -379,7 +379,7 @@ class MyFrame(wx.Frame):
                     dlg.Destroy()
 
                     if result == wx.ID_YES:
-                        # Usa threading para uma UI responsiva durante o processo de restauração
+                        # Uses threading for a responsive UI during the restore process
                         threading.Thread(target=self.perform_restoration, args=(restore_point_data,), daemon=True).start()
 
                 else:
@@ -395,23 +395,23 @@ class MyFrame(wx.Frame):
 
     def perform_restoration(self, restore_point_data):
         try:
-            # Extrai o SequenceNumber, Description e CreationTime do ponto de restauração
+            # Extracts the SequenceNumber, Description and CreationTime from the restore point
             sequence_number = restore_point_data.get("SequenceNumber")
 
-            # PowerShell command para restaurar o sistema para o ponto de restauração especificado
+            # PowerShell command to restore the system to the specified restore point
             restore_command = f"Restore-Computer -RestorePoint $({sequence_number}) -Confirm:$false"
 
-            # Executa o comando PowerShell para restaurar o sistema
+            # Run PowerShell command to restore the system
             subprocess.run(["powershell", "-Command", restore_command], shell=True, check=True)
 
-            # Exibe uma mensagem indicando a restauração bem-sucedida
+            # Displays a message indicating successful restoration
             wx.CallAfter(wx.MessageBox, f"Changes successfully restored to '{restore_point_data.get('Description')}' ({restore_point_data.get('CreationTime')})! The computer will be restarted.", "Restoration Completed", wx.OK | wx.ICON_INFORMATION)
 
-            # Reinicia o computador
+            # Restart the computer
             subprocess.run(["powershell", "Restart-Computer"])
 
         except subprocess.CalledProcessError as e:
-            # Exibe uma mensagem de erro se a restauração falhar
+            # Displays an error message if the restore fails
             wx.CallAfter(wx.MessageBox, f"Error restoring changes:\n{e.stderr}", "Restoration Error", wx.OK | wx.ICON_ERROR)
 
     def move_command_to_top(self, event):
@@ -512,7 +512,7 @@ def save_commands(commands):
         with open("commands", "wb") as file:
             pickle.dump(commands, file)
     except Exception as e:
-        print("Erro ao salvar comandos:", e)
+        print("Error saving commands:", e)
 
 def load_commands():
     try:
@@ -521,7 +521,7 @@ def load_commands():
     except FileNotFoundError:
         return []
     except Exception as e:
-        print("Erro ao carregar comandos:", e)
+        print("Error loading commands:", e)
         return []
 
 def create_system_restore_point(description):
@@ -529,7 +529,7 @@ def create_system_restore_point(description):
         ctypes.windll.shell32.ShellExecuteW(None, "runas", "powershell.exe", "Checkpoint-Computer -Description '{}'".format(description), "", 1)
         wx.MessageBox("Restore point created successfully!", "Restoration point", wx.OK | wx.ICON_INFORMATION)
     except Exception as e:
-        wx.MessageBox("Error creating restore point:\n" + str(e), "Erro de Ponto de Restauração", wx.OK | wx.ICON_ERROR)
+        wx.MessageBox("Error creating restore point:\n" + str(e), "Restore Point Error", wx.OK | wx.ICON_ERROR)
 
 def show_welcome_dialog():
     # Check if the welcome indicator file exists
