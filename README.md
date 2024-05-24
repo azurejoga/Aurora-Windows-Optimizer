@@ -27,7 +27,7 @@ Whether you want to **optimize your PC for maximum performance** or simply **eli
 
 ## aurora, windows optimizer is safe?
 Yes, Aurora Windows Optimizer is safe, and you can check it yourself with some tools.
-1. virus total. [see and check the aurora in virus total](https://www.virustotal.com/gui/file/88a00774e882d989cac3ebc4c6c3ded4d505a7d4118d34370e4c196f81ffd6be?nocache=1)
+1. virus total. [see and check the aurora in virus total](https://www.virustotal.com/gui/file/8a2a97b1ee70674a5d7571d4c8985de3fa8270ad5532517a4dc3f502dbef1aab?nocache=1)
 2. Verify with GPG keys. I signed my gpg keys to ensure the executable is legitimate.
 3. never download from sites other than chocolatey or github and always check the hashes for comparison, if the hash of the zip or executable is not the same, do not trust and do not install or run it.
 
@@ -84,33 +84,8 @@ Getting started with optimizing your PC with Aurora is easy:
 If you encounter any issues or have suggestions for improvements, please create an *issue*. Collaboration is essential to enhance Aurora and make it even more amazing.
 
 ## installation methods
-You can see the [change log,here](https://github.com/azurejoga/Aurora-Windows-Optimizer/blob/aurora/changelog.md)
-
-
-To install Aurora, Windows Optimizer
-There are 2 installation methods.
-
-
-## download from chocolatey.
-
-```
-choco install aurora-windows-optimizer --version=13.0.0
-```
-
-Follow the on-screen instructions, choose the folder and click install
-
-
-## download the zip below
-
-
-Start your journey to a more powerful and efficient PC. Download Aurora for Windows 11 and Windows 10 now:
-
-
-- **SHA-256: ZIP VERSION** 88a00774e882d989cac3ebc4c6c3ded4d505a7d4118d34370e4c196f81ffd6be
-
-
-[Download Aurora, Windows Optimizer, ZIP version](https://github.com/azurejoga/Aurora-Windows-Optimizer/releases/download/aurora15/aurora-windows-optimizer.zip)
-
+* You can see the [changelog here](https://github.com/azurejoga/Aurora-Windows-Optimizer/blob/aurora/changelog.md)
+* you can see the installation methods [here](https://github.com/azurejoga/Aurora-Windows-Optimizer/blob/aurora/instalation.md)
 
 # Thank you for choosing Aurora to elevate your PC's performance to unprecedented levels! 💪✨
 
