@@ -332,22 +332,25 @@ class MyFrame(wx.Frame):
             save_commands(self.commands)
 
     def check_updates(self, event):
-        script_dir = os.path.dirname(os.path.abspath(__file__))
-        
-        # Path to update.exe in the "update" folder
+        if getattr(sys, 'frozen', False):  # Verifica se está rodando em modo compilado
+            script_dir = os.path.dirname(sys.executable)
+        else:  # Rodando em modo script
+            script_dir = os.path.dirname(os.path.abspath(__file__))
+
+        # Caminho para update.exe na pasta "update"
         update_exe_path_update = os.path.join(script_dir, "update", "update.exe")
-        
-        # Path to update.exe in the same folder
+
+        # Caminho para update.exe na mesma pasta
         update_exe_path_same_folder = os.path.join(script_dir, "update.exe")
 
-        # Check if update.exe exists in the "update" folder and run it
+        # Verifica se update.exe existe na pasta "update" e executa
         if os.path.exists(update_exe_path_update):
             subprocess.run([update_exe_path_update], shell=True)
-        # If it doesn't exist, check the same folder and run
+        # Se não existir, verifica na mesma pasta e executa
         elif os.path.exists(update_exe_path_same_folder):
             subprocess.run([update_exe_path_same_folder], shell=True)
         else:
-            print("Update.exe file not found.")
+            print("Arquivo update.exe não encontrado.")
 
     def restore_changes(self, event):
         try:
