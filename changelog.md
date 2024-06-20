@@ -1,3 +1,45 @@
+## Aurora, v17.0
+20/06/2024
+
+## English
+# New Features
+* Added a logging system to simplify error tracking.
+  Thanks to [ionutsoftware](https://github.com/azurejoga/Aurora-Windows-Optimizer/pull/12)
+* Added a virtual environment containing the dependencies used by the application, making it easier for other contributors to work without needing to download unused dependencies in their original Python setup.
+  ◦ To activate it, use ".\venv\scripts\activate"
+  Thanks to [ionutsoftware](https://github.com/azurejoga/Aurora-Windows-Optimizer/pull/12)
+
+# Bug Fixes
+* The security checks for is_admin() and run_as_admin() have been fixed. They were vague and, in case of an error, did not provide information about the cause, making it difficult to detect potential failures. The modification is minor and will not affect the program's logic in any way.
+  Thanks to [ionutsoftware](https://github.com/azurejoga/Aurora-Windows-Optimizer/pull/12)
+* Fixed updates for Aurora; the update will now work smoothly.
+
+# New Resources
+* Added the possibility to download the full TeamViewer client for management and remote control.
+
+# Acknowledgments
+Thank you to those who donated for me to acquire my certificate to sign my applications! Thanks to this, Aurora is now signed as well, making Aurora more reliable and robust.
+Additionally, a false positive was reported to Microsoft, and apparently, Microsoft SmartScreen will no longer flag it.
+
+## português / portuguese.
+# Novas funcionalidades.
+* Adicionado um sistema de registro usando logging, para simplificar o rastreamento de erros
+Graças a [ionutsoftware](https://github.com/azurejoga/Aurora-Windows-Optimizer/pull/12)
+* Adicionado um ambiente virtual que contém as dependências usadas pelo aplicativo, para facilitar a contribuição de outros colaboradores sem precisar baixar dependências que não usam em seu Python original.
+◦ Para ativá-lo, use ".\venv\scripts\activate
+Graças a [ionutsoftware](https://github.com/azurejoga/Aurora-Windows-Optimizer/pull/12)
+# Correção de bugs.
+* A segurança verifica is_admin()e run_as_admin()foi corrigida. Eram vagos e, em caso de erro, não forneciam informações sobre o motivo, impossibilitando a detecção de eventuais falhas. A modificação é pequena e em nenhum caso afetará a lógica do programa.
+Graças a [ionutsoftware](https://github.com/azurejoga/Aurora-Windows-Optimizer/pull/12)
+* Atualizações do aurora corrigida, agora a atualização funcionará sem problemas.
+
+# Novos recursos.
+* Adicionado a possibilidade de baixar o team viewer full cliente para gerenciamento e controle remoto.
+
+# Agradecimentos.
+Obrigado as pessoas que doaram para eu adquirir meu certificado para assinar meus aplicativos! graças a isso, o aurora agora está assinado também, isso torna o aurora mais confiável e robusto.
+Além disso, foi relatado o falso positivo para a Microsoft e aparentemente não acusará mais o Microsoft smart screen.
+
 ## aurora, windows optimizer v16.0
 30/03/2024 18:49
 # english

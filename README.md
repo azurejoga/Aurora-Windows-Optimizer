@@ -1,14 +1,5 @@
 # Aurora Windows Optimizer
 
-# Leia em Português 
-[Leia em Português](https://github.com/azurejoga/Aurora-Windows-Optimizer/blob/aurora/readme-pt-br.md)
-
-# Leer en Español
-[Leer en Español](https://github.com/azurejoga/Aurora-Windows-Optimizer/blob/aurora/readme_es.md)
-
-# Read in English
-[README in English](https://github.com/azurejoga/Aurora-Windows-Optimizer/blob/aurora/readme.md)
-
 # Aurora: Windows Optimizer™ Transforming Your PC into a Powerful Machine! 💻
 
 
@@ -27,8 +18,10 @@ Whether you want to **optimize your PC for maximum performance** or simply **eli
 
 ## aurora, windows optimizer is safe?
 Yes, Aurora Windows Optimizer is safe, and you can check it yourself with some tools.
-1. virus total. [see and check the aurora in virus total](https://www.virustotal.com/gui/file/8a2a97b1ee70674a5d7571d4c8985de3fa8270ad5532517a4dc3f502dbef1aab?nocache=1)
-2. Verify with GPG keys. I signed my gpg keys to ensure the executable is legitimate.
+1. virus total. [see and check the aurora in virus total](https://www.virustotal.com/gui/file/501f7524a07ad50509f26a2d6ef6db185083ec5c2d1af97b57c3c4a5a2e74305/)
+
+2. Aurora is now signed with a trusted certificate by a trusted authority, CA. therefore, it is safe. Microsoft itself verified this!
+
 3. never download from sites other than chocolatey or github and always check the hashes for comparison, if the hash of the zip or executable is not the same, do not trust and do not install or run it.
 
 ### 🌄 Powerful Features:
@@ -59,20 +52,18 @@ Yes, Aurora Windows Optimizer is safe, and you can check it yourself with some t
 13. completely disable windows update, completely!
 14. receive notifications when a command was completed successfully or an error occurred.
 15. the welcome message now no longer appears after the first run
+16. Now you can install the full team viewer client
 Our list of features that Aurora offers will be updated as we introduce new features!
 
-### 🌟 The Future is Amazing:
-
-We are committed to adding more incredible features to Aurora. Look forward to new languages, advanced Windows registry customization, and much more. 
-# Additionally, Aurora is fully accessible for visually impaired users. 🌌
+ # Additionally, Aurora is fully accessible for visually impaired users. 🌌
 
 ## How to Use Aurora? 🚀
 
 Getting started with optimizing your PC with Aurora is easy:
 
-1. Open the application as an administrator for the best performance.
+1. Open the application
 2. Skip the welcome message if you've already made a restoration point.
-3. Choose from a variety of optimization commands or create your own. Press enter on a command and wait for it to be executed. If the program stops responding, it is normal, this is not a bug and the script will run normally due to using an external execution method
+3. Choose from a variety of optimization commands or create your own. Press enter on a command and wait for it to be executed. 
 4. Edit, move, remove commands according to your preference.
 
 # It is highly recommended to create a restoration point before making changes so you can undo them if necessary.
