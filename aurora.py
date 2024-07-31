@@ -8,35 +8,36 @@ import os
 import sys
 import threading
 import logging
-#log configuration
+
+# Log configuration
 logging.basicConfig(filename='aurora.log', level=logging.DEBUG, 
                     format='%(asctime)s - %(levelname)s - %(message)s')
+
 def is_admin():
     try:
         result = ctypes.windll.shell32.IsUserAnAdmin()
         if result:
-            logging.info("Operation successful, the user has admin privileges.")
+            logging.info("User has admin privileges.")
         else:
-            logging.info("Operation successful, the user does not have admin privileges.")
+            logging.info("User does not have admin privileges.")
         return result
     except OSError as e:
-        logging.error("An error occurred, unable to verify admin privileges. Detailed error: %s", str(e))
+        logging.error("OS error occurred while checking admin privileges: %s", str(e))
         return False
     except Exception as e:
-        logging.error("An unexpected error occurred: %s", str(e))
+        logging.error("Unexpected error occurred: %s", str(e))
         return False
 
 def run_as_admin():
     try:
-        logging.info("Attempting to elevate privileges")
-
-        instance=ctypes.windll.shell32.ShellExecuteW(None, "runas", sys.executable, " ".join(sys.argv), None, 1)
-        if instance<=32:
-            logging.error(f"Failed to elevate privileges, ShellExecuteW returned {instance}")
+        logging.info("Attempting to elevate privileges.")
+        instance = ctypes.windll.shell32.ShellExecuteW(None, "runas", sys.executable, " ".join(sys.argv), None, 1)
+        if instance <= 32:
+            logging.error("Failed to elevate privileges, ShellExecuteW returned %s", instance)
         else:
-            logging.info("Privileges successfully elevated")
+            logging.info("Privileges successfully elevated.")
     except Exception as e:
-        logging.error(f"An error occurred while trying to elevate privileges. details: {e}")
+        logging.error("Error occurred while trying to elevate privileges: %s", e)
 
 if not is_admin():
     run_as_admin()
@@ -47,17 +48,6 @@ powershell_command = "Set-ExecutionPolicy Unrestricted -Scope CurrentUser -Force
 
 # Runs PowerShell command
 subprocess.run(["powershell", "-Command", powershell_command], shell=True, check=True)
-
-# Constants for the Windows API to create a restore point
-SMGR_CREATE = 0x100
-SMGR_CONFIRM = 0x200
-SMGR_AUTO = 0x400
-SMGR_NOCHANGE = 0x800
-SMGR_NORESTORE = 0x1000
-SMGR_NOTSUPPORTED = 0x2000
-SMGR_LOCK = 0x4000
-SMGR_UNLOCK = 0x8000
-SMGR_NOSMPAGEFILE = 0x10000
 
 class WelcomeDialog(wx.Dialog):
     def __init__(self, parent, id, title):
@@ -88,15 +78,15 @@ class WelcomeDialog(wx.Dialog):
 
 class MyFrame(wx.Frame):
     def __init__(self, parent, id, title):
-        super(MyFrame, self).__init__(parent, id, title, size=(400, 300))
+        super(MyFrame, self).__init__(parent, id, title, size=(600, 400))
 
         panel = wx.Panel(self)
 
-        # Empty list
+        # Command list
         self.lista_de_comandos = wx.ListCtrl(panel, -1, style=wx.LC_REPORT)
-        self.lista_de_comandos.InsertColumn(0, "Name", width=100)
-        self.lista_de_comandos.InsertColumn(1, "Description", width=150)
-        self.lista_de_comandos.InsertColumn(2, "Command", width=200)
+        self.lista_de_comandos.InsertColumn(0, "Name", width=150)
+        self.lista_de_comandos.InsertColumn(1, "Description", width=250)
+        self.lista_de_comandos.InsertColumn(2, "Command", width=300)
         self.lista_de_comandos.InsertColumn(3, "Type", width=100)
 
         # Create the "Add Commands" menu
@@ -108,12 +98,12 @@ class MyFrame(wx.Frame):
 
         # Create the "Tools" menu and add items
         tools_menu = wx.Menu()
-        open_github_repo_item = tools_menu.Append(wx.ID_ANY, "Open the repository on GitHub", "Open the repository on GitHub")
-        download_latest_github_item = tools_menu.Append(wx.ID_ANY, "Download Latest Version from GitHub", "Download Latest Version from GitHub")
+        open_github_repo_item = tools_menu.Append(wx.ID_ANY, "Open GitHub Repository", "Open the repository on GitHub")
+        download_latest_github_item = tools_menu.Append(wx.ID_ANY, "Download Latest Version", "Download Latest Version from GitHub")
         create_restore_point_item = tools_menu.Append(wx.ID_ANY, "Create Restore Point", "Create a system restore point")
         restore_changes_item = tools_menu.Append(wx.ID_ANY, "Restore Changes", "Restore system changes to the last restore point and restart")
         sort_commands_item = tools_menu.Append(wx.ID_ANY, "Sort Commands", "Sort commands alphabetically")
-        check_updates_item = tools_menu.Append(wx.ID_ANY, "Check updates", "Check for updates and close Aurora")
+        check_updates_item = tools_menu.Append(wx.ID_ANY, "Check Updates", "Check for updates and close Aurora")
 
         # Bind the EVT_MENU event
         self.Bind(wx.EVT_MENU, self.open_github_repo, open_github_repo_item)
@@ -151,7 +141,7 @@ class MyFrame(wx.Frame):
             cmd = self.lista_de_comandos.GetItemText(selected_item, col=2)
             type = self.lista_de_comandos.GetItemText(selected_item, col=3)
 
-# Execute the command in a separate thread
+            # Execute the command in a separate thread
             threading.Thread(target=self.run_command, args=(cmd, type)).start()
 
     def on_add_command(self, event):
@@ -184,16 +174,15 @@ class MyFrame(wx.Frame):
             output_dialog = OutputDialog(self, -1, "Command Result", output)
             output_dialog.ShowModal()
         except Exception as e:
-            print("Error showing output dialog:", e)
+            logging.error("Error showing output dialog: %s", e)
 
     def show_notification(self, message, success=True):
         try:
             notification_title = "Success" if success else "Error"
             notification = wx.adv.NotificationMessage(title=notification_title, message=message, parent=None)
             notification.Show()
-
         except Exception as e:
-            print("Error showing notification:", e)
+            logging.error("Error showing notification: %s", e)
 
     def run_command(self, command, type):
         try:
@@ -202,7 +191,7 @@ class MyFrame(wx.Frame):
             elif "POWERSHELL" in type.upper():
                 result = subprocess.run(["powershell", "-Command", command], shell=True, check=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
             else:
-                print("Unsupported command type:", type)
+                logging.error("Unsupported command type: %s", type)
                 return
 
             if result.returncode == 0:
@@ -216,39 +205,24 @@ class MyFrame(wx.Frame):
             wx.CallAfter(self.show_output_dialog, e.stderr)
             wx.CallAfter(self.show_notification, "Error executing command", success=False)
         except Exception as e:
-            print("Error executing command:", e)
+            logging.error("Error executing command: %s", e)
             wx.CallAfter(self.show_output_dialog, "An unexpected error occurred")
             wx.CallAfter(self.show_notification, "An unexpected error occurred", success=False)
 
-            # Display the output in a dialog box
-            output_dialog = OutputDialog(self, -1, "Command Result", result.stdout)
-            output_dialog.ShowModal()
-
-        except subprocess.CalledProcessError as e:
-            # If an error occurs while executing the command, display the error output in a dialog box
-            output_dialog = OutputDialog(self, -1, "Error Executing Command", e.stderr)
-            output_dialog.ShowModal()
-        except Exception as e:
-            print("Error executing command:", e)
-
     def open_github_repo(self, event):
-        # GitHub repo URL
         github_url = "https://github.com/azurejoga/Aurora-Windows-Optimizer"
         webbrowser.open(github_url)
 
     def download_latest_github(self, event):
-        # URL to download the latest version from GitHub
         download_url = "https://github.com/azurejoga/Aurora-Windows-Optimizer/releases"
         webbrowser.open(download_url)
 
     def create_system_restore_point(self, event):
-        # Open a dialog to enter the description for the restore point
         description = wx.GetTextFromUser("Enter a description for the restore point:", "Create Restore Point")
         if description:
             create_system_restore_point(description)
 
     def sort_commands(self, event):
-        # Sort the commands in alphabetical order
         self.lista_de_comandos.DeleteAllItems()
         self.commands.sort(key=lambda x: x["name"])
         for command in self.commands:
@@ -257,11 +231,11 @@ class MyFrame(wx.Frame):
     def create_context_menu(self):
         menu = wx.Menu()
 
-        edit_item = wx.MenuItem(menu, wx.ID_ANY, "edit")
+        edit_item = wx.MenuItem(menu, wx.ID_ANY, "Edit")
         self.Bind(wx.EVT_MENU, self.on_edit_command, edit_item)
         menu.Append(edit_item)
 
-        remove_item = wx.MenuItem(menu, wx.ID_ANY, "Remove command")
+        remove_item = wx.MenuItem(menu, wx.ID_ANY, "Remove Command")
         self.Bind(wx.EVT_MENU, self.on_remove_command, remove_item)
         menu.Append(remove_item)
 
@@ -269,7 +243,7 @@ class MyFrame(wx.Frame):
         self.Bind(wx.EVT_MENU, self.move_command_to_top, move_to_top_item)
         menu.Append(move_to_top_item)
 
-        move_to_bottom_item = wx.MenuItem(menu, wx.ID_ANY, "Move to End")
+        move_to_bottom_item = wx.MenuItem(menu, wx.ID_ANY, "Move to Bottom")
         self.Bind(wx.EVT_MENU, self.move_command_to_bottom, move_to_bottom_item)
         menu.Append(move_to_bottom_item)
 
@@ -285,13 +259,11 @@ class MyFrame(wx.Frame):
     def on_edit_command(self, event):
         selected_item = self.lista_de_comandos.GetFirstSelected()
         if selected_item >= 0:
-            # Get details of the selected command
             name = self.lista_de_comandos.GetItemText(selected_item, col=0)
             desc = self.lista_de_comandos.GetItemText(selected_item, col=1)
             cmd = self.lista_de_comandos.GetItemText(selected_item, col=2)
             type = self.lista_de_comandos.GetItemText(selected_item, col=3)
 
-            # Use the same dialog box for editing
             dlg = AddCommandDialog(self, -1, "Edit Command")
             dlg.name_text.SetValue(name)
             dlg.desc_text.SetValue(desc)
@@ -300,7 +272,6 @@ class MyFrame(wx.Frame):
 
             result = dlg.ShowModal()
             if result == wx.ID_OK:
-                # Update the details of the command in the list
                 updated_name = dlg.name_text.GetValue()
                 updated_desc = dlg.desc_text.GetValue()
                 updated_cmd = dlg.cmd_text.GetValue()
@@ -311,13 +282,7 @@ class MyFrame(wx.Frame):
                 self.lista_de_comandos.SetItem(selected_item, 2, updated_cmd)
                 self.lista_de_comandos.SetItem(selected_item, 3, updated_type)
 
-                # Update the details of the command in the list of commands
-                self.commands[selected_item]["name"] = updated_name
-                self.commands[selected_item]["desc"] = updated_desc
-                self.commands[selected_item]["cmd"] = updated_cmd
-                self.commands[selected_item]["type"] = updated_type
-
-                # Save the changes to the file
+                self.commands[selected_item] = {"name": updated_name, "desc": updated_desc, "cmd": updated_cmd, "type": updated_type}
                 save_commands(self.commands)
 
             dlg.Destroy()
@@ -325,69 +290,41 @@ class MyFrame(wx.Frame):
     def on_remove_command(self, event):
         selected_item = self.lista_de_comandos.GetFirstSelected()
         if selected_item >= 0:
-            # Remove the command from the list and from the display
             del self.commands[selected_item]
             self.lista_de_comandos.DeleteItem(selected_item)
-            # Save the changes to the file
             save_commands(self.commands)
 
     def check_updates(self, event):
-        if getattr(sys, 'frozen', False):  # Verifica se está rodando em modo compilado
-            script_dir = os.path.dirname(sys.executable)
-        else:  # Rodando em modo script
-            script_dir = os.path.dirname(os.path.abspath(__file__))
-
-        # Caminho para update.exe na pasta "update"
+        script_dir = os.path.dirname(sys.executable if getattr(sys, 'frozen', False) else os.path.abspath(__file__))
         update_exe_path_update = os.path.join(script_dir, "update", "update.exe")
-
-        # Caminho para update.exe na mesma pasta
         update_exe_path_same_folder = os.path.join(script_dir, "update.exe")
 
-        # Verifica se update.exe existe na pasta "update" e executa
         if os.path.exists(update_exe_path_update):
             subprocess.run([update_exe_path_update], shell=True)
-        # Se não existir, verifica na mesma pasta e executa
         elif os.path.exists(update_exe_path_same_folder):
             subprocess.run([update_exe_path_same_folder], shell=True)
         else:
-            print("Arquivo update.exe não encontrado.")
+            logging.error("update.exe not found.")
 
     def restore_changes(self, event):
         try:
-            # PowerShell command to find the last system restore point
             find_restore_point_command = "Get-ComputerRestorePoint | Sort-Object -Property CreationTime -Descending | Select-Object -First 1 | Format-List -Property CreationTime, Description, SequenceNumber"
-
-            # Runs PowerShell command to find the last restore point
             result = subprocess.run(["powershell", "-Command", find_restore_point_command], shell=True, capture_output=True, text=True)
 
             if result.returncode == 0:
                 restore_point_info = result.stdout.strip()
 
                 if restore_point_info:
-                    # send restore point information
-                    restore_point_data = {}
-                    for line in restore_point_info.split('\n'):
-                        key, value = line.split(':', 1)
-                        restore_point_data[key.strip()] = value.strip()
+                    restore_point_data = {line.split(':', 1)[0].strip(): line.split(':', 1)[1].strip() for line in restore_point_info.split('\n')}
 
-                    # Confirm with the user before proceeding with the restore
-                    dlg = wx.MessageDialog(
-                        None,
-                        f"Do you want to restore the system to the latest restore point?\n\n{restore_point_info}",
-                        "Restore Changes",
-                        wx.YES_NO | wx.ICON_QUESTION
-                    )
-
+                    dlg = wx.MessageDialog(None, f"Do you want to restore the system to the latest restore point?\n\n{restore_point_info}", "Restore Changes", wx.YES_NO | wx.ICON_QUESTION)
                     result = dlg.ShowModal()
                     dlg.Destroy()
 
                     if result == wx.ID_YES:
-                        # Uses threading for a responsive UI during the restore process
                         threading.Thread(target=self.perform_restoration, args=(restore_point_data,), daemon=True).start()
-
                 else:
                     wx.MessageBox("Could not find a restore point. Create a restore point before attempting to restore changes.", "Restoration Error", wx.OK | wx.ICON_ERROR)
-
             else:
                 wx.MessageBox(f"Error finding or restoring restore point:\n{result.stderr}", "Restoration Error", wx.OK | wx.ICON_ERROR)
 
@@ -398,29 +335,18 @@ class MyFrame(wx.Frame):
 
     def perform_restoration(self, restore_point_data):
         try:
-            # Extracts the SequenceNumber, Description and CreationTime from the restore point
             sequence_number = restore_point_data.get("SequenceNumber")
-
-            # PowerShell command to restore the system to the specified restore point
-            restore_command = f"Restore-Computer -RestorePoint $({sequence_number}) -Confirm:$false"
-
-            # Run PowerShell command to restore the system
+            restore_command = f"Restore-Computer -RestorePoint {sequence_number} -Confirm:$false"
             subprocess.run(["powershell", "-Command", restore_command], shell=True, check=True)
 
-            # Displays a message indicating successful restoration
             wx.CallAfter(wx.MessageBox, f"Changes successfully restored to '{restore_point_data.get('Description')}' ({restore_point_data.get('CreationTime')})! The computer will be restarted.", "Restoration Completed", wx.OK | wx.ICON_INFORMATION)
-
-            # Restart the computer
             subprocess.run(["powershell", "Restart-Computer"])
-
         except subprocess.CalledProcessError as e:
-            # Displays an error message if the restore fails
             wx.CallAfter(wx.MessageBox, f"Error restoring changes:\n{e.stderr}", "Restoration Error", wx.OK | wx.ICON_ERROR)
 
     def move_command_to_top(self, event):
         selected_item = self.lista_de_comandos.GetFirstSelected()
         if selected_item > 0:
-            # Move the command to the top of the list
             self.commands.insert(0, self.commands.pop(selected_item))
             self.lista_de_comandos.DeleteAllItems()
             for command in self.commands:
@@ -430,7 +356,6 @@ class MyFrame(wx.Frame):
     def move_command_to_bottom(self, event):
         selected_item = self.lista_de_comandos.GetFirstSelected()
         if selected_item >= 0 and selected_item < len(self.commands) - 1:
-            # Move the command to the end of the list
             self.commands.append(self.commands.pop(selected_item))
             self.lista_de_comandos.DeleteAllItems()
             for command in self.commands:
@@ -451,9 +376,9 @@ class AddCommandDialog(wx.Dialog):
         self.desc_text = wx.TextCtrl(panel, -1, "")
 
         cmd_label = wx.StaticText(panel, -1, "Command:")
-        self.cmd_text = wx.TextCtrl(panel, -1, "", style=wx.TE_MULTILINE)  # Allows multiple lines
+        self.cmd_text = wx.TextCtrl(panel, -1, "", style=wx.TE_MULTILINE)
 
-        type_label = wx.StaticText(panel, -1, "Command type")
+        type_label = wx.StaticText(panel, -1, "Command type:")
         self.type_combo = wx.ComboBox(panel, -1, choices=["CMD", "Powershell"], style=wx.CB_READONLY)
 
         # "Ok" and "Cancel" buttons
@@ -490,17 +415,14 @@ class OutputDialog(wx.Dialog):
 
         panel = wx.Panel(self)
 
-        # Command output text
         if output:
             output_text = wx.TextCtrl(panel, -1, value=output.strip(), style=wx.TE_MULTILINE | wx.TE_READONLY | wx.HSCROLL | wx.VSCROLL)
         else:
             output_text = wx.TextCtrl(panel, -1, value='The command was executed successfully!', style=wx.TE_MULTILINE | wx.TE_READONLY | wx.HSCROLL | wx.VSCROLL)
 
-        # "Close" button
-        close_button = wx.Button(panel, label="close")
+        close_button = wx.Button(panel, label="Close")
         close_button.Bind(wx.EVT_BUTTON, self.on_close)
 
-        # Layout of the dialog
         sizer = wx.BoxSizer(wx.VERTICAL)
         sizer.Add(output_text, 1, wx.EXPAND | wx.ALL, 10)
         sizer.Add(close_button, 0, wx.CENTER | wx.ALL, 10)
@@ -515,7 +437,7 @@ def save_commands(commands):
         with open("commands", "wb") as file:
             pickle.dump(commands, file)
     except Exception as e:
-        print("Error saving commands:", e)
+        logging.error("Error saving commands: %s", e)
 
 def load_commands():
     try:
@@ -524,33 +446,30 @@ def load_commands():
     except FileNotFoundError:
         return []
     except Exception as e:
-        print("Error loading commands:", e)
+        logging.error("Error loading commands: %s", e)
         return []
 
 def create_system_restore_point(description):
     try:
         ctypes.windll.shell32.ShellExecuteW(None, "runas", "powershell.exe", "Checkpoint-Computer -Description '{}'".format(description), "", 1)
-        wx.MessageBox("Restore point created successfully!", "Restoration point", wx.OK | wx.ICON_INFORMATION)
+        wx.MessageBox("Restore point created successfully!", "Restore Point", wx.OK | wx.ICON_INFORMATION)
     except Exception as e:
         wx.MessageBox("Error creating restore point:\n" + str(e), "Restore Point Error", wx.OK | wx.ICON_ERROR)
 
 def show_welcome_dialog():
-    # Check if the welcome indicator file exists
     if not os.path.exists("welcome_indicator"):
-        # Display the welcome dialog if the indicator file does not exist
         app = wx.App()
         dlg = WelcomeDialog(None, -1, "Welcome to Aurora")
         result = dlg.ShowModal()
         dlg.Destroy()
         app.MainLoop()
 
-        # Create the welcome indicator file
         open("welcome_indicator", "w").close()
 
 def main():
     show_welcome_dialog()
     app = wx.App(False)
-    frame = MyFrame(None, -1, "Aurora, Windows Optimizer™")
+    frame = MyFrame(None, -1, "Aurora Windows Optimizer™")
     frame.Show()
     app.MainLoop()
 
