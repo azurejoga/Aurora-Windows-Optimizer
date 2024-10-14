@@ -43,12 +43,14 @@ Get Aurora for Windows 10 and 11 by downloading the ZIP version:
 
 - **SHA-256:** `5123e47574eaabae4b621eed575d11d6b6269a9a3fc8f8ee9924bae84a69c8f0`
 
-[Download Aurora, ZIP version](https://github.com/azurejoga/Aurora-Windows-Optimizer/releases/download/aurora16/aurora-windows-optimizer.zip)
+[Download Aurora, ZIP version](https://github.com/azurejoga/Aurora-Windows-Optimizer/releases/download/aurora18/aurora-windows-optimizer.zip)
 
 ### NVDA Addon
 Aurora is also available as an NVDA Addon for improved accessibility. Download the latest version (v18.0 or higher):
 
 [Download NVDA Addon](https://github.com/azurejoga/Aurora-Windows-Optimizer/releases)
+
+* hotkey: NVDA + SHIFT + A to activate aurora!
 
 ---
 
