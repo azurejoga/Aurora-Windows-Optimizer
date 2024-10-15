@@ -18,7 +18,7 @@ Whether you want to **optimize your PC for maximum performance** or simply **eli
 
 ## aurora, windows optimizer is safe?
 Yes, Aurora Windows Optimizer is safe, and you can check it yourself with some tools.
-1. virus total. [see and check the aurora in virus total](https://www.virustotal.com/gui/file/501f7524a07ad50509f26a2d6ef6db185083ec5c2d1af97b57c3c4a5a2e74305/)
+1. virus total. [see and check the aurora in virus total](https://www.virustotal.com/gui/file/5123e47574eaabae4b621eed575d11d6b6269a9a3fc8f8ee9924bae84a69c8f0)
 
 2. Aurora is now signed with a trusted certificate by a trusted authority, CA. therefore, it is safe. Microsoft itself verified this!
 
@@ -70,13 +70,28 @@ Getting started with optimizing your PC with Aurora is easy:
 
 # We are not responsible for anything that happens to your PC; use at your own risk!
 
+## installation methods
+* You can see the [changelog here](https://github.com/azurejoga/Aurora-Windows-Optimizer/blob/aurora/changelog.md)
+
+* you can see the installation methods [here](https://github.com/azurejoga/Aurora-Windows-Optimizer/blob/aurora/instalation.md)
+
+## Updating Aurora
+
+To update Aurora, open the program and press **ALT** or go to the **Tools** menu, then select **Check for Updates**. A new installer will launch, and you will need to select the directory where Aurora is installed. Common installation directories include:
+
+- Microsoft Store: Documents
+- Documents: Where the NVDA Addon may be found (under `Documents).
+- Chocolatey: Chocolatey’s default directory.
+- Winget: Winget’s installation directory.
+
+Note that the NVDA Addon is usually located in the `Documents` folder, but other installations depend on the user-defined directories.
+
+After selecting the correct path, follow the on-screen instructions to complete the update.
+
+
 ## Report Bugs and Collaborate 🐞😻
 
 If you encounter any issues or have suggestions for improvements, please create an *issue*. Collaboration is essential to enhance Aurora and make it even more amazing.
-
-## installation methods
-* You can see the [changelog here](https://github.com/azurejoga/Aurora-Windows-Optimizer/blob/aurora/changelog.md)
-* you can see the installation methods [here](https://github.com/azurejoga/Aurora-Windows-Optimizer/blob/aurora/instalation.md)
 
 # Thank you for choosing Aurora to elevate your PC's performance to unprecedented levels! 💪✨
 

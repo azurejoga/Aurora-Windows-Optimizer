@@ -1,3 +1,60 @@
+# Aurora, Windows Optimizer v18.0  
+14/10/2024 16:26
+
+## English
+
+### Code
+* New logs have been added or improved. Check out the [aurora.py](https://github.com/azurejoga/Aurora-Windows-Optimizer/blob/aurora/aurora.py) for more details.
+
+### Amazing new features!
+* **Disk Optimization**: Aurora can now determine the type of disk and apply the best optimization for it. The supported disks are:
+  1. **SSD**: Enables TRIM for SSD if it is not already enabled. Note: Most SSDs come with TRIM enabled by default, so check your SSD settings before using the script.
+  2. **HDD**: Activates compression for HDDs, improving speed and prolonging the disk’s lifespan.
+* The **same disk optimization script** also cleans your disk and removes unnecessary files. Note: After running the script, you’ll need to manually navigate to the Disk Cleanup window and click "OK."
+* Aurora can now **automatically clear your browser’s cache**. Simply run the script, and it will detect and clean your browser’s cache automatically. Supported browsers:
+  1. Firefox / Mozilla
+  2. Google Chrome (all versions)
+  3. Microsoft Edge (native)
+* Aurora can now **disable all animations** on your PC to improve performance.
+
+### New Installation Methods
+* Aurora now includes a [NVDA Addon](https://github.com/azurejoga/Aurora-Windows-Optimizer/tree/aurora/NVDA%20addon) for your convenience. You can get it from the [new releases](https://github.com/azurejoga/Aurora-Windows-Optimizer/releases) or download it directly from [this link](https://github.com/azurejoga/Aurora-Windows-Optimizer/releases/download/aurora18/auroraWindows-18.0.nvda-addon).
+* Installation methods are available [here](https://github.com/azurejoga/Aurora-Windows-Optimizer/blob/aurora/instalation.md).
+
+### Shortcut Key
+* To activate and run Aurora, press NVDA + SHIFT + A simultaneously.
+
+We hope you enjoy this new update!  
+For a cleaner, faster Windows!
+
+---
+
+## Português
+
+### Código
+* Novos registros de logs foram adicionados ou aprimorados. Consulte [aurora.py](https://github.com/azurejoga/Aurora-Windows-Optimizer/blob/aurora/aurora.py) para mais informações.
+
+### Novos recursos incríveis!
+* **Otimização de Disco**: Agora o Aurora pode determinar o tipo de disco e aplicar a melhor otimização para ele. Os discos suportados são:
+  1. **SSD**: Ativa o TRIM para SSD, caso não esteja ativado. PS: A maioria dos SSDs já vem com TRIM ativado por padrão, então verifique antes as configurações do seu SSD.
+  2. **HDD**: Ativa a compressão para HDD, melhorando a velocidade e prolongando a vida útil do disco.
+* O **mesmo script de otimização de disco** também limpa o seu disco e remove arquivos desnecessários. PS: Após rodar o script, é necessário abrir manualmente a janela de Limpeza de Disco alternando para ela com ALT + Tabe  clicar em "OK."
+* Agora o Aurora pode **limpar automaticamente o cache do seu navegador**. Basta rodar o script e ele detectará e limpará o cache do navegador automaticamente. Navegadores suportados:
+  1. Firefox / Mozilla
+  2. Google Chrome (todas as versões)
+  3. Microsoft Edge (nativo)
+* O Aurora agora pode **desligar totalmente as animações** do seu PC para melhorar o desempenho.
+
+### Novas Formas de Instalação
+* O Aurora agora possui um [Complemento para NVDA](https://github.com/azurejoga/Aurora-Windows-Optimizer/tree/aurora/NVDA%20addon) para sua comodidade. Você pode baixá-lo nos [novos lançamentos](https://github.com/azurejoga/Aurora-Windows-Optimizer/releases) ou pelo [link direto](https://github.com/azurejoga/Aurora-Windows-Optimizer/releases/download/aurora18/auroraWindows-18.0.nvda-addon).
+* Métodos de instalação estão disponíveis [aqui](https://github.com/azurejoga/Aurora-Windows-Optimizer/blob/aurora/instalation.md).
+
+### Tecla de Atalho
+* Para ativar e executar o Aurora, pressione simultaneamente NVDA + SHIFT + A.
+
+Esperamos que goste dessa nova atualização!  
+Por um Windows mais livre de porcarias!
+
 ## Aurora, v17.0
 20/06/2024
 
