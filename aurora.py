@@ -8,6 +8,8 @@ import os
 import sys
 import threading
 import logging
+import random
+from playsound import playsound
 
 # Log configuration
 logging.basicConfig(filename='aurora.log', level=logging.DEBUG, 
@@ -43,11 +45,45 @@ if not is_admin():
     run_as_admin()
     sys.exit()
 
+def play_random_sound():
+    # Definir o caminho completo para a pasta de sons
+    sound_folder = os.path.join(os.getcwd(), "sounds")
+    logging.info(f"Folder of sounds defined as: {sound_folder}")
+    
+    # Verificar se a pasta existe
+    if not os.path.exists(sound_folder):
+        logging.error(f"The sounds folder does not exist: {sound_folder}")
+        return
+    
+    # Lista de arquivos de som disponíveis
+    sound_files = ["logo-aurora.mp3", "logo-aurora2.mp3", "logo-aurora3.mp3"]
+    logging.info(f"List of sound files: {sound_files}")
+    
+    # Selecionar aleatoriamente um arquivo de som
+    chosen_file = random.choice(sound_files)
+    sound_path = os.path.join(sound_folder, chosen_file)
+    logging.info(f"Selected sound file: {chosen_file}")
+    
+    # Verificar se o arquivo de som existe
+    if os.path.exists(sound_path):
+        logging.info(f"Playing sound from: {sound_path}")
+        try:
+            playsound(sound_path)
+        except Exception as e:
+            logging.error(f"Error while playing the sound: {str(e)}")
+    else:
+        logging.error(f"Sound file not found: {sound_path}")
+
+# Teste da função
+play_random_sound()
+
+
 # PowerShell command to enable script execution
 powershell_command = "Set-ExecutionPolicy Unrestricted -Scope CurrentUser -Force"
 
 # Runs PowerShell command
 subprocess.run(["powershell", "-Command", powershell_command], shell=True, check=True)
+
 
 class WelcomeDialog(wx.Dialog):
     def __init__(self, parent, id, title):
@@ -104,6 +140,9 @@ class MyFrame(wx.Frame):
         restore_changes_item = tools_menu.Append(wx.ID_ANY, "Restore Changes", "Restore system changes to the last restore point and restart")
         sort_commands_item = tools_menu.Append(wx.ID_ANY, "Sort Commands", "Sort commands alphabetically")
         check_updates_item = tools_menu.Append(wx.ID_ANY, "Check Updates", "Check for updates and close Aurora")
+        view_changelog_item = tools_menu.Append(wx.ID_ANY, "See the registration of changes by clicking here", "View the changelog of Aurora")
+        report_performance_item = tools_menu.Append(wx.ID_ANY, "Click here to inform a report after using the aurora!", "Submit a performance report")
+
 
         # Bind the EVT_MENU event
         self.Bind(wx.EVT_MENU, self.open_github_repo, open_github_repo_item)
@@ -112,6 +151,8 @@ class MyFrame(wx.Frame):
         self.Bind(wx.EVT_MENU, self.restore_changes, restore_changes_item)
         self.Bind(wx.EVT_MENU, self.sort_commands, sort_commands_item)
         self.Bind(wx.EVT_MENU, self.check_updates, check_updates_item)
+        self.Bind(wx.EVT_MENU, self.open_changelog, view_changelog_item)
+        self.Bind(wx.EVT_MENU, self.report_performance, report_performance_item)
 
         # Append the "Tools" menu to the menu bar
         menu_bar.Append(tools_menu, "Tools")
@@ -216,6 +257,14 @@ class MyFrame(wx.Frame):
     def download_latest_github(self, event):
         download_url = "https://github.com/azurejoga/Aurora-Windows-Optimizer/releases"
         webbrowser.open(download_url)
+
+    def open_changelog(self, event):
+        changelog_url = "https://github.com/azurejoga/Aurora-Windows-Optimizer/blob/aurora/changelog.md"
+        webbrowser.open(changelog_url)
+
+    def report_performance(self, event):
+        report_url = "https://forms.gle/FQxX369rhNuPefHt6"
+        webbrowser.open(report_url)
 
     def create_system_restore_point(self, event):
         description = wx.GetTextFromUser("Enter a description for the restore point:", "Create Restore Point")
