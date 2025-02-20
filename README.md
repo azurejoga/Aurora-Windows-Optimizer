@@ -18,7 +18,7 @@ Whether you want to **optimize your PC for maximum performance** or simply **eli
 
 ## aurora, windows optimizer is safe?
 Yes, Aurora Windows Optimizer is safe, and you can check it yourself with some tools.
-1. virus total. [see and check the aurora in virus total](https://www.virustotal.com/gui/file/5123e47574eaabae4b621eed575d11d6b6269a9a3fc8f8ee9924bae84a69c8f0)
+1. virustotal. [see and check the aurora in virustotal](https://www.virustotal.com/gui/file/21addd102f59240bfc9689f01ef4c70a8ce617893f688ebc98b53de1225afb8a/summary)
 
 2. Aurora is now signed with a trusted certificate by a trusted authority, CA. therefore, it is safe. Microsoft itself verified this!
 
@@ -38,7 +38,7 @@ Yes, Aurora Windows Optimizer is safe, and you can check it yourself with some t
 - **Install useful applications through Aurora, Windows Optimizer**
 - **Applications listed are:**
 1. NVDA, install NVDA: Screen Reader for the Blind.
-2. install all visual runtime, VC++ packages.
+2. install all visual runtime, all  VC++ packages.
 3. install all .net framework from 1.0 to 8.0
 4. Install the much needed java8 JDK!
 5. Install winrar or, if you prefer, 7zip.
@@ -48,11 +48,17 @@ Yes, Aurora Windows Optimizer is safe, and you can check it yourself with some t
 9. Automatically log in to Windows without having to enter your password!
 10. Install a classic start menu or task manager, better than the one in windows 10! It's even better! with a classic look!
 11. enable or disable the firewall, it's your choice!
-12. Clear the DNS cache, optimize your windows with more than 67 commands and much more!
+12. Clear the DNS cache, optimize your windows with more than 100 commands and much more!
 13. completely disable windows update, completely!
 14. receive notifications when a command was completed successfully or an error occurred.
 15. the welcome message now no longer appears after the first run
-16. Now you can install the full team viewer client
+16. Now you can install the full team viewer cliente
+17. Check or activate the Windows11 recall.
+18. Optimize your internet with more than 10 native commands from Windows!
+19. Disable to know more about this photo
+20. Send a Benchmark form to become public at Github and for everyone to see the efficiency of Aurora, Windows Optimizer.
+21. See Changelog directly from the program!
+22. Optimize your disc, clean your browser cache, completely turn off Windows animations and more!
 Our list of features that Aurora offers will be updated as we introduce new features!
 
  # Additionally, Aurora is fully accessible for visually impaired users. 🌌
