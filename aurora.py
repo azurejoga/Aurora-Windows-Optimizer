@@ -46,25 +46,25 @@ if not is_admin():
     sys.exit()
 
 def play_random_sound():
-    # Definir o caminho completo para a pasta de sons
+    # Set the full path to the sound folder
     sound_folder = os.path.join(os.getcwd(), "sounds")
     logging.info(f"Folder of sounds defined as: {sound_folder}")
     
-    # Verificar se a pasta existe
+    # Check if the folder exists
     if not os.path.exists(sound_folder):
         logging.error(f"The sounds folder does not exist: {sound_folder}")
         return
     
-    # Lista de arquivos de som disponíveis
+    # List of Sound files available
     sound_files = ["logo-aurora.mp3", "logo-aurora2.mp3", "logo-aurora3.mp3"]
     logging.info(f"List of sound files: {sound_files}")
     
-    # Selecionar aleatoriamente um arquivo de som
+    # Randomly select a sound file
     chosen_file = random.choice(sound_files)
     sound_path = os.path.join(sound_folder, chosen_file)
     logging.info(f"Selected sound file: {chosen_file}")
     
-    # Verificar se o arquivo de som existe
+    # Check if the sound file exists
     if os.path.exists(sound_path):
         logging.info(f"Playing sound from: {sound_path}")
         try:
@@ -74,7 +74,7 @@ def play_random_sound():
     else:
         logging.error(f"Sound file not found: {sound_path}")
 
-# Teste da função
+# Function test
 play_random_sound()
 
 

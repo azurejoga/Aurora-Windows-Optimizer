@@ -1,3 +1,68 @@
+## Aurora Windows Optimizer V19.0
+
+Release Date: 20/02/2025 - 14:08
+
+## English
+
+## Code Changes
+
+* New functions have been added to Aurora. You can check them in the aurora.py file.
+
+## Exciting New Features in Aurora!
+
+* Aurora Windows Optimizer now includes startup sounds! Download now and experience it yourself.
+
+* A benchmark evaluation feature has been introduced. You can submit a report before and after using Aurora via the tools menu (Tools Menu > Click here to inform a report after using Aurora!). These reports, as agreed in the terms, will be published publicly in our GitHub repository: Aurora Windows Optimizer Repository. Show the world the effectiveness of Aurora!
+
+* Aurora now allows you to view the changelog directly from the application. Simply navigate to the tools menu and click on "View Changelog."
+
+## New Commands
+
+* Delete all .cab and .msu files that accumulate as junk from Windows Update.
+
+* Check if Recall, the new Windows 11 feature, is enabled.
+
+* Disable Recall, reducing unnecessary memory usage.
+
+* Optimize your internet connection with over 10 native Windows commands
+
+* Disable the "Learn more about this photo" feature—you definitely don’t need it.
+
+## Bug Fixes
+
+* Fixed an issue that prevented Aurora's second option from initializing properly.
+
+## Português
+
+## Mudanças no Código
+
+* Novas funções foram adicionadas ao Aurora. Você pode conferi-las no arquivo aurora.py.
+
+## Novidades Incríveis no Aurora!
+
+* O Aurora Windows Optimizer agora possui sons na inicialização! Baixe agora e descubra!
+
+* Agora o Aurora conta com uma avaliação de benchmark! No programa, vá até o menu de ferramentas (Menu Ferramentas > Clique aqui para informar um relatório após o uso do Aurora!). Você pode enviar uma avaliação antes e depois de usar o Aurora. Conforme acordado nos termos, publicaremos os resultados publicamente em nosso repositório do GitHub: Repositório Aurora Windows Optimizer. Mostre ao mundo a eficiência do Aurora!
+
+* Agora é possível visualizar o changelog do Aurora diretamente no programa. Basta acessar o menu de ferramentas e clicar em "Ver Changelog."
+
+## Novos Comandos
+
+* Exclua todos os arquivos .cab e .msu responsáveis por acumular lixo do Windows Update.
+
+* Verifique se o Recall, novo recurso do Windows 11, está ativado.
+
+* Desative o Recall, economizando memória desnecessária.
+
+* Otimize sua internet com mais de 10 comandos nativos do Windows.
+
+* Desative o recurso "Saiba mais sobre esta foto". Você definitivamente não precisa disso.
+
+## Correções de Bugs
+
+* Corrigido o bug que impedia a segunda opção do Aurora de inicializar corretamente.
+
+
 # Aurora, Windows Optimizer v18.0  
 14/10/2024 16:26
 
